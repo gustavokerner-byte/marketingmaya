@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MayaApp CDC — Instagram Dashboard</title>
+  <meta name="description" content="Dashboard de social media do Instagram da MayaApp CDC (@mayaapp.cdc)." />
+
+  <!-- Inter via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js — vendorizado localmente (site 100% estático, sem dependência de CDN em runtime) -->
+  <script src="vendor/chart.umd.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" fill="none" aria-label="MayaApp CDC">
+          <path d="M32 3.5l1.9 4.2 4.6.5-3.4 3.1.95 4.5L32 13.6l-4.05 2.2.95-4.5-3.4-3.1 4.6-.5L32 3.5z" fill="#FFD84D"/>
+          <path d="M10 22c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-2l-5.5 6.2V40H18c-4.4 0-8-3.6-8-8V22z" fill="#7C3AED"/>
+          <path d="M28 30c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-4v6.2L40.5 48H36c-4.4 0-8-3.6-8-8V30z" fill="#7C3AED" fill-opacity="0.55"/>
+        </svg>
+        <div class="brand-text">
+          <h1>Instagram Dashboard</h1>
+          <p class="handle">@mayaapp.cdc</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="updated-badge" id="updatedBadge"><span class="dot"></span>Carregando…</span>
+        <div class="period-selector" id="periodSelector" role="group" aria-label="Período">
+          <button data-period="7">7d</button>
+          <button data-period="30" class="active">30d</button>
+          <button data-period="90">90d</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ STATES ============ -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>Carregando dados…</p>
+  </div>
+  <div id="error" style="display:none;">
+    <p><strong>Não foi possível carregar <code>data.json</code>.</strong></p>
+    <p>Certifique-se de servir o dashboard por HTTP (ex.: GitHub Pages ou <code>python3 -m http.server</code>). Abrir o arquivo direto pelo navegador (file://) bloqueia o carregamento do JSON.</p>
+  </div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="wrap" id="app" style="display:none;">
+
+    <!-- BLOCO 1 — KPIs -->
+    <section id="kpis" aria-label="Indicadores principais">
+      <div class="section-head">
+        <h2>Visão Geral</h2>
+        <span class="sub" id="kpiPeriodLabel"></span>
+      </div>
+      <div class="kpi-grid" id="kpiGrid"></div>
+    </section>
+
+    <!-- BLOCO 2 — Evolução Temporal -->
+    <section id="evolution" aria-label="Evolução temporal">
+      <div class="section-head">
+        <h2>Evolução Temporal</h2>
+        <span class="sub" id="evoPeriodLabel"></span>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <p class="card-title">Alcance e Views</p>
+          <p class="card-caption">Contas únicas alcançadas (reach) e total de exibições (views) por dia.</p>
+          <div class="legend">
+            <span class="item"><span class="swatch" style="background:#7C3AED"></span>Reach</span>
+            <span class="item"><span class="swatch" style="background:#3B82F6"></span>Views</span>
+          </div>
+          <div class="chart-box"><canvas id="chartReach"></canvas></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Engajamento</p>
+          <p class="card-caption">Curtidas, comentários, salvamentos e compartilhamentos por dia.</p>
+          <div class="legend">
+            <span class="item"><span class="swatch" style="background:#FFD84D"></span>Likes</span>
+            <span class="item"><span class="swatch" style="background:#C4B5FD"></span>Comentários</span>
+            <span class="item"><span class="swatch" style="background:#3B82F6"></span>Saves</span>
+            <span class="item"><span class="swatch" style="background:#9CA3AF"></span>Shares</span>
+          </div>
+          <div class="chart-box"><canvas id="chartEngagement"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 3 — Ranking de Posts -->
+    <section id="ranking" aria-label="Ranking de posts">
+      <div class="section-head">
+        <h2>Ranking de Posts</h2>
+        <span class="sub" id="rankPeriodLabel"></span>
+      </div>
+      <div class="table-scroll">
+        <table class="ranking">
+          <thead>
+            <tr>
+              <th class="no-sort">Post</th>
+              <th class="no-sort">Tipo</th>
+              <th data-sort="date">Data</th>
+              <th class="no-sort">Caption</th>
+              <th class="num" data-sort="reach">Reach</th>
+              <th class="num" data-sort="engagement">Engaj.</th>
+              <th class="num" data-sort="er">ER</th>
+              <th class="num" data-sort="saves">Saves</th>
+              <th class="num" data-sort="shares">Shares</th>
+              <th class="num" data-sort="follows">Follows</th>
+            </tr>
+          </thead>
+          <tbody id="rankBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- BLOCO 4 — Comparativo por Formato -->
+    <section id="formats" aria-label="Comparativo por formato">
+      <div class="section-head">
+        <h2>Comparativo por Formato</h2>
+        <span class="sub">Todos os posts · métricas lifetime</span>
+      </div>
+      <div class="card">
+        <p class="card-title">Performance média por tipo de mídia</p>
+        <p class="card-caption">Média por post em cada formato. Selecione a métrica para comparar.</p>
+        <div class="metric-toggle" id="fmtToggle">
+          <button data-metric="reach" class="active">Reach médio</button>
+          <button data-metric="engagement">Engagement médio</button>
+          <button data-metric="saves">Saves médio</button>
+          <button data-metric="shares">Shares médio</button>
+          <button data-metric="er">Engagement rate médio</button>
+        </div>
+        <div class="chart-box short"><canvas id="chartFormats"></canvas></div>
+        <div class="fmt-table-scroll"><table class="format-table" id="formatTable"></table></div>
+      </div>
+    </section>
+
+    <!-- BLOCO 5 — Audiência -->
+    <section id="audience" aria-label="Audiência">
+      <div class="section-head">
+        <h2>Audiência</h2>
+        <span class="sub">Dados demográficos</span>
+      </div>
+      <div class="card" id="audienceCard"></div>
+    </section>
+
+    <footer>
+      <p><strong>a MayaApp CDC</strong> · Dashboard estático de Instagram · dados via Windsor.ai</p>
+      <p id="footNote"></p>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
