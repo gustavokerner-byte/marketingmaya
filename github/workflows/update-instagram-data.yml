@@ -1,0 +1,36 @@
+name: Update Instagram Data
+
+on:
+  schedule:
+    # Roda diariamente às 11:00 UTC (08:00 BRT)
+    - cron: '0 11 * * *'
+  workflow_dispatch: # Permite rodar manualmente pelo GitHub
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Instagram data from Windsor.ai
+        env:
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+        run: node scripts/fetch-instagram-data.js
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data.json
+          git diff --quiet --cached || git commit -m "📊 Atualização automática de dados Instagram - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
