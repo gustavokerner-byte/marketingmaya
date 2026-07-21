@@ -41,6 +41,17 @@ async function windsorFetch(fields, extraParams = {}) {
 
   if (!res.ok) {
     const body = await res.text();
+    if (res.status === 400 || res.status === 401 || res.status === 403) {
+      if (/api[_ ]?key/i.test(body)) {
+        throw new Error(
+          `Windsor rejeitou a API key (HTTP ${res.status}). ` +
+          `Verifique o secret WINDSOR_API_KEY do repositório: ` +
+          `pegue a chave em windsor.ai (Get data via API / API key) e ` +
+          `cole em Settings → Secrets and variables → Actions → WINDSOR_API_KEY. ` +
+          `Resposta do Windsor: ${body}`
+        );
+      }
+    }
     throw new Error(`Windsor API error ${res.status}: ${body}`);
   }
 
@@ -53,6 +64,16 @@ function dateStr(daysAgo = 0) {
   const d = new Date();
   d.setDate(d.getDate() - daysAgo);
   return d.toISOString().slice(0, 10);
+}
+
+// O Windsor retorna media_type como IMAGE | VIDEO | CAROUSEL_ALBUM | REEL.
+// O dashboard trabalha com IMAGE | CAROUSEL_ALBUM | REELS — normaliza aqui
+// para os reels/vídeos não ficarem sem badge nem fora do comparativo por formato.
+function normalizeMediaType(raw) {
+  const t = String(raw || '').toUpperCase();
+  if (t === 'REEL' || t === 'REELS' || t === 'VIDEO') return 'REELS';
+  if (t === 'CAROUSEL_ALBUM' || t === 'CAROUSEL' || t === 'ALBUM') return 'CAROUSEL_ALBUM';
+  return 'IMAGE';
 }
 
 function loadExistingData() {
@@ -150,7 +171,7 @@ async function fetchPosts() {
     .filter(r => r.timestamp) // Filtra linhas sem timestamp
     .map(r => ({
       timestamp: r.timestamp,
-      type: r.media_type || 'IMAGE',
+      type: normalizeMediaType(r.media_type),
       caption: r.media_caption || '',
       permalink: r.media_permalink || '',
       media_url: r.media_url || r.media_thumbnail_url || null,
@@ -236,6 +257,12 @@ async function main() {
 
   // Merge daily metrics com histórico existente
   const mergedDaily = mergeDaily(existing?.daily_metrics, dailyMetrics);
+
+  // Garante os campos que o dashboard usa no estado "bloqueado" (< 100 seguidores)
+  audience.min_followers_required = audience.min_followers_required || 100;
+  if (audience.current_followers == null) {
+    audience.current_followers = accountInfo.followers_count != null ? accountInfo.followers_count : null;
+  }
 
   // Preserva followers_count histórico se account retornar null
   // (o campo followers_count só retorna o valor de "hoje")
