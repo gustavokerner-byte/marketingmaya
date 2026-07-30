@@ -1,0 +1,110 @@
+{
+  "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
+  "_corte_semanal": "domingo a sabado",
+  "_atualizado_em": "2026-07-30",
+  "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
+
+  "semana_referencia": {
+    "inicio": "2026-07-19",
+    "fim": "2026-07-25"
+  },
+
+  "acumulado": {
+    "_periodo": "2026-02-01 a 2026-07-25",
+    "cadastros": 417,
+    "primeiro_uso": 363,
+    "assinantes": 0,
+    "ativos_mes": 42,
+    "receita_bruta": 0,
+    "rebate": 0,
+    "produtos_cadastrados": 2254,
+    "produtos_sucesso": 2242,
+    "produtos_salvos": 1289,
+    "imagens_geradas": 24274,
+    "imagens_sucesso": 19929,
+    "imagens_salvas": 8082,
+    "heavy_users": 98,
+    "heavy_users_pct": 30,
+    "frequencia": [
+      { "faixa": "1-5 cadastros", "usuarios": 227 },
+      { "faixa": "6-10 cadastros", "usuarios": 38 },
+      { "faixa": "11-15 cadastros", "usuarios": 19 },
+      { "faixa": "16+ cadastros", "usuarios": 41 }
+    ],
+    "top_clientes": [
+      { "nome": "Fouzi Mimiuni", "cadastros": 94, "imagens": 763, "erros": 0, "sucesso_pct": 90.2 },
+      { "nome": "Stark Multi", "cadastros": 75, "imagens": 693, "erros": 0, "sucesso_pct": 92.8 },
+      { "nome": "Ielma Carla Nogueira Carla", "cadastros": 68, "imagens": 462, "erros": 18, "sucesso_pct": 72.3 }
+    ]
+  },
+
+  "mes": {
+    "_periodo": "2026-07-01 a 2026-07-25",
+    "label": "Julho 2026",
+    "cadastros": 39,
+    "primeiro_uso": 21,
+    "assinantes": 0,
+    "ativos_mes": 42,
+    "produtos_cadastrados": 188,
+    "produtos_sucesso": 188,
+    "produtos_salvos": 113,
+    "imagens_geradas": 2140,
+    "imagens_sucesso": 1701,
+    "imagens_salvas": 793,
+    "heavy_users": 12,
+    "heavy_users_pct": 29
+  },
+
+  "mes_anterior": {
+    "_periodo": "2026-06-01 a 2026-06-25",
+    "label": "Junho 2026",
+    "cadastros": 59,
+    "primeiro_uso": 37,
+    "assinantes": 0,
+    "ativos_mes": 54,
+    "base_cadastrada_fim": 368,
+    "produtos_cadastrados": 268,
+    "produtos_sucesso": 268,
+    "produtos_salvos": 199,
+    "imagens_geradas": 3024,
+    "imagens_sucesso": 2421,
+    "imagens_salvas": 1617,
+    "heavy_users": 15,
+    "heavy_users_pct": 28
+  },
+
+  "semanas": [
+    {
+      "inicio": "2026-07-12",
+      "fim": "2026-07-18",
+      "cadastros": 16,
+      "primeiro_uso": 8,
+      "ativos_mes": 32,
+      "base_cadastrada_fim": 407,
+      "produtos_cadastrados": 38,
+      "produtos_sucesso": 38,
+      "produtos_salvos": 24,
+      "imagens_geradas": 406,
+      "imagens_sucesso": 342,
+      "imagens_salvas": 157,
+      "heavy_users": 1,
+      "heavy_users_pct": 7
+    },
+    {
+      "inicio": "2026-07-19",
+      "fim": "2026-07-25",
+      "cadastros": 10,
+      "primeiro_uso": 7,
+      "ativos_mes": 42,
+      "base_cadastrada_fim": 417,
+      "produtos_cadastrados": 70,
+      "produtos_sucesso": 70,
+      "produtos_salvos": 40,
+      "imagens_geradas": 781,
+      "imagens_sucesso": 630,
+      "imagens_salvas": 270,
+      "heavy_users": 4,
+      "heavy_users_pct": 29
+    }
+  ]
+}

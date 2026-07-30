@@ -1,89 +1,70 @@
-# MayaApp CDC — Instagram Dashboard
+# MayaApp CDC — Dashboard Marketing Interno
 
-Dashboard de social media (Instagram) da **a MayaApp CDC** ([@mayaapp.cdc](https://www.instagram.com/mayaapp.cdc/)).
-Site **100% estático** — HTML + CSS + JavaScript vanilla, sem build step. Lê os dados
-de `data.json` no próprio diretório e não faz nenhuma chamada a API em runtime.
+Dashboard estático (GitHub Pages) da **a MayaApp CDC**, com 4 abas:
 
-## Arquitetura
+| Aba | Fonte de dados | Atualização |
+|---|---|---|
+| **Resumo Executivo** | deriva das 3 fontes | automática |
+| **Cadastros** | `data/cadastros.json` | manual — `tools/add_semana.py` (toda segunda) |
+| **Ativações Físicas** | `data/ativacoes.json` | `tools/build_ativacoes.py` a partir de `data/qr/` |
+| **Instagram** | `data.json` (raiz) | GitHub Action + Windsor.ai (diária) |
 
-```
-Windsor.ai (Instagram Graph API)
-        │
-        ▼
-   Cowork Task (diária) — puxa dados via MCP Windsor.ai
-        │
-        ▼
-   data.json (commitado no repo)
-        │
-        ▼
-   GitHub Pages — dashboard estático lê data.json
-```
+Todas as semanas cortam **domingo a sábado**, alinhado ao BI da CWS.
 
-Toda a lógica de data fetching acontece fora do dashboard (no Cowork, diariamente).
-O dashboard apenas renderiza o `data.json` mais recente do repositório.
-
-## Estrutura de arquivos
+## Estrutura
 
 ```
 /
-├── index.html            # marcação + header/seções
-├── style.css             # tema claro institucional, responsivo
-├── app.js                # carregamento de dados, cálculos, gráficos e interações
-├── data.json             # dados (atualizado pelo Cowork diariamente)
-├── vendor/
-│   └── chart.umd.js      # Chart.js 4.4.1 vendorizado (sem dependência de CDN)
+├── index.html                 # header + abas + os 4 painéis
+├── style.css                  # tema Instagram (paleta MayaApp)
+├── app.js                     # lógica do Instagram (KPIs, gráficos, filtro de período)
+├── vendor/chart.umd.js        # Chart.js vendorizado (aba Instagram)
+├── data.json                  # Instagram — atualizado pela GitHub Action
 ├── assets/
-│   └── logo.svg          # logo "M" (duas speech bubbles + estrela dourada)
-└── README.md
+│   ├── logo.svg
+│   ├── mx-dash.css            # estilos das abas + seções Resumo/Cadastros/Ativações
+│   └── mx-dash.js             # abas, KPIs e gráficos SVG (zero dependências)
+├── data/
+│   ├── cadastros.json         # BI da CWS (manual)
+│   ├── ativacoes.json         # gerado dos exports de QR
+│   └── qr/                    # exports brutos de QR Code
+├── scripts/
+│   └── fetch-instagram-data.js  # data fetcher do Instagram (Windsor.ai)
+├── tools/
+│   ├── add_semana.py          # adiciona a semana fechada em cadastros.json
+│   └── build_ativacoes.py     # regenera ativacoes.json dos exports de QR
+├── docs/
+│   ├── BRIEFING_CLAUDE_CODE.md # como as 4 abas foram integradas
+│   └── ROTINA_SEMANAL.md       # rotina de segunda-feira (operação)
+└── .github/workflows/update-instagram-data.yml
 ```
 
-> **Chart.js vendorizado:** a lib de gráficos vive em `vendor/` em vez de vir de um
-> CDN, para o site ser totalmente autossuficiente no GitHub Pages. A fonte **Inter**
-> é carregada do Google Fonts, com fallback para a stack de sistema.
+## Arquitetura das abas
 
-## Blocos do dashboard
-
-1. **KPI Cards** — Seguidores, Reach total, Engagement rate médio, Views totais, com delta vs. período anterior.
-2. **Evolução Temporal** — gráfico de linha Reach × Views (eixo duplo) e gráfico de Engajamento (likes/comentários/saves/shares).
-3. **Ranking de Posts** — tabela ordenável por qualquer métrica, com thumbnail, badge de tipo, ER por post, e destaque para maior reach / maior ER.
-4. **Comparativo por Formato** — média por post por tipo de mídia (Imagem / Carrossel / Reel), com seletor de métrica. Usa **todos os posts** (não filtrado por período).
-5. **Audiência** — bloqueada até 100 seguidores; mostra progresso ("faltam N seguidores").
-
-### Filtro de período global (7d / 30d / 90d, default 30d)
-Afeta os blocos 1, 2 e 3. Os blocos 4 e 5 usam dados lifetime e não são filtrados.
-Os deltas comparam com o período imediatamente anterior de mesma duração; quando não há
-histórico anterior suficiente (ex.: 30d/90d com apenas 30 dias de dados), o card exibe
-"sem período anterior".
-
-## Cálculos
-
-- **Engagement rate (conta):** `(Σ total_interactions / Σ reach) × 100` no período.
-- **Engagement rate (post):** `engagement / reach × 100`.
-- **Delta:** `((valor_atual − valor_anterior) / valor_anterior) × 100`.
-- **Reach** (contas únicas) é a métrica primária de visibilidade; **views** captura exibições totais (com repetições).
+O **Instagram** é independente: `app.js` + `style.css` + `data.json` continuam como
+sempre; as seções de IG apenas passam a morar dentro do painel `#mx-panel-instagram`.
+O **filtro de período (7d/30d/90d) existe só na aba Instagram**. As demais abas são
+estáticas (recortes fechados). Tudo com prefixo `mx-` não colide com o Instagram.
+A paleta MayaApp é aplicada às abas novas via aliases de token no `index.html`.
 
 ## Rodar localmente
 
-O dashboard usa `fetch('data.json')`, que exige um servidor HTTP (abrir via `file://`
-é bloqueado pelo navegador):
+O dashboard usa `fetch()` de arquivos locais, então precisa de um servidor HTTP
+(abrir via `file://` é bloqueado pelo navegador):
 
 ```bash
-python3 -m http.server 8000
-# abra http://localhost:8000
+python3 -m http.server 8000   # http://localhost:8000
 ```
 
-## Deploy no GitHub Pages
+## Operação semanal
 
-1. Faça push deste diretório para o repositório.
-2. Em **Settings → Pages**, selecione a branch e a pasta raiz (`/`).
-3. O GitHub Pages serve `index.html` diretamente.
+Ver **`docs/ROTINA_SEMANAL.md`**. Em resumo, toda segunda:
 
-Para atualizar os dados, basta commitar um novo `data.json` — o Cowork faz isso
-diariamente (spec do fetching à parte).
+```bash
+python3 tools/add_semana.py         # cadastros da semana fechada (números do BI)
+python3 tools/build_ativacoes.py    # se chegaram exports de QR novos em data/qr/
+git add data/ && git commit -m "dados da semana" && git push
+```
 
-## Atualização dos dados (`data.json`)
-
-- `daily_metrics`: acumulado historicamente (merge dos últimos 30d sem duplicar datas).
-- `posts`: métricas lifetime por post.
-- `audience`: preenchido automaticamente ao atingir 100 seguidores.
-- `new_followers`: `null` do Windsor.ai (conta < 100 seguidores) é tratado como `0`.
+O Instagram não exige nada — a GitHub Action atualiza `data.json` sozinha (11:00 UTC).
+O GitHub Pages republica a cada commit.

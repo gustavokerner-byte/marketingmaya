@@ -1,0 +1,268 @@
+{
+  "_gerado_em": "2026-07-30T13:16:21-03:00",
+  "_fonte": "Exports de QR Code (data/qr/)",
+  "_corte_semanal": "domingo a sabado (alinhado ao BI da CWS)",
+  "semana_referencia": {
+    "inicio": "2026-07-19",
+    "fim": "2026-07-25"
+  },
+  "totais": {
+    "scans_total": 109,
+    "unicos_total": 87,
+    "scans_semana": 13,
+    "unicos_semana": 9,
+    "scans_semana_anterior": 23,
+    "unicos_semana_anterior": 19,
+    "recorrencia": 1.25
+  },
+  "frentes": [
+    {
+      "label": "Flyers",
+      "qr": "Adesivo",
+      "tipo": "Flyer",
+      "local": "Distribuição em campo",
+      "instalacao": "2026-06-02",
+      "scans_total": 53,
+      "unicos_total": 40,
+      "scans_semana": 7,
+      "unicos_semana": 4,
+      "scans_semana_anterior": 13,
+      "recorrencia": 1.32,
+      "primeiro_scan": "2026-06-02",
+      "ultimo_scan": "2026-07-30"
+    },
+    {
+      "label": "Pilastra Boulevard",
+      "qr": "pilastra1_boulevard_cdcQ",
+      "tipo": "Pilastra",
+      "local": "Boulevard CDC",
+      "instalacao": "2026-06-18",
+      "scans_total": 51,
+      "unicos_total": 42,
+      "scans_semana": 4,
+      "unicos_semana": 3,
+      "scans_semana_anterior": 9,
+      "recorrencia": 1.21,
+      "primeiro_scan": "2026-06-18",
+      "ultimo_scan": "2026-07-30"
+    },
+    {
+      "label": "Banner São Caetano",
+      "qr": "Entrada Sao Caetano",
+      "tipo": "Banner",
+      "local": "Entrada São Caetano",
+      "instalacao": "2026-06-18",
+      "scans_total": 5,
+      "unicos_total": 5,
+      "scans_semana": 2,
+      "unicos_semana": 2,
+      "scans_semana_anterior": 1,
+      "recorrencia": 1.0,
+      "primeiro_scan": "2026-06-18",
+      "ultimo_scan": "2026-07-24"
+    }
+  ],
+  "semanas": [
+    {
+      "inicio": "2026-05-31",
+      "fim": "2026-06-06",
+      "parcial": false,
+      "scans": 5,
+      "unicos": 3,
+      "por_frente": {
+        "Pilastra Boulevard": 0,
+        "Flyers": 5,
+        "Banner São Caetano": 0
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 0,
+        "Flyers": 3,
+        "Banner São Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-06-07",
+      "fim": "2026-06-13",
+      "parcial": false,
+      "scans": 4,
+      "unicos": 3,
+      "por_frente": {
+        "Pilastra Boulevard": 0,
+        "Flyers": 4,
+        "Banner São Caetano": 0
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 0,
+        "Flyers": 3,
+        "Banner São Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-06-14",
+      "fim": "2026-06-20",
+      "parcial": false,
+      "scans": 12,
+      "unicos": 10,
+      "por_frente": {
+        "Pilastra Boulevard": 7,
+        "Flyers": 3,
+        "Banner São Caetano": 2
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 6,
+        "Flyers": 2,
+        "Banner São Caetano": 2
+      }
+    },
+    {
+      "inicio": "2026-06-21",
+      "fim": "2026-06-27",
+      "parcial": false,
+      "scans": 16,
+      "unicos": 15,
+      "por_frente": {
+        "Pilastra Boulevard": 9,
+        "Flyers": 7,
+        "Banner São Caetano": 0
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 9,
+        "Flyers": 6,
+        "Banner São Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-06-28",
+      "fim": "2026-07-04",
+      "parcial": false,
+      "scans": 17,
+      "unicos": 10,
+      "por_frente": {
+        "Pilastra Boulevard": 10,
+        "Flyers": 7,
+        "Banner São Caetano": 0
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 5,
+        "Flyers": 5,
+        "Banner São Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-07-05",
+      "fim": "2026-07-11",
+      "parcial": false,
+      "scans": 12,
+      "unicos": 12,
+      "por_frente": {
+        "Pilastra Boulevard": 7,
+        "Flyers": 5,
+        "Banner São Caetano": 0
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 7,
+        "Flyers": 5,
+        "Banner São Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-07-12",
+      "fim": "2026-07-18",
+      "parcial": false,
+      "scans": 23,
+      "unicos": 19,
+      "por_frente": {
+        "Pilastra Boulevard": 9,
+        "Flyers": 13,
+        "Banner São Caetano": 1
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 7,
+        "Flyers": 11,
+        "Banner São Caetano": 1
+      }
+    },
+    {
+      "inicio": "2026-07-19",
+      "fim": "2026-07-25",
+      "parcial": false,
+      "scans": 13,
+      "unicos": 9,
+      "por_frente": {
+        "Pilastra Boulevard": 4,
+        "Flyers": 7,
+        "Banner São Caetano": 2
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 3,
+        "Flyers": 4,
+        "Banner São Caetano": 2
+      }
+    },
+    {
+      "inicio": "2026-07-26",
+      "fim": "2026-08-01",
+      "parcial": true,
+      "scans": 7,
+      "unicos": 6,
+      "por_frente": {
+        "Pilastra Boulevard": 5,
+        "Flyers": 2,
+        "Banner São Caetano": 0
+      },
+      "unicos_por_frente": {
+        "Pilastra Boulevard": 5,
+        "Flyers": 1,
+        "Banner São Caetano": 0
+      }
+    }
+  ],
+  "sistema_operacional": {
+    "Android": 69,
+    "iOS": 39,
+    "Linux": 1
+  },
+  "top_cidades": [
+    {
+      "cidade": "Sao Paulo",
+      "scans": 58
+    },
+    {
+      "cidade": "Campinas",
+      "scans": 8
+    },
+    {
+      "cidade": "Osasco",
+      "scans": 5
+    },
+    {
+      "cidade": "Goiania",
+      "scans": 3
+    },
+    {
+      "cidade": "Rio De Janeiro",
+      "scans": 3
+    },
+    {
+      "cidade": "Rio Das Ostras",
+      "scans": 2
+    },
+    {
+      "cidade": "Alto Rio Novo",
+      "scans": 2
+    },
+    {
+      "cidade": "Catalao",
+      "scans": 2
+    },
+    {
+      "cidade": "Diadema",
+      "scans": 2
+    },
+    {
+      "cidade": "Francisco Morato",
+      "scans": 2
+    }
+  ],
+  "fora_da_capital_pct": 46.8
+}

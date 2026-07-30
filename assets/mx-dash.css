@@ -1,0 +1,359 @@
+/* ==========================================================================
+   MayaApp CDC — Dashboard Diretoria
+   Estilos das abas e das secoes Resumo Executivo / Cadastros / Ativacoes.
+   Tudo prefixado com mx- para nao colidir com o CSS existente do Instagram.
+   Cores herdam os tokens do dashboard atual quando existirem (fallback ao lado).
+   ========================================================================== */
+
+.mx {
+  --mx-ink: var(--text, #16123a);
+  --mx-ink-soft: var(--text-muted, #6b6789);
+  --mx-line: var(--border, #e7e4f2);
+  --mx-surface: var(--card, #ffffff);
+  --mx-bg: var(--bg, #f7f6fb);
+
+  --mx-brand: var(--accent, #6d4aff);
+  --mx-brand-deep: #4b2fd6;
+  --mx-brand-wash: #f0ecff;
+
+  --mx-up: #0f9d6e;
+  --mx-down: #d64550;
+  --mx-flat: var(--mx-ink-soft);
+
+  --mx-f1: #6d4aff; /* Pilastra Boulevard */
+  --mx-f2: #12b3a8; /* Flyers */
+  --mx-f3: #f2a63b; /* Banner Sao Caetano */
+
+  --mx-r: 14px;
+  --mx-gap: 16px;
+
+  color: var(--mx-ink);
+}
+
+/* ---------------------------------------------------------------- navegacao */
+.mx-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 24px;
+  padding: 4px;
+  background: var(--mx-brand-wash);
+  border-radius: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mx-tabs::-webkit-scrollbar { display: none; }
+
+.mx-tab {
+  flex: 1 1 auto;
+  min-width: max-content;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--mx-ink-soft);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 10px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.mx-tab:hover { color: var(--mx-brand-deep); }
+.mx-tab[aria-selected="true"] {
+  background: var(--mx-surface);
+  color: var(--mx-brand-deep);
+  box-shadow: 0 1px 3px rgba(22, 18, 58, 0.1);
+}
+.mx-tab:focus-visible {
+  outline: 2px solid var(--mx-brand);
+  outline-offset: 2px;
+}
+
+.mx-panel[hidden] { display: none; }
+
+/* ------------------------------------------------------------------ blocos */
+.mx-block { margin: 0 0 32px; }
+
+.mx-block-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+}
+.mx-block-head h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.mx-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--mx-ink-soft);
+}
+.mx-note {
+  font-size: 0.8rem;
+  color: var(--mx-ink-soft);
+  line-height: 1.55;
+  margin: 10px 0 0;
+}
+
+/* ------------------------------------------------------- KPI hero (grandes) */
+.mx-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--mx-gap);
+  margin: 0 0 var(--mx-gap);
+}
+
+.mx-hero-card {
+  position: relative;
+  padding: 22px 22px 20px;
+  border-radius: var(--mx-r);
+  background: linear-gradient(135deg, var(--mx-brand) 0%, var(--mx-brand-deep) 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.mx-hero-card--ghost {
+  background: var(--mx-surface);
+  border: 1px solid var(--mx-line);
+  color: var(--mx-ink);
+}
+
+.mx-hero-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
+  margin: 0 0 8px;
+}
+.mx-hero-card--ghost .mx-hero-label { color: var(--mx-ink-soft); opacity: 1; }
+
+.mx-hero-value {
+  font-size: clamp(2.1rem, 5.5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}
+.mx-hero-sub {
+  margin: 9px 0 0;
+  font-size: 0.78rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+.mx-hero-card--ghost .mx-hero-sub { color: var(--mx-ink-soft); opacity: 1; }
+
+/* ---------------------------------------------------------- KPI secundarios */
+.mx-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: var(--mx-gap);
+}
+
+.mx-kpi {
+  padding: 16px 17px;
+  background: var(--mx-surface);
+  border: 1px solid var(--mx-line);
+  border-radius: var(--mx-r);
+}
+.mx-kpi-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mx-ink-soft);
+  margin: 0 0 9px;
+  line-height: 1.3;
+}
+.mx-kpi-row {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.mx-kpi-value {
+  font-size: 1.72rem;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.028em;
+  font-variant-numeric: tabular-nums;
+}
+.mx-kpi-sub {
+  margin: 8px 0 0;
+  font-size: 0.74rem;
+  color: var(--mx-ink-soft);
+  line-height: 1.45;
+}
+
+.mx-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mx-delta--up   { color: var(--mx-up);   background: rgba(15, 157, 110, 0.11); }
+.mx-delta--down { color: var(--mx-down); background: rgba(214, 69, 80, 0.11); }
+.mx-delta--flat { color: var(--mx-flat); background: rgba(107, 103, 137, 0.11); }
+
+/* ------------------------------------------------------------------ graficos */
+.mx-chart {
+  background: var(--mx-surface);
+  border: 1px solid var(--mx-line);
+  border-radius: var(--mx-r);
+  padding: 18px 18px 12px;
+}
+.mx-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.mx-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 14px 0 0;
+  font-size: 0.76rem;
+  color: var(--mx-ink-soft);
+}
+.mx-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.mx-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex: none;
+}
+
+.mx-axis      { font-size: 10.5px; fill: var(--mx-ink-soft); }
+.mx-grid      { stroke: var(--mx-line); stroke-width: 1; }
+.mx-barlabel  { font-size: 10.5px; font-weight: 700; fill: var(--mx-ink); }
+.mx-bar       { transition: opacity 0.15s; }
+.mx-bar:hover { opacity: 0.72; }
+.mx-partial   { opacity: 0.45; }
+
+/* --------------------------------------------------------------------- funil */
+.mx-funnel {
+  display: grid;
+  gap: 10px;
+}
+.mx-funnel-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1.1fr) 3fr auto;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.83rem;
+}
+.mx-funnel-row > span:first-child { color: var(--mx-ink-soft); }
+.mx-funnel-track {
+  height: 9px;
+  border-radius: 20px;
+  background: var(--mx-brand-wash);
+  overflow: hidden;
+}
+.mx-funnel-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--mx-brand) 0%, var(--mx-brand-deep) 100%);
+}
+.mx-funnel-num {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------- tabela */
+.mx-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--mx-line);
+  border-radius: var(--mx-r);
+  background: var(--mx-surface);
+}
+.mx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 620px;
+}
+.mx-table th,
+.mx-table td {
+  padding: 12px 15px;
+  text-align: right;
+  border-bottom: 1px solid var(--mx-line);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.mx-table th:first-child,
+.mx-table td:first-child { text-align: left; }
+.mx-table thead th {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mx-ink-soft);
+  background: var(--mx-bg);
+}
+.mx-table tbody tr:last-child td { border-bottom: 0; }
+.mx-table tfoot td {
+  font-weight: 700;
+  background: var(--mx-bg);
+  border-bottom: 0;
+}
+.mx-swatch {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  margin-right: 8px;
+  vertical-align: baseline;
+}
+
+/* ---------------------------------------------------------------- utilidades */
+.mx-flag {
+  display: flex;
+  gap: 11px;
+  padding: 13px 15px;
+  border-radius: 11px;
+  background: #fff8ec;
+  border: 1px solid #f3ddb4;
+  font-size: 0.81rem;
+  line-height: 1.55;
+  color: #6b4c12;
+  margin: 0 0 var(--mx-gap);
+}
+.mx-flag strong { color: #4d3607; }
+
+.mx-empty {
+  padding: 32px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--mx-ink-soft);
+  background: var(--mx-surface);
+  border: 1px dashed var(--mx-line);
+  border-radius: var(--mx-r);
+  line-height: 1.6;
+}
+
+.mx-stamp {
+  font-size: 0.72rem;
+  color: var(--mx-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 560px) {
+  .mx-hero { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .mx-funnel-row { grid-template-columns: 1fr auto; }
+  .mx-funnel-row .mx-funnel-track { grid-column: 1 / -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mx-tab, .mx-bar { transition: none; }
+}

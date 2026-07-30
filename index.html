@@ -3,23 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MayaApp CDC — Instagram Dashboard</title>
-  <meta name="description" content="Dashboard de social media do Instagram da MayaApp CDC (@mayaapp.cdc)." />
+  <title>MayaApp CDC — Dashboard Marketing Interno</title>
+  <meta name="description" content="Dashboard de marketing interno da MayaApp CDC: cadastros, ativações físicas e Instagram." />
 
   <!-- Inter via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Chart.js — vendorizado localmente (site 100% estático, sem dependência de CDN em runtime) -->
   <script src="vendor/chart.umd.js"></script>
 
   <link rel="stylesheet" href="style.css" />
+  <!-- Abas + seções Resumo/Cadastros/Ativações (prefixo mx-, não colide com o Instagram) -->
+  <link rel="stylesheet" href="assets/mx-dash.css" />
+  <!-- Harmonização de marca: faz o mx-dash herdar a paleta MayaApp (carregado DEPOIS do mx-dash.css) -->
+  <style id="mx-brand-maya">
+    .mx {
+      --accent: #7C3AED;         /* Maya Purple */
+      --text: #1A0A2E;           /* Navy Deep   */
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --card: #F8F7FC;           /* Surface Light */
+      --bg: #FFFFFF;
+      /* tokens que o mx-dash.css fixa em valores genéricos → Maya */
+      --mx-brand-deep: #5B21B6;
+      --mx-brand-wash: #F1ECFA;
+      --mx-up: #22C55E;
+      --mx-down: #EF4444;
+      --mx-f1: #7C3AED;          /* frente 1 · roxo Maya   */
+      --mx-f2: #3B82F6;          /* frente 2 · azul tech    */
+      --mx-f3: #E0A93B;          /* frente 3 · dourado      */
+    }
+  </style>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 </head>
-<body>
+<body class="mx">
 
-  <!-- ============ HEADER ============ -->
+  <!-- ============ HEADER GLOBAL ============ -->
   <header>
     <div class="header-inner">
       <div class="brand">
@@ -29,33 +50,72 @@
           <path d="M28 30c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-4v6.2L40.5 48H36c-4.4 0-8-3.6-8-8V30z" fill="#7C3AED" fill-opacity="0.55"/>
         </svg>
         <div class="brand-text">
-          <h1>Instagram Dashboard</h1>
-          <p class="handle">@mayaapp.cdc</p>
-        </div>
-      </div>
-      <div class="header-right">
-        <span class="updated-badge" id="updatedBadge"><span class="dot"></span>Carregando…</span>
-        <div class="period-selector" id="periodSelector" role="group" aria-label="Período">
-          <button data-period="7">7d</button>
-          <button data-period="30" class="active">30d</button>
-          <button data-period="90">90d</button>
+          <h1>MayaApp CDC</h1>
+          <p class="handle">Dashboard Marketing Interno</p>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ============ STATES ============ -->
-  <div id="loading">
-    <div class="spinner"></div>
-    <p>Carregando dados…</p>
-  </div>
-  <div id="error" style="display:none;">
-    <p><strong>Não foi possível carregar <code>data.json</code>.</strong></p>
-    <p>Certifique-se de servir o dashboard por HTTP (ex.: GitHub Pages ou <code>python3 -m http.server</code>). Abrir o arquivo direto pelo navegador (file://) bloqueia o carregamento do JSON.</p>
-  </div>
+  <!-- ============ ABAS + PAINÉIS ============ -->
+  <main class="wrap">
 
-  <!-- ============ MAIN ============ -->
-  <main class="wrap" id="app" style="display:none;">
+    <nav class="mx-tabs" role="tablist" aria-label="Seções do dashboard">
+      <button class="mx-tab" role="tab" data-tab="resumo"
+              id="mx-tab-resumo" aria-controls="mx-panel-resumo" aria-selected="true">Resumo Executivo</button>
+      <button class="mx-tab" role="tab" data-tab="cadastros"
+              id="mx-tab-cadastros" aria-controls="mx-panel-cadastros" aria-selected="false">Cadastros</button>
+      <button class="mx-tab" role="tab" data-tab="ativacoes"
+              id="mx-tab-ativacoes" aria-controls="mx-panel-ativacoes" aria-selected="false">Ativações Físicas</button>
+      <button class="mx-tab" role="tab" data-tab="instagram"
+              id="mx-tab-instagram" aria-controls="mx-panel-instagram" aria-selected="false">Instagram</button>
+    </nav>
+
+    <p class="mx-stamp" id="mx-atualizado"></p>
+
+    <!-- ABA 1 — Resumo Executivo -->
+    <div class="mx-panel" id="mx-panel-resumo" role="tabpanel" aria-labelledby="mx-tab-resumo">
+      <div id="mx-resumo"><div class="mx-empty">Carregando dados…</div></div>
+    </div>
+
+    <!-- ABA 2 — Cadastros -->
+    <div class="mx-panel" id="mx-panel-cadastros" role="tabpanel" aria-labelledby="mx-tab-cadastros" hidden>
+      <div id="mx-cadastros"><div class="mx-empty">Carregando dados…</div></div>
+    </div>
+
+    <!-- ABA 3 — Ativações Físicas -->
+    <div class="mx-panel" id="mx-panel-ativacoes" role="tabpanel" aria-labelledby="mx-tab-ativacoes" hidden>
+      <div id="mx-ativacoes"><div class="mx-empty">Carregando dados…</div></div>
+    </div>
+
+    <!-- ABA 4 — Instagram (conteúdo original intacto; app.js segue mandando aqui) -->
+    <div class="mx-panel" id="mx-panel-instagram" role="tabpanel" aria-labelledby="mx-tab-instagram" hidden>
+
+      <!-- Sub-header do Instagram: handle + selo de atualização + filtro de período (só nesta aba) -->
+      <div class="ig-subhead">
+        <span class="handle ig-handle">@mayaapp.cdc</span>
+        <div class="ig-subhead-right">
+          <span class="updated-badge" id="updatedBadge"><span class="dot"></span>Carregando…</span>
+          <div class="period-selector" id="periodSelector" role="group" aria-label="Período">
+            <button data-period="7">7d</button>
+            <button data-period="30" class="active">30d</button>
+            <button data-period="90">90d</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTADOS (Instagram) -->
+      <div id="loading">
+        <div class="spinner"></div>
+        <p>Carregando dados…</p>
+      </div>
+      <div id="error" style="display:none;">
+        <p><strong>Não foi possível carregar <code>data.json</code>.</strong></p>
+        <p>Certifique-se de servir o dashboard por HTTP (ex.: GitHub Pages ou <code>python3 -m http.server</code>). Abrir o arquivo direto pelo navegador (file://) bloqueia o carregamento do JSON.</p>
+      </div>
+
+      <!-- app.js alterna a visibilidade deste #app (não alterar) -->
+      <div id="app" style="display:none;">
 
     <!-- BLOCO 1 — KPIs -->
     <section id="kpis" aria-label="Indicadores principais">
@@ -153,13 +213,28 @@
       <div class="card" id="audienceCard"></div>
     </section>
 
+      </div><!-- /#app -->
+    </div><!-- /#mx-panel-instagram -->
+
     <footer>
-      <p><strong>a MayaApp CDC</strong> · Dashboard estático de Instagram · dados via Windsor.ai</p>
+      <p><strong>a MayaApp CDC</strong> · Dashboard de Marketing Interno</p>
       <p id="footNote"></p>
     </footer>
 
   </main>
 
+  <!-- Instagram: precisa continuar rodando primeiro (não alterar) -->
   <script src="app.js"></script>
+  <!-- Abas + seções Resumo / Cadastros / Ativações -->
+  <script src="assets/mx-dash.js"></script>
+  <!-- Chart.js recalcula tamanho ao revelar a aba Instagram (os canvases renderizam com display:none) -->
+  <script>
+    (function () {
+      var ig = document.getElementById("mx-tab-instagram");
+      if (ig) ig.addEventListener("click", function () {
+        setTimeout(function () { window.dispatchEvent(new Event("resize")); }, 60);
+      });
+    })();
+  </script>
 </body>
 </html>

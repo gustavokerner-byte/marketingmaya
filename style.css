@@ -473,6 +473,25 @@ footer {
 footer a { color: var(--maya-purple); text-decoration: none; }
 
 /* ============================================================
+   SUB-HEADER DA ABA INSTAGRAM (handle + selo + filtro de período)
+   ============================================================ */
+.ig-subhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.ig-subhead .ig-handle { font-size: 14px; font-weight: 500; }
+.ig-subhead-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
