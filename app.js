@@ -464,6 +464,7 @@ function renderAudience() {
   if (!a.available) {
     const missing = Math.max(0, required - current);
     const pct = Math.min(100, (current / required) * 100);
+    el.className = 'card';
     el.innerHTML = `
       <div class="audience-locked">
         <div class="lock-icon">🔒</div>
@@ -476,8 +477,110 @@ function renderAudience() {
         </div>
       </div>`;
   } else {
-    // Placeholder para quando ≥ 100 seguidores (v2)
-    el.innerHTML = `<p class="card-caption">Distribuição de audiência disponível. Renderização completa na v2.</p>`;
+    // Audiência disponível (≥ 100 seguidores): gênero, faixa etária, cidades, países.
+    const GEN = { F: 'Feminino', M: 'Masculino', U: 'Não informado' };
+    const GEN_COLOR = { F: C.purple, M: C.blue, U: C.gray };
+    const COUNTRY = {
+      BR: 'Brasil', PT: 'Portugal', CH: 'Suíça', US: 'Estados Unidos', AR: 'Argentina',
+      ES: 'Espanha', FR: 'França', IT: 'Itália', DE: 'Alemanha', GB: 'Reino Unido',
+      AO: 'Angola', MZ: 'Moçambique', UY: 'Uruguai', PY: 'Paraguai', CL: 'Chile',
+    };
+
+    el.className = 'audience-grid';
+    el.innerHTML = `
+      <div class="card audience-panel">
+        <p class="card-title">Gênero</p>
+        <div class="chart-box audience-mini"><canvas id="audGender"></canvas></div>
+        <div class="audience-legend" id="audGenderLegend"></div>
+      </div>
+      <div class="card audience-panel">
+        <p class="card-title">Faixa etária</p>
+        <div class="chart-box audience-mini"><canvas id="audAge"></canvas></div>
+      </div>
+      <div class="card audience-panel">
+        <p class="card-title">Top cidades</p>
+        <ul class="audience-list" id="audCities"></ul>
+      </div>
+      <div class="card audience-panel">
+        <p class="card-title">Países</p>
+        <ul class="audience-list" id="audCountries"></ul>
+      </div>`;
+
+    // Listas (top 5) com barra proporcional
+    const listHTML = (arr, labeler) => {
+      const top = (arr || []).slice(0, 5);
+      if (!top.length) return `<li class="audience-empty">Sem dados</li>`;
+      const max = Math.max.apply(null, top.map(x => x.size).concat([1]));
+      return top.map((x, i) => `
+        <li>
+          <span class="rank">${i + 1}</span>
+          <span class="name" title="${escapeAttr(x.name)}">${escapeHtml(labeler(x.name))}</span>
+          <span class="bar"><span style="width:${(x.size / max) * 100}%"></span></span>
+          <span class="val">${fmtPct(x.size, 0)}</span>
+        </li>`).join('');
+    };
+    document.getElementById('audCities').innerHTML =
+      listHTML(a.cities, n => n.split(',')[0]);
+    document.getElementById('audCountries').innerHTML =
+      listHTML(a.countries, c => COUNTRY[c] || c);
+
+    if (hasChart()) {
+      // Donut de gênero
+      const g = a.gender || [];
+      if (charts.audGender) charts.audGender.destroy();
+      charts.audGender = new Chart(document.getElementById('audGender'), {
+        type: 'doughnut',
+        data: {
+          labels: g.map(x => GEN[x.name] || x.name),
+          datasets: [{
+            data: g.map(x => x.size),
+            backgroundColor: g.map(x => GEN_COLOR[x.name] || C.muted),
+            borderWidth: 2, borderColor: '#fff',
+          }],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, cutout: '62%',
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#1A0A2E', titleFont: chartFont, bodyFont: chartFont, padding: 10, cornerRadius: 8,
+              callbacks: { label: (ctx) => `${ctx.label}: ${fmtPct(ctx.parsed, 0)}` },
+            },
+          },
+        },
+      });
+      document.getElementById('audGenderLegend').innerHTML = g.map(x =>
+        `<span class="item"><span class="sw" style="background:${GEN_COLOR[x.name] || C.muted}"></span>${GEN[x.name] || x.name} · ${fmtPct(x.size, 0)}</span>`).join('');
+
+      // Barras horizontais de faixa etária
+      const ages = a.age || [];
+      if (charts.audAge) charts.audAge.destroy();
+      charts.audAge = new Chart(document.getElementById('audAge'), {
+        type: 'bar',
+        data: {
+          labels: ages.map(x => x.name),
+          datasets: [{
+            data: ages.map(x => x.size),
+            backgroundColor: C.purple + 'CC', borderColor: C.purple,
+            borderWidth: 1.5, borderRadius: 6, maxBarThickness: 26,
+          }],
+        },
+        options: {
+          indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#1A0A2E', titleFont: chartFont, bodyFont: chartFont, padding: 10, cornerRadius: 8,
+              callbacks: { label: (ctx) => `${ctx.label}: ${fmtPct(ctx.parsed.x, 0)}` },
+            },
+          },
+          scales: {
+            x: { beginAtZero: true, grid: { color: '#F0EEF6' }, ticks: { font: { ...chartFont, size: 11 }, color: C.muted, callback: v => v + '%' } },
+            y: { grid: { display: false }, ticks: { font: { ...chartFont, size: 11 }, color: C.text } },
+          },
+        },
+      });
+    }
   }
 }
 
