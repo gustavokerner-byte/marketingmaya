@@ -1,35 +1,35 @@
 {
-  "_gerado_em": "2026-07-30T13:16:21-03:00",
-  "_fonte": "Exports de QR Code (data/qr/)",
+  "_gerado_em": "2026-08-13T00:00:00-03:00",
+  "_fonte": "Exports de QR Code (data/qr/) + historico ativacoes.json",
   "_corte_semanal": "domingo a sabado (alinhado ao BI da CWS)",
+  "_nota": "Frente 'Flyers' consolida Adesivo (original) + Bras (adicional) como uma unica frente, por decisao do gestor. Boulevard e Banner vem do export (autoritativo). Uniques e cidades acumulados sao aproximados: dedup cross-QR nao e possivel com o export parcial do Adesivo.",
   "semana_referencia": {
-    "inicio": "2026-07-19",
-    "fim": "2026-07-25"
+    "inicio": "2026-08-02",
+    "fim": "2026-08-08"
   },
   "totais": {
-    "scans_total": 109,
-    "unicos_total": 87,
-    "scans_semana": 13,
-    "unicos_semana": 9,
-    "scans_semana_anterior": 23,
-    "unicos_semana_anterior": 19,
-    "recorrencia": 1.25
+    "scans_total": 131,
+    "unicos_total": 108,
+    "scans_semana": 4,
+    "unicos_semana": 3,
+    "scans_semana_anterior": 11,
+    "unicos_semana_anterior": 11,
+    "recorrencia": 1.21
   },
   "frentes": [
     {
       "label": "Flyers",
-      "qr": "Adesivo",
+      "qr": "Adesivo + Bras",
       "tipo": "Flyer",
-      "local": "Distribuição em campo",
+      "local": "Distribuicao em campo",
       "instalacao": "2026-06-02",
-      "scans_total": 53,
-      "unicos_total": 40,
-      "scans_semana": 7,
-      "unicos_semana": 4,
-      "scans_semana_anterior": 13,
-      "recorrencia": 1.32,
+      "scans_total": 65,
+      "unicos_total": 52,
+      "scans_semana": 1,
+      "scans_semana_anterior": 2,
+      "recorrencia": 1.25,
       "primeiro_scan": "2026-06-02",
-      "ultimo_scan": "2026-07-30"
+      "ultimo_scan": "2026-08-12"
     },
     {
       "label": "Pilastra Boulevard",
@@ -37,26 +37,24 @@
       "tipo": "Pilastra",
       "local": "Boulevard CDC",
       "instalacao": "2026-06-18",
-      "scans_total": 51,
-      "unicos_total": 42,
-      "scans_semana": 4,
-      "unicos_semana": 3,
+      "scans_total": 61,
+      "unicos_total": 51,
+      "scans_semana": 3,
       "scans_semana_anterior": 9,
-      "recorrencia": 1.21,
+      "recorrencia": 1.2,
       "primeiro_scan": "2026-06-18",
-      "ultimo_scan": "2026-07-30"
+      "ultimo_scan": "2026-08-12"
     },
     {
-      "label": "Banner São Caetano",
+      "label": "Banner Sao Caetano",
       "qr": "Entrada Sao Caetano",
       "tipo": "Banner",
-      "local": "Entrada São Caetano",
+      "local": "Entrada Sao Caetano",
       "instalacao": "2026-06-18",
       "scans_total": 5,
       "unicos_total": 5,
-      "scans_semana": 2,
-      "unicos_semana": 2,
-      "scans_semana_anterior": 1,
+      "scans_semana": 0,
+      "scans_semana_anterior": 0,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-06-18",
       "ultimo_scan": "2026-07-24"
@@ -68,16 +66,10 @@
       "fim": "2026-06-06",
       "parcial": false,
       "scans": 5,
-      "unicos": 3,
       "por_frente": {
         "Pilastra Boulevard": 0,
         "Flyers": 5,
-        "Banner São Caetano": 0
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 0,
-        "Flyers": 3,
-        "Banner São Caetano": 0
+        "Banner Sao Caetano": 0
       }
     },
     {
@@ -85,16 +77,10 @@
       "fim": "2026-06-13",
       "parcial": false,
       "scans": 4,
-      "unicos": 3,
       "por_frente": {
         "Pilastra Boulevard": 0,
         "Flyers": 4,
-        "Banner São Caetano": 0
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 0,
-        "Flyers": 3,
-        "Banner São Caetano": 0
+        "Banner Sao Caetano": 0
       }
     },
     {
@@ -102,16 +88,10 @@
       "fim": "2026-06-20",
       "parcial": false,
       "scans": 12,
-      "unicos": 10,
       "por_frente": {
         "Pilastra Boulevard": 7,
         "Flyers": 3,
-        "Banner São Caetano": 2
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 6,
-        "Flyers": 2,
-        "Banner São Caetano": 2
+        "Banner Sao Caetano": 2
       }
     },
     {
@@ -119,16 +99,10 @@
       "fim": "2026-06-27",
       "parcial": false,
       "scans": 16,
-      "unicos": 15,
       "por_frente": {
         "Pilastra Boulevard": 9,
         "Flyers": 7,
-        "Banner São Caetano": 0
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 9,
-        "Flyers": 6,
-        "Banner São Caetano": 0
+        "Banner Sao Caetano": 0
       }
     },
     {
@@ -136,16 +110,10 @@
       "fim": "2026-07-04",
       "parcial": false,
       "scans": 17,
-      "unicos": 10,
       "por_frente": {
         "Pilastra Boulevard": 10,
         "Flyers": 7,
-        "Banner São Caetano": 0
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 5,
-        "Flyers": 5,
-        "Banner São Caetano": 0
+        "Banner Sao Caetano": 0
       }
     },
     {
@@ -153,79 +121,77 @@
       "fim": "2026-07-11",
       "parcial": false,
       "scans": 12,
-      "unicos": 12,
       "por_frente": {
         "Pilastra Boulevard": 7,
         "Flyers": 5,
-        "Banner São Caetano": 0
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 7,
-        "Flyers": 5,
-        "Banner São Caetano": 0
+        "Banner Sao Caetano": 0
       }
     },
     {
       "inicio": "2026-07-12",
       "fim": "2026-07-18",
       "parcial": false,
-      "scans": 23,
-      "unicos": 19,
+      "scans": 26,
       "por_frente": {
         "Pilastra Boulevard": 9,
-        "Flyers": 13,
-        "Banner São Caetano": 1
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 7,
-        "Flyers": 11,
-        "Banner São Caetano": 1
+        "Flyers": 16,
+        "Banner Sao Caetano": 1
       }
     },
     {
       "inicio": "2026-07-19",
       "fim": "2026-07-25",
       "parcial": false,
-      "scans": 13,
-      "unicos": 9,
+      "scans": 15,
       "por_frente": {
         "Pilastra Boulevard": 4,
-        "Flyers": 7,
-        "Banner São Caetano": 2
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 3,
-        "Flyers": 4,
-        "Banner São Caetano": 2
+        "Flyers": 9,
+        "Banner Sao Caetano": 2
       }
     },
     {
       "inicio": "2026-07-26",
       "fim": "2026-08-01",
-      "parcial": true,
-      "scans": 7,
-      "unicos": 6,
+      "parcial": false,
+      "scans": 11,
       "por_frente": {
-        "Pilastra Boulevard": 5,
+        "Pilastra Boulevard": 9,
         "Flyers": 2,
-        "Banner São Caetano": 0
-      },
-      "unicos_por_frente": {
-        "Pilastra Boulevard": 5,
+        "Banner Sao Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-08-02",
+      "fim": "2026-08-08",
+      "parcial": false,
+      "scans": 4,
+      "por_frente": {
+        "Pilastra Boulevard": 3,
         "Flyers": 1,
-        "Banner São Caetano": 0
+        "Banner Sao Caetano": 0
+      }
+    },
+    {
+      "inicio": "2026-08-09",
+      "fim": "2026-08-15",
+      "parcial": true,
+      "scans": 9,
+      "por_frente": {
+        "Pilastra Boulevard": 3,
+        "Flyers": 6,
+        "Banner Sao Caetano": 0
       }
     }
   ],
   "sistema_operacional": {
-    "Android": 69,
-    "iOS": 39,
+    "Android": 83,
+    "iOS": 47,
     "Linux": 1
   },
   "top_cidades": [
     {
       "cidade": "Sao Paulo",
-      "scans": 58
+      "scans": 63
     },
     {
       "cidade": "Campinas",
@@ -236,16 +202,20 @@
       "scans": 5
     },
     {
+      "cidade": "Rio Das Ostras",
+      "scans": 5
+    },
+    {
+      "cidade": "Rio De Janeiro",
+      "scans": 4
+    },
+    {
       "cidade": "Goiania",
       "scans": 3
     },
     {
-      "cidade": "Rio De Janeiro",
+      "cidade": "Diadema",
       "scans": 3
-    },
-    {
-      "cidade": "Rio Das Ostras",
-      "scans": 2
     },
     {
       "cidade": "Alto Rio Novo",
@@ -256,13 +226,9 @@
       "scans": 2
     },
     {
-      "cidade": "Diadema",
-      "scans": 2
-    },
-    {
       "cidade": "Francisco Morato",
       "scans": 2
     }
   ],
-  "fora_da_capital_pct": 46.8
+  "fora_da_capital_pct": 51.9
 }
