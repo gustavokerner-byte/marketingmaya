@@ -1,34 +1,34 @@
 {
   "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
   "_corte_semanal": "domingo a sabado",
-  "_atualizado_em": "2026-08-09",
+  "_atualizado_em": "2026-08-15",
   "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
 
   "semana_referencia": {
-    "inicio": "2026-08-02",
-    "fim": "2026-08-08"
+    "inicio": "2026-08-09",
+    "fim": "2026-08-15"
   },
 
   "acumulado": {
-    "_periodo": "2026-02-01 a 2026-08-09",
-    "cadastros": 439,
-    "primeiro_uso": 377,
+    "_periodo": "2026-02-01 a 2026-08-15",
+    "cadastros": 454,
+    "primeiro_uso": 378,
     "assinantes": 0,
-    "ativos_mes": 14,
+    "ativos_mes": 20,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2357,
-    "produtos_sucesso": 2345,
-    "produtos_salvos": 1344,
-    "imagens_geradas": 25461,
-    "imagens_sucesso": 20856,
-    "imagens_salvas": 8423,
+    "produtos_cadastrados": 2386,
+    "produtos_sucesso": 2374,
+    "produtos_salvos": 1363,
+    "imagens_geradas": 25769,
+    "imagens_sucesso": 21117,
+    "imagens_salvas": 8567,
     "heavy_users": 100,
     "heavy_users_pct": 29,
     "frequencia": [
-      { "faixa": "1-5 cadastros", "usuarios": 239 },
-      { "faixa": "6-10 cadastros", "usuarios": 38 },
-      { "faixa": "11-15 cadastros", "usuarios": 17 },
+      { "faixa": "1-5 cadastros", "usuarios": 240 },
+      { "faixa": "6-10 cadastros", "usuarios": 37 },
+      { "faixa": "11-15 cadastros", "usuarios": 18 },
       { "faixa": "16+ cadastros", "usuarios": 45 }
     ],
     "top_clientes": [
@@ -39,38 +39,38 @@
   },
 
   "mes": {
-    "_periodo": "2026-08-01 a 2026-08-09",
+    "_periodo": "2026-08-01 a 2026-08-15",
     "label": "Agosto 2026",
-    "cadastros": 12,
-    "primeiro_uso": 7,
+    "cadastros": 27,
+    "primeiro_uso": 8,
     "assinantes": 0,
-    "ativos_mes": 14,
-    "produtos_cadastrados": 70,
-    "produtos_sucesso": 70,
-    "produtos_salvos": 34,
-    "imagens_geradas": 808,
-    "imagens_sucesso": 630,
-    "imagens_salvas": 220,
+    "ativos_mes": 20,
+    "produtos_cadastrados": 99,
+    "produtos_sucesso": 99,
+    "produtos_salvos": 53,
+    "imagens_geradas": 1116,
+    "imagens_sucesso": 891,
+    "imagens_salvas": 364,
     "heavy_users": 5,
-    "heavy_users_pct": 36
+    "heavy_users_pct": 25
   },
 
   "mes_anterior": {
-    "_periodo": "2026-07-01 a 2026-07-09",
+    "_periodo": "2026-07-01 a 2026-07-15",
     "label": "Julho 2026",
-    "cadastros": 12,
-    "primeiro_uso": 6,
+    "cadastros": 23,
+    "primeiro_uso": 11,
     "assinantes": 0,
-    "ativos_mes": 22,
-    "base_cadastrada_fim": 390,
-    "produtos_cadastrados": 79,
-    "produtos_sucesso": 79,
-    "produtos_salvos": 47,
-    "imagens_geradas": 940,
-    "imagens_sucesso": 720,
-    "imagens_salvas": 361,
+    "ativos_mes": 27,
+    "base_cadastrada_fim": 401,
+    "produtos_cadastrados": 95,
+    "produtos_sucesso": 95,
+    "produtos_salvos": 61,
+    "imagens_geradas": 1122,
+    "imagens_sucesso": 864,
+    "imagens_salvas": 433,
     "heavy_users": 6,
-    "heavy_users_pct": 27
+    "heavy_users_pct": 22
   },
 
   "julho_fechado": {
@@ -156,6 +156,22 @@
       "heavy_users": 5,
       "heavy_users_pct": 38,
       "_nota": "Corte do BI desta semana ate 06-08/08; ultimos dias sem novos registros/imagens. 439o cadastro em 09/08 (proxima semana)."
+    },
+    {
+      "inicio": "2026-08-09",
+      "fim": "2026-08-15",
+      "cadastros": 16,
+      "primeiro_uso": 1,
+      "ativos_mes": 20,
+      "base_cadastrada_fim": 454,
+      "produtos_cadastrados": 29,
+      "produtos_sucesso": 29,
+      "produtos_salvos": 19,
+      "imagens_geradas": 308,
+      "imagens_sucesso": 261,
+      "imagens_salvas": 144,
+      "heavy_users": 1,
+      "heavy_users_pct": 10
     }
   ]
 }

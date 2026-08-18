@@ -405,7 +405,7 @@
   function renderAtivacoes(ati) {
     var t = ati.totais || {}, frentes = ati.frentes || [], sems = ati.semanas || [];
     var ref = ati.semana_referencia || {};
-    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f3)"];
+    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f3)", "var(--mx-f4)"];
 
     var hero = heroCard("Scans acumulados", num(t.scans_total), "todas as frentes") +
       heroCard("Visitantes únicos", num(t.unicos_total),
