@@ -1,12 +1,13 @@
 # MayaApp CDC — Dashboard Marketing Interno
 
-Dashboard estático (GitHub Pages) da **a MayaApp CDC**, com 4 abas:
+Dashboard estático (GitHub Pages) da **a MayaApp CDC**, com 5 abas:
 
 | Aba | Fonte de dados | Atualização |
 |---|---|---|
-| **Resumo Executivo** | deriva das 3 fontes | automática |
+| **Resumo Executivo** | deriva das outras fontes | automática |
 | **Cadastros** | `data/cadastros.json` | manual — `tools/add_semana.py` (toda segunda) |
 | **Ativações Físicas** | `data/ativacoes.json` | `tools/build_ativacoes.py` a partir de `data/qr/` |
+| **Promotoras** | `data/promotoras.json` | manual — 2 formulários de campo (ver `docs/ROTINA_PROMOTORAS.md`) |
 | **Instagram** | `data.json` (raiz) | GitHub Action + Windsor.ai (diária) |
 
 Todas as semanas cortam **domingo a sábado**, alinhado ao BI da CWS.
@@ -23,10 +24,13 @@ Todas as semanas cortam **domingo a sábado**, alinhado ao BI da CWS.
 ├── assets/
 │   ├── logo.svg
 │   ├── mx-dash.css            # estilos das abas + seções Resumo/Cadastros/Ativações
-│   └── mx-dash.js             # abas, KPIs e gráficos SVG (zero dependências)
+│   ├── mx-dash.js             # abas, KPIs e gráficos SVG (zero dependências)
+│   └── promotoras.css         # estilos da aba Promotoras (prefixo pr-)
 ├── data/
 │   ├── cadastros.json         # BI da CWS (manual)
 │   ├── ativacoes.json         # gerado dos exports de QR
+│   ├── promotoras.json        # frente Promotoras (2 formulários de campo)
+│   ├── updates.json           # histórico de números/comparativos das rodadas (referência)
 │   └── qr/                    # exports brutos de QR Code
 ├── scripts/
 │   └── fetch-instagram-data.js  # data fetcher do Instagram (Windsor.ai)

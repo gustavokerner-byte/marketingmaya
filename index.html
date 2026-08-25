@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Abas + seções Resumo/Cadastros/Ativações (prefixo mx-, não colide com o Instagram) -->
   <link rel="stylesheet" href="assets/mx-dash.css" />
+  <!-- Aba Promotoras (prefixo pr-) -->
+  <link rel="stylesheet" href="assets/promotoras.css" />
   <!-- Harmonização de marca: faz o mx-dash herdar a paleta MayaApp (carregado DEPOIS do mx-dash.css) -->
   <style id="mx-brand-maya">
     .mx {
@@ -68,6 +70,8 @@
               id="mx-tab-cadastros" aria-controls="mx-panel-cadastros" aria-selected="false">Cadastros</button>
       <button class="mx-tab" role="tab" data-tab="ativacoes"
               id="mx-tab-ativacoes" aria-controls="mx-panel-ativacoes" aria-selected="false">Ativações Físicas</button>
+      <button class="mx-tab" role="tab" data-tab="promotoras"
+              id="mx-tab-promotoras" aria-controls="mx-panel-promotoras" aria-selected="false">Promotoras</button>
       <button class="mx-tab" role="tab" data-tab="instagram"
               id="mx-tab-instagram" aria-controls="mx-panel-instagram" aria-selected="false">Instagram</button>
     </nav>
@@ -89,7 +93,12 @@
       <div id="mx-ativacoes"><div class="mx-empty">Carregando dados…</div></div>
     </div>
 
-    <!-- ABA 4 — Instagram (conteúdo original intacto; app.js segue mandando aqui) -->
+    <!-- ABA 4 — Promotoras (ativação de campo + reativação heavy users) -->
+    <div class="mx-panel" id="mx-panel-promotoras" role="tabpanel" aria-labelledby="mx-tab-promotoras" hidden>
+      <div id="mx-promotoras"><div class="mx-empty">Carregando dados…</div></div>
+    </div>
+
+    <!-- ABA 5 — Instagram (conteúdo original intacto; app.js segue mandando aqui) -->
     <div class="mx-panel" id="mx-panel-instagram" role="tabpanel" aria-labelledby="mx-tab-instagram" hidden>
 
       <!-- Sub-header do Instagram: handle + selo de atualização + filtro de período (só nesta aba) -->

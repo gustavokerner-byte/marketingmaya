@@ -1,0 +1,258 @@
+{
+  "descricao": "Historico das rodadas de update ao investidor. Alimenta os comparativos e evita pedir print repetido.",
+  "versao": 2,
+  "definicao_de_semana": "domingo a sabado. Rotulo = numero ISO da segunda-feira contida na janela.",
+  "fonte": "BI CWS + Windsor.ai (Instagram) + QR codes (leitor de QR)",
+  "destinatarios": ["vinicius.dias@cws-platform.com", "fernando@cws-platform.com"],
+  "ultima_rodada": "2026-08-24",
+
+  "semanas_fechadas_dom_sab": [
+    {
+      "semana": 33,
+      "periodo": "2026-08-09 a 2026-08-15",
+      "novos_cadastros": 16,
+      "primeiro_uso": 1,
+      "usuarios_ativos": 20,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 29,
+      "imagens_geradas": 308,
+      "cadastrados_acumulado_no_fim": 454,
+      "nota": "Capturada como comparativo da rodada da semana 34."
+    },
+    {
+      "semana": 34,
+      "periodo": "2026-08-16 a 2026-08-22",
+      "novos_cadastros": 24,
+      "primeiro_uso": 13,
+      "usuarios_ativos": 39,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 75,
+      "imagens_geradas": 801,
+      "cadastrados_acumulado_no_fim": 478
+    }
+  ],
+
+  "janelas_parciais_dom_qui": [
+    {
+      "semana": 30,
+      "periodo": "2026-07-19 a 2026-07-23",
+      "dias": 5,
+      "novos_cadastros": 3,
+      "primeiro_uso": 4,
+      "usuarios_ativos": 41,
+      "produtos_cadastrados": 25,
+      "imagens_geradas": 289,
+      "cadastrados_acumulado_no_fim": 465
+    },
+    {
+      "semana": 29,
+      "periodo": "2026-07-12 a 2026-07-16",
+      "dias": 5,
+      "novos_cadastros": 11,
+      "primeiro_uso": 5,
+      "usuarios_ativos": 30,
+      "produtos_cadastrados": 22,
+      "imagens_geradas": 243,
+      "cadastrados_acumulado_no_fim": 457
+    }
+  ],
+
+  "semanas_legado_seg_dom": {
+    "aviso": "Capturado sob a definicao antiga (segunda a domingo). NAO comparavel com as semanas domingo-sabado. Nao usar como comparativo.",
+    "dados": [
+      { "semana": 26, "periodo": "2026-06-22 a 2026-06-28", "primeiro_uso": 24 },
+      { "semana": 27, "periodo": "2026-06-29 a 2026-07-05", "primeiro_uso": 4 },
+      { "semana": 28, "periodo": "2026-07-06 a 2026-07-12", "primeiro_uso": 4 },
+      { "semana": 29, "periodo": "2026-07-13 a 2026-07-19", "primeiro_uso": 8 }
+    ]
+  },
+
+  "acumulados_por_rodada": [
+    {
+      "data": "2026-07-22",
+      "usuarios_cadastrados": 465,
+      "produtos_cadastrados": null,
+      "imagens_geradas": null,
+      "nota": "Acumulado de produtos e imagens nao capturado nesta rodada."
+    },
+    {
+      "data": "2026-07-23",
+      "janela_do_print": "2026-02-01 a 2026-07-23",
+      "usuarios_cadastrados": 465,
+      "primeiro_uso_acumulado": 371,
+      "produtos_cadastrados": 2241,
+      "imagens_geradas": 24147,
+      "produtos_salvos": 1290,
+      "imagens_salvas": 8090,
+      "validacao": "Print mostra novos cadastros 465, igual ao total de usuarios cadastrados 465. Janela cobre 100% da base. Acumulado valido."
+    },
+    {
+      "data": "2026-08-24",
+      "janela_do_print": "2026-02-01 a 2026-08-22",
+      "usuarios_cadastrados": 478,
+      "primeiro_uso_acumulado": 391,
+      "assinantes_base_ativa": 0,
+      "produtos_cadastrados": 2461,
+      "produtos_com_sucesso": 2449,
+      "produtos_salvos": 1411,
+      "imagens_geradas": 26570,
+      "imagens_com_sucesso": 21792,
+      "imagens_salvas": 8825,
+      "validacao": "Print mostra novos cadastros 478, igual ao total de usuarios cadastrados 478. Janela cobre 100% da base. Acumulado valido. 478 >= 465 da rodada anterior."
+    }
+  ],
+
+  "mes_corrente_por_corte": [
+    { "mes": "2026-07", "dia_corte": 22, "novos_cadastros": 33, "primeiro_uso": 19, "usuarios_ativos": 39, "produtos_cadastrados": 139, "imagens_geradas": 1612 },
+    { "mes": "2026-07", "dia_corte": 23, "novos_cadastros": 33, "primeiro_uso": 20, "usuarios_ativos": 41, "produtos_cadastrados": 146, "imagens_geradas": 1693 },
+    { "mes": "2026-08", "dia_corte": 22, "novos_cadastros": 51, "primeiro_uso": 21, "usuarios_ativos": 39, "assinantes_novos": 0, "produtos_cadastrados": 174, "imagens_geradas": 1917 }
+  ],
+
+  "mes_anterior_por_corte": [
+    { "mes": "2026-06", "dia_corte": 23, "novos_cadastros": 58, "primeiro_uso": 30, "usuarios_ativos": 45, "produtos_cadastrados": 191, "imagens_geradas": 2095, "cadastrados_acumulado_no_fim": 413 },
+    { "mes": "2026-06", "dia_corte": 30, "novos_cadastros": 77, "primeiro_uso": 43, "usuarios_ativos": 61, "produtos_cadastrados": 298, "imagens_geradas": 3375, "cadastrados_acumulado_no_fim": 432, "nota": "Mes fechado." }
+  ],
+
+  "medias_moveis": [
+    {
+      "data": "2026-07-23",
+      "janela": "2026-07-17 a 2026-07-23",
+      "cadastros_no_periodo": 8,
+      "media_diaria": 1.1,
+      "metodo": "acumulado 465 em 23/07 menos acumulado 457 em 16/07, dividido por 7"
+    },
+    {
+      "data": "2026-08-22",
+      "janela": "2026-08-16 a 2026-08-22",
+      "cadastros_no_periodo": 24,
+      "media_diaria": 3.4,
+      "metodo": "acumulado 478 em 22/08 menos acumulado 454 em 15/08, dividido por 7"
+    }
+  ],
+
+  "qr_codes": [
+    {
+      "data_da_rodada": "2026-08-24",
+      "janela": "2026-08-16 a 2026-08-22",
+      "metrica": "leituras (visitantes unicos) filtrados pela data/hora do scan",
+      "frentes_conhecidas": ["Bras", "CDC"],
+      "regra_agrupamento": "Frentes nao reconhecidas agrupadas como 'Flyer' (regra do gestor). Nesta rodada, agrupadas em Flyer: 'Praca de Alimentacao', 'Entrada Sao Caetano', 'pilastra1_boulevard_cdcQ'.",
+      "por_frente_semana_34": {
+        "Bras": { "leituras": 7, "unicos": 1 },
+        "CDC": { "leituras": 7, "unicos": 2 },
+        "Flyer": { "leituras": 3, "unicos": 3, "composicao": "Praca de Alimentacao 3/3" }
+      },
+      "total_semana_34": { "leituras": 17, "unicos": 6 },
+      "por_frente_semana_33": {
+        "Bras": { "leituras": 6, "unicos": 6 },
+        "Flyer": { "leituras": 4, "unicos": 4, "composicao": "Praca de Alimentacao 1/1; pilastra1_boulevard_cdcQ 3/3" }
+      },
+      "total_semana_33": { "leituras": 10, "unicos": 10 },
+      "nota": "Frentes cruas encontradas nos arquivos: Bras, CDC, Entrada Sao Caetano, Praca de Alimentacao, pilastra1_boulevard_cdcQ. Agrupamento Flyer a confirmar com o gestor."
+    }
+  ],
+
+  "instagram": [
+    {
+      "data": "2026-07-23",
+      "conta": "mayaapp.cdc",
+      "account_id": "17841480695293760",
+      "janela": "2026-07-19 a 2026-07-23",
+      "janela_comparativa": "2026-07-12 a 2026-07-16",
+      "seguidores_total": 93,
+      "posts_total": 17,
+      "novos_seguidores_na_janela": null,
+      "alcance_janela": 757,
+      "alcance_janela_anterior": 194,
+      "visualizacoes_janela": 1261,
+      "visualizacoes_janela_anterior": 697,
+      "contas_engajadas_janela": 27,
+      "contas_engajadas_janela_anterior": 30,
+      "interacoes_janela": 37,
+      "interacoes_janela_anterior": 34,
+      "posts_de_pico": [
+        { "data": "2026-07-09", "tipo": "CAROUSEL_ALBUM", "alcance": 1314, "engajamento": 12, "seguidores_atribuidos": 0 },
+        { "data": "2026-07-17", "tipo": "REELS", "alcance": 1852, "engajamento": 53, "seguidores_atribuidos": null }
+      ],
+      "linha_de_base_alcance_por_post": "13 a 38",
+      "nota": "Novos seguidores indisponivel: a API do Instagram nao libera a metrica diaria para contas com menos de 100 seguidores. Destrava ao passar de 100. Alcance e soma do alcance diario, nao alcance unico. seguidores_atribuidos e null em reels: a API nao suporta o campo."
+    },
+    {
+      "data": "2026-08-24",
+      "conta": "mayaapp.cdc",
+      "account_id": "17841480695293760",
+      "janela": "2026-08-16 a 2026-08-22",
+      "janela_comparativa": "2026-08-09 a 2026-08-15",
+      "seguidores_total": 152,
+      "novos_seguidores_na_janela": 11,
+      "alcance_janela": 2903,
+      "alcance_janela_anterior": 841,
+      "visualizacoes_janela": 4644,
+      "visualizacoes_janela_anterior": 2298,
+      "contas_engajadas_janela": 56,
+      "contas_engajadas_janela_anterior": 28,
+      "interacoes_janela": 95,
+      "interacoes_janela_anterior": 33,
+      "nota": "Conta passou de 100 seguidores: metrica de novos seguidores diaria DESTRAVOU. Novos seguidores na janela = 11 (soma de follower_count 16-22/08). Alcance e soma do alcance diario, nao alcance unico."
+    }
+  ],
+
+  "rodadas_enviadas": [
+    {
+      "data": "2026-07-23",
+      "tipo": "parcial_quinta",
+      "semana": 30,
+      "assunto": "MayaApp - parcial da semana 30 (19-23/jul)",
+      "status": "rascunho criado no Gmail, nao enviado",
+      "gmail_draft_id": "r2673270560049173491",
+      "gmail_draft_id_anterior": "r3134963031828770905",
+      "ficou_de_fora": [
+        "Instagram novos seguidores na janela: null (API do Instagram nao libera a metrica diaria abaixo de 100 seguidores).",
+        "Delta acumulado de produtos e imagens: a rodada de 22/07 nao capturou esses acumulados, entao nao ha base para variacao. Valores absolutos entraram (2.241 e 24.147); o delta foi omitido, nao estimado."
+      ]
+    },
+    {
+      "data": "2026-08-24",
+      "tipo": "fechamento_segunda",
+      "semana": 34,
+      "assunto": "MayaApp - fechamento da semana 34 (16-22/ago)",
+      "status": "rascunho criado no Gmail, nao enviado",
+      "gmail_draft_id": "r-5632895517798609937",
+      "sem_downloads": true,
+      "ficou_de_fora": [
+        "Bloco de Downloads (App Store + Google Play): omitido a pedido do gestor nesta rodada.",
+        "Dashboard (3 JSON do repo dados-usuarios): NAO sincronizado nesta rodada (sem downloads e sem o estado atual dos JSON v3). Rascunho de e-mail sem a primeira linha de 'Dashboard Atualizado' para nao induzir a erro."
+      ],
+      "acao_presencial": "Acao presencial em 24/08 (segunda, semana 35) gerou 118 novos cadastros. Fora do corte da semana 34; entram na semana 35. Sinalizado no e-mail (Obs. do bloco acumulado).",
+      "observacoes": [
+        "Semana 33 primeiro uso = 1 (base baixa) faz o comparativo de primeiro uso da semana 34 explodir para +1200% (13 vs 1). Numero real, reportado sem atenuacao.",
+        "Comparativo do mes: julho ate dia 22 veio do historico (mes_corrente_por_corte), sem pedir print novo."
+      ]
+    }
+  ],
+
+  "fonte_canonica": "Print do BI CWS. Deck, apresentacao ou planilha nao prevalecem. Instagram vem do Windsor.ai. QR codes vem do leitor de QR.",
+
+  "pendencias_de_captura": [
+    "Definicao do denominador de 'engajamento %' - bloco de Instagram segue em numeros absolutos",
+    "Confirmar agrupamento das frentes de QR (o que vira 'Flyer' vs frente propria: Praca de Alimentacao, Entrada Sao Caetano, pilastra1_boulevard_cdcQ).",
+    "Downloads (App Store + Google Play) da semana 34: gestor optou por rodar sem downloads; capturar quando disponivel.",
+    "Estado atual dos 3 JSON do dashboard (repo privado dados-usuarios) para sincronizar o dashboard.",
+    "Julho nunca foi fechado no serie_mensal do dashboard (ultima rodada antes desta foi 23/07). Fechar julho quando for sincronizar o dashboard.",
+    "Semanas 31-32 (dom-sab) nao capturadas: serie semanal dom-sab tem lacuna entre 23/jul e semana 33."
+  ],
+
+  "divergencias_abertas": [],
+
+  "divergencias_resolvidas": [
+    {
+      "id": "DIV-01",
+      "status": "resolvida",
+      "data_resolucao": "2026-07-23",
+      "tema": "Usuarios cadastrados, produtos e imagens",
+      "fonte_a": "Deck 'MayaApp - Desenvolvimento Mai-Ago 2026' (20/06/2026): 487 usuarios cadastrados, 2.000 produtos, 20.000 imagens",
+      "fonte_b": "BI CWS: 432 cadastrados em 30/06/2026; 2.241 produtos e 24.147 imagens em 23/07/2026",
+      "decisao": "O print do BI prevalece. Os numeros do deck de 20/06 nao devem ser usados."
+    }
+  ]
+}
