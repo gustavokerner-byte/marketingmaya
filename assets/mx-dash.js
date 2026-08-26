@@ -330,7 +330,7 @@
         ativacao != null ? pct(ativacao) + " de ativação" : "") +
       heroCard("Usuários ativos no mês", num(ac.ativos_mes), "acumulado do mês", true) +
       heroCard("Heavy users", num(ac.heavy_users),
-        pct(ac.heavy_users_pct, 0) + " da base com 6+ cadastros", true);
+        pct(ac.heavy_users_pct, 0) + " da base com 6+ produtos cadastrados", true);
 
     var grid =
       kpi("Cadastros na semana", num(sem.cadastros), delta(sem.cadastros, ant.cadastros),
@@ -369,7 +369,8 @@
     ]);
 
     var freq = (ac.frequencia || []).map(function (f) {
-      return "<tr><td>" + esc(f.faixa) + "</td><td>" + num(f.usuarios) + "</td></tr>";
+      var faixa = String(f.faixa || "").replace(/cadastros/i, "produtos cadastrados");
+      return "<tr><td>" + esc(faixa) + "</td><td>" + num(f.usuarios) + "</td></tr>";
     }).join("");
 
     mount("mx-cadastros", '' +
@@ -395,7 +396,7 @@
         " dos produtos cadastrados. Cada imagem gerada e não salva é custo de IA sem retorno.</p></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +
-        "<h3>Distribuição por frequência de cadastro</h3>" +
+        "<h3>Distribuição por frequência de produtos cadastrados</h3>" +
         '<span class="mx-eyebrow">acumulado</span></div>' +
       '<div class="mx-table-wrap"><table class="mx-table">' +
         "<thead><tr><th>Faixa</th><th>Usuários</th></tr></thead><tbody>" + freq +
