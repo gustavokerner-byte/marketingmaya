@@ -486,6 +486,16 @@ function renderAudience() {
       AO: 'Angola', MZ: 'Moçambique', UY: 'Uruguai', PY: 'Paraguai', CL: 'Chile',
     };
 
+    // Os campos audience_*_size do Windsor são CONTAGENS absolutas (nº de
+    // seguidores), não percentuais — converte para % com o denominador certo.
+    const sumSize = (arr) => (arr || []).reduce((s, x) => s + (x.size || 0), 0);
+    const followers = a.current_followers != null ? a.current_followers : (DATA.account.followers_count || 0);
+    const sumGender = sumSize(a.gender) || 1;
+    const sumAge = sumSize(a.age) || 1;
+    const sumCountries = sumSize(a.countries) || 1;
+    const sumCities = sumSize(a.cities) || 1;
+    const cityDenom = followers > 0 ? followers : sumCities; // cidades: % sobre o total de seguidores
+
     el.className = 'audience-grid';
     el.innerHTML = `
       <div class="card audience-panel">
@@ -506,23 +516,26 @@ function renderAudience() {
         <ul class="audience-list" id="audCountries"></ul>
       </div>`;
 
-    // Listas (top 5) com barra proporcional
-    const listHTML = (arr, labeler) => {
+    // Listas (top 5) — percentual sobre o denominador e barra proporcional
+    const listHTML = (arr, denom, labeler) => {
       const top = (arr || []).slice(0, 5);
       if (!top.length) return `<li class="audience-empty">Sem dados</li>`;
-      const max = Math.max.apply(null, top.map(x => x.size).concat([1]));
-      return top.map((x, i) => `
+      const maxPct = Math.max.apply(null, top.map(x => (x.size || 0) / denom * 100).concat([1]));
+      return top.map((x, i) => {
+        const p = (x.size || 0) / denom * 100;
+        return `
         <li>
           <span class="rank">${i + 1}</span>
           <span class="name" title="${escapeAttr(x.name)}">${escapeHtml(labeler(x.name))}</span>
-          <span class="bar"><span style="width:${(x.size / max) * 100}%"></span></span>
-          <span class="val">${fmtPct(x.size, 0)}</span>
-        </li>`).join('');
+          <span class="bar"><span style="width:${(p / maxPct) * 100}%"></span></span>
+          <span class="val">${fmtPct(p, 0)}</span>
+        </li>`;
+      }).join('');
     };
     document.getElementById('audCities').innerHTML =
-      listHTML(a.cities, n => n.split(',')[0]);
+      listHTML(a.cities, cityDenom, n => n.split(',')[0]);
     document.getElementById('audCountries').innerHTML =
-      listHTML(a.countries, c => COUNTRY[c] || c);
+      listHTML(a.countries, sumCountries, c => COUNTRY[c] || c);
 
     if (hasChart()) {
       // Donut de gênero
@@ -544,13 +557,13 @@ function renderAudience() {
             legend: { display: false },
             tooltip: {
               backgroundColor: '#1A0A2E', titleFont: chartFont, bodyFont: chartFont, padding: 10, cornerRadius: 8,
-              callbacks: { label: (ctx) => `${ctx.label}: ${fmtPct(ctx.parsed, 0)}` },
+              callbacks: { label: (ctx) => `${ctx.label}: ${fmtPct(ctx.parsed / sumGender * 100, 0)}` },
             },
           },
         },
       });
       document.getElementById('audGenderLegend').innerHTML = g.map(x =>
-        `<span class="item"><span class="sw" style="background:${GEN_COLOR[x.name] || C.muted}"></span>${GEN[x.name] || x.name} · ${fmtPct(x.size, 0)}</span>`).join('');
+        `<span class="item"><span class="sw" style="background:${GEN_COLOR[x.name] || C.muted}"></span>${GEN[x.name] || x.name} · ${fmtPct((x.size || 0) / sumGender * 100, 0)}</span>`).join('');
 
       // Barras horizontais de faixa etária
       const ages = a.age || [];
@@ -560,7 +573,7 @@ function renderAudience() {
         data: {
           labels: ages.map(x => x.name),
           datasets: [{
-            data: ages.map(x => x.size),
+            data: ages.map(x => (x.size || 0) / sumAge * 100),
             backgroundColor: C.purple + 'CC', borderColor: C.purple,
             borderWidth: 1.5, borderRadius: 6, maxBarThickness: 26,
           }],
