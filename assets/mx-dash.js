@@ -260,8 +260,14 @@
   // ------------------------------------------------------------------ render
   function renderResumo(cad, ati, ig) {
     var ac = cad.acumulado || {};
-    var sem = (cad.semanas || []).slice(-1)[0] || {};
-    var ant = (cad.semanas || []).slice(-2)[0] || {};
+    var sems = cad.semanas || [];
+    var parc = cad.semana_parcial;                 // semana em curso (corte dom-qui)
+    var isParc = !!parc;
+    var sem = parc || sems.slice(-1)[0] || {};
+    var ant = isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {});
+    // Parcial (dom-qui) nao e comparavel a semana cheia (dom-sab) -> sem badge de variacao
+    var sd = function (a, b) { return isParc ? false : delta(a, b); };
+    var antTxt = isParc ? "última fechada: " : "semana anterior: ";
     var tAti = ati.totais || {};
     var ref = cad.semana_referencia || {};
 
@@ -278,17 +284,17 @@
       heroCard("Assinantes", num(ac.assinantes), "receita acumulada R$ " + num(ac.receita_bruta || 0), true);
 
     var semanaKpis =
-      kpi("Novos cadastros", num(sem.cadastros), delta(sem.cadastros, ant.cadastros),
-        "semana anterior: " + num(ant.cadastros)) +
-      kpi("Usuários com 1º uso", num(sem.primeiro_uso), delta(sem.primeiro_uso, ant.primeiro_uso),
-        "semana anterior: " + num(ant.primeiro_uso)) +
+      kpi("Novos cadastros", num(sem.cadastros), sd(sem.cadastros, ant.cadastros),
+        antTxt + num(ant.cadastros)) +
+      kpi("Usuários com 1º uso", num(sem.primeiro_uso), sd(sem.primeiro_uso, ant.primeiro_uso),
+        antTxt + num(ant.primeiro_uso)) +
       kpi("Scans de QR Code", num(tAti.scans_semana), delta(tAti.scans_semana, tAti.scans_semana_anterior),
         "semana anterior: " + num(tAti.scans_semana_anterior)) +
       kpi("Produtos cadastrados", num(sem.produtos_cadastrados),
-        delta(sem.produtos_cadastrados, ant.produtos_cadastrados),
-        "semana anterior: " + num(ant.produtos_cadastrados)) +
-      kpi("Imagens geradas", num(sem.imagens_geradas), delta(sem.imagens_geradas, ant.imagens_geradas),
-        "semana anterior: " + num(ant.imagens_geradas)) +
+        sd(sem.produtos_cadastrados, ant.produtos_cadastrados),
+        antTxt + num(ant.produtos_cadastrados)) +
+      kpi("Imagens geradas", num(sem.imagens_geradas), sd(sem.imagens_geradas, ant.imagens_geradas),
+        antTxt + num(ant.imagens_geradas)) +
       kpi("Usuários ativos no mês", num(sem.ativos_mes), false, "acumulado do mês");
 
     var mes = cad.mes || {}, mant = cad.mes_anterior || {};
@@ -310,7 +316,7 @@
 
       '<div class="mx-block"><div class="mx-block-head">' +
         "<h3>Semana " + periodo(ref.inicio, ref.fim) + "</h3>" +
-        '<span class="mx-eyebrow">vs. semana anterior</span>' +
+        '<span class="mx-eyebrow">' + (isParc ? "parcial · dom–qui (corte " + dm(ref.fim) + ")" : "vs. semana anterior") + '</span>' +
       '</div><div class="mx-kpis">' + semanaKpis + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +
@@ -322,7 +328,12 @@
   function renderCadastros(cad) {
     var ac = cad.acumulado || {}, mes = cad.mes || {}, mant = cad.mes_anterior || {};
     var sems = cad.semanas || [];
-    var sem = sems.slice(-1)[0] || {}, ant = sems.slice(-2)[0] || {};
+    var parc = cad.semana_parcial, isParc = !!parc;
+    var ref = cad.semana_referencia || {};
+    var sem = parc || sems.slice(-1)[0] || {};
+    var ant = isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {});
+    var sd = function (a, b) { return isParc ? false : delta(a, b); };
+    var semLbl = (isParc ? "parcial · " : "") + (isParc ? periodo(ref.inicio, ref.fim) : periodo(sem.inicio, sem.fim));
     var ativacao = ac.cadastros ? (ac.primeiro_uso / ac.cadastros) * 100 : null;
 
     var hero = heroCard("Cadastros acumulados", num(ac.cadastros), esc(ac._periodo || "")) +
@@ -333,12 +344,12 @@
         pct(ac.heavy_users_pct, 0) + " da base com 6+ produtos cadastrados", true);
 
     var grid =
-      kpi("Cadastros na semana", num(sem.cadastros), delta(sem.cadastros, ant.cadastros),
-        periodo(sem.inicio, sem.fim)) +
+      kpi("Cadastros na semana", num(sem.cadastros), sd(sem.cadastros, ant.cadastros),
+        semLbl) +
       kpi("Cadastros no mês", num(mes.cadastros), delta(mes.cadastros, mant.cadastros),
         esc(mant.label || "") + ": " + num(mant.cadastros)) +
-      kpi("1º uso na semana", num(sem.primeiro_uso), delta(sem.primeiro_uso, ant.primeiro_uso),
-        periodo(sem.inicio, sem.fim)) +
+      kpi("1º uso na semana", num(sem.primeiro_uso), sd(sem.primeiro_uso, ant.primeiro_uso),
+        semLbl) +
       kpi("1º uso no mês", num(mes.primeiro_uso), delta(mes.primeiro_uso, mant.primeiro_uso),
         esc(mant.label || "") + ": " + num(mant.primeiro_uso));
 
@@ -455,7 +466,15 @@
       return "<tr><td>" + esc(c.cidade) + "</td><td>" + num(c.scans) + "</td></tr>";
     }).join("");
 
+    var cdc = ati.ativacao_cdc;
+    var cdcBlock = cdc ? '<div class="mx-block"><div class="mx-block-head"><h3>' + esc(cdc.label || "Ativação no CDC") + '</h3>' +
+      '<span class="mx-eyebrow">' + esc(cdc.periodo || "") + '</span></div><div class="mx-hero">' +
+      heroCard("Leituras de QR", num(cdc.leituras_total), (cdc.qr_codes || []).map(function (q) { return esc(q.nome); }).join(" + ")) +
+      (cdc.qr_codes || []).map(function (q) { return heroCard(q.nome, num(q.leituras), q.desde ? "desde " + dm(q.desde) : "", true); }).join("") +
+      '</div>' + (cdc.nota ? '<p class="mx-note">' + esc(cdc.nota) + '</p>' : "") + '</div>' : "";
+
     mount("mx-ativacoes", '' +
+      cdcBlock +
       '<div class="mx-block"><div class="mx-hero">' + hero + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +

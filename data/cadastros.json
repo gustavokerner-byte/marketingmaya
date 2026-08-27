@@ -1,36 +1,37 @@
 {
   "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
   "_corte_semanal": "domingo a sabado",
-  "_atualizado_em": "2026-08-24",
+  "_atualizado_em": "2026-08-27",
   "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
   "semana_referencia": {
-    "inicio": "2026-08-16",
-    "fim": "2026-08-22"
+    "inicio": "2026-08-23",
+    "fim": "2026-08-27",
+    "parcial": true
   },
   "acumulado": {
-    "_periodo": "2026-02-01 a 2026-08-22",
-    "cadastros": 478,
-    "primeiro_uso": 391,
+    "_periodo": "2026-02-01 a 2026-08-27",
+    "cadastros": 580,
+    "primeiro_uso": 408,
     "assinantes": 0,
-    "ativos_mes": 39,
+    "ativos_mes": 58,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2461,
-    "produtos_sucesso": 2449,
-    "produtos_salvos": 1411,
-    "imagens_geradas": 26570,
-    "imagens_sucesso": 21792,
-    "imagens_salvas": 8825,
-    "heavy_users": 100,
+    "produtos_cadastrados": 2521,
+    "produtos_sucesso": 2509,
+    "produtos_salvos": 1438,
+    "imagens_geradas": 27232,
+    "imagens_sucesso": 22341,
+    "imagens_salvas": 8971,
+    "heavy_users": 103,
     "heavy_users_pct": 28,
     "frequencia": [
       {
         "faixa": "1-5 cadastros",
-        "usuarios": 253
+        "usuarios": 266
       },
       {
         "faixa": "6-10 cadastros",
-        "usuarios": 37
+        "usuarios": 39
       },
       {
         "faixa": "11-15 cadastros",
@@ -38,7 +39,7 @@
       },
       {
         "faixa": "16+ cadastros",
-        "usuarios": 45
+        "usuarios": 46
       }
     ],
     "top_clientes": [
@@ -63,23 +64,25 @@
         "erros": 18,
         "sucesso_pct": 74.1
       }
-    ]
+    ],
+    "_obs_base": "Base ao corte 27/08 reflete varredura de ~17 cadastros de teste/duplicados removidos na semana 35 (confirmado pelo time)."
   },
   "mes": {
-    "_periodo": "2026-08-01 a 2026-08-22",
+    "_periodo": "2026-08-01 a 2026-08-27",
     "label": "Agosto 2026",
-    "cadastros": 51,
-    "primeiro_uso": 21,
+    "cadastros": 170,
+    "primeiro_uso": 38,
     "assinantes": 0,
-    "ativos_mes": 39,
-    "produtos_cadastrados": 174,
-    "produtos_sucesso": 174,
-    "produtos_salvos": 101,
-    "imagens_geradas": 1917,
-    "imagens_sucesso": 1566,
-    "imagens_salvas": 622,
-    "heavy_users": 7,
-    "heavy_users_pct": 18
+    "ativos_mes": 58,
+    "produtos_cadastrados": 234,
+    "produtos_sucesso": 234,
+    "produtos_salvos": 128,
+    "imagens_geradas": 2579,
+    "imagens_sucesso": 2115,
+    "imagens_salvas": 768,
+    "heavy_users": null,
+    "heavy_users_pct": null,
+    "_nota": "Agosto ao corte 27/08 = soma de dois cortes reais do BI: 01-22 (fechamento sem.34) + 23-27 (parcial). heavy do mes nao capturado neste corte -> null."
   },
   "mes_anterior": {
     "_periodo": "2026-07-01 a 2026-07-22",
@@ -214,5 +217,24 @@
       "heavy_users": 3,
       "heavy_users_pct": 13
     }
-  ]
+  ],
+  "semana_parcial": {
+    "_periodo": "2026-08-23 a 2026-08-27",
+    "parcial": true,
+    "label": "Semana 35 (parcial dom-qui)",
+    "cadastros": 119,
+    "primeiro_uso": 17,
+    "ativos_mes": 58,
+    "base_cadastrada_fim": 580,
+    "produtos_cadastrados": 60,
+    "produtos_sucesso": 60,
+    "produtos_salvos": 27,
+    "imagens_geradas": 662,
+    "imagens_sucesso": 549,
+    "imagens_salvas": 146,
+    "heavy_users": 4,
+    "heavy_users_pct": 19,
+    "_acao": "Inclui a acao presencial de 24/08 (~118 cadastros).",
+    "_base": "Varredura de base confirmada pelo time: ~17 cadastros de teste/duplicados removidos na semana 35. Por isso 478 (fim sem.34) + 119 novos != 580; base canonica = 580 (acumulado, 100% base). Primeiro uso encadeia (391+17=408)."
+  }
 }

@@ -7,6 +7,16 @@
     "inicio": "2026-08-16",
     "fim": "2026-08-22"
   },
+  "ativacao_cdc": {
+    "label": "Ativação no CDC",
+    "periodo": "Semana 35 · ação presencial 24/08",
+    "leituras_total": 119,
+    "nota": "QR da ação presencial no CDC (leitor scanned.page). Consolidado dos 2 QR abaixo; leituras totais.",
+    "qr_codes": [
+      { "nome": "Banner de chão", "leituras": 80, "desde": "2026-08-14" },
+      { "nome": "Flyers_roleta", "leituras": 39, "desde": "2026-08-08" }
+    ]
+  },
   "totais": {
     "scans_total": 150,
     "unicos_total": 116,
