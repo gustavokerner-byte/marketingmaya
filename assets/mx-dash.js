@@ -417,7 +417,7 @@
   function renderAtivacoes(ati) {
     var t = ati.totais || {}, frentes = ati.frentes || [], sems = ati.semanas || [];
     var ref = ati.semana_referencia || {};
-    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f3)", "var(--mx-f4)"];
+    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f3)", "var(--mx-f4)", "var(--mx-f5)"];
 
     var hero = heroCard("Scans acumulados", num(t.scans_total), "todas as frentes") +
       heroCard("Visitantes únicos", num(t.unicos_total),
@@ -426,8 +426,9 @@
       heroCard("Fora da capital", pct(ati.fora_da_capital_pct, 0),
         "dos scans vêm de outras cidades", true);
 
+    var isParcAti = !!ref.parcial; // semana parcial: sem badge de variacao por frente
     var cardsFrente = frentes.map(function (f, i) {
-      return kpi(f.label, num(f.scans_semana), delta(f.scans_semana, f.scans_semana_anterior),
+      return kpi(f.label, num(f.scans_semana), isParcAti ? false : delta(f.scans_semana, f.scans_semana_anterior),
         num(f.scans_total) + " scans acumulados · desde " + dm(f.instalacao));
     }).join("");
 
@@ -466,20 +467,12 @@
       return "<tr><td>" + esc(c.cidade) + "</td><td>" + num(c.scans) + "</td></tr>";
     }).join("");
 
-    var cdc = ati.ativacao_cdc;
-    var cdcBlock = cdc ? '<div class="mx-block"><div class="mx-block-head"><h3>' + esc(cdc.label || "Ativação no CDC") + '</h3>' +
-      '<span class="mx-eyebrow">' + esc(cdc.periodo || "") + '</span></div><div class="mx-hero">' +
-      heroCard("Leituras de QR", num(cdc.leituras_total), (cdc.qr_codes || []).map(function (q) { return esc(q.nome); }).join(" + ")) +
-      (cdc.qr_codes || []).map(function (q) { return heroCard(q.nome, num(q.leituras), q.desde ? "desde " + dm(q.desde) : "", true); }).join("") +
-      '</div>' + (cdc.nota ? '<p class="mx-note">' + esc(cdc.nota) + '</p>' : "") + '</div>' : "";
-
     mount("mx-ativacoes", '' +
-      cdcBlock +
       '<div class="mx-block"><div class="mx-hero">' + hero + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +
         "<h3>Scans na semana por frente</h3>" +
-        '<span class="mx-eyebrow">' + periodo(ref.inicio, ref.fim) + " · vs. semana anterior</span>" +
+        '<span class="mx-eyebrow">' + periodo(ref.inicio, ref.fim) + (isParcAti ? " · parcial" : " · vs. semana anterior") + "</span>" +
       '</div><div class="mx-kpis">' + cardsFrente + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +

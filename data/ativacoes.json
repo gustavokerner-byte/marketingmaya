@@ -1,30 +1,22 @@
 {
-  "_gerado_em": "2026-08-24T00:00:00-03:00",
+  "_gerado_em": "2026-08-27T00:00:00-03:00",
+  "_nota_roleta": "Frente 'Evento Roleta' = ação presencial no CDC (24/08), consolidando os 2 QR do leitor scanned.page (Banner de chão 80 + Flyers_roleta 39 = 119 leituras). Sem quebra semanal no export; atribuída à semana 35 (23-29/08, parcial). Leituras tratadas como scans (sem dedup de únicos).",
   "_fonte": "Exports de QR Code (data/qr/) + historico ativacoes.json",
   "_corte_semanal": "domingo a sabado (alinhado ao BI da CWS)",
   "_nota": "Frente 'Flyers' consolida Adesivo (original) + Bras + CDC (CDC novo nesta rodada) como uma unica frente, por decisao do gestor. Pilastra e Praca vem do export. Banner Sao Caetano sem scans desde 24/07. SEMANA 34 (16-22/08): 17 scans / 6 unicos, concentrados em 22/08 e com recorrencia alta (Flyers 14 scans / 3 unicos) - provaveis scans de teste/demonstracao dos QR de Bras e CDC no dia 22. Uniques acumulados aproximados: dedup cross-QR nao e possivel com export parcial do Adesivo. top_cidades e fora_da_capital_pct referem-se ate a rodada anterior.",
   "semana_referencia": {
-    "inicio": "2026-08-16",
-    "fim": "2026-08-22"
-  },
-  "ativacao_cdc": {
-    "label": "Ativação no CDC",
-    "periodo": "Semana 35 · ação presencial 24/08",
-    "leituras_total": 119,
-    "nota": "QR da ação presencial no CDC (leitor scanned.page). Consolidado dos 2 QR abaixo; leituras totais.",
-    "qr_codes": [
-      { "nome": "Banner de chão", "leituras": 80, "desde": "2026-08-14" },
-      { "nome": "Flyers_roleta", "leituras": 39, "desde": "2026-08-08" }
-    ]
+    "inicio": "2026-08-23",
+    "fim": "2026-08-29",
+    "parcial": true
   },
   "totais": {
-    "scans_total": 150,
-    "unicos_total": 116,
-    "scans_semana": 17,
-    "unicos_semana": 6,
-    "scans_semana_anterior": 10,
-    "unicos_semana_anterior": 8,
-    "recorrencia": 1.29
+    "scans_total": 269,
+    "unicos_total": 235,
+    "scans_semana": 119,
+    "unicos_semana": 119,
+    "scans_semana_anterior": 17,
+    "unicos_semana_anterior": 6,
+    "recorrencia": 1.14
   },
   "frentes": [
     {
@@ -35,8 +27,8 @@
       "instalacao": "2026-06-02",
       "scans_total": 79,
       "unicos_total": 55,
-      "scans_semana": 14,
-      "scans_semana_anterior": 6,
+      "scans_semana": 0,
+      "scans_semana_anterior": 14,
       "recorrencia": 1.44,
       "primeiro_scan": "2026-06-02",
       "ultimo_scan": "2026-08-22"
@@ -50,7 +42,7 @@
       "scans_total": 61,
       "unicos_total": 51,
       "scans_semana": 0,
-      "scans_semana_anterior": 3,
+      "scans_semana_anterior": 0,
       "recorrencia": 1.2,
       "primeiro_scan": "2026-06-18",
       "ultimo_scan": "2026-08-12"
@@ -77,11 +69,25 @@
       "instalacao": "2026-08-03",
       "scans_total": 5,
       "unicos_total": 5,
-      "scans_semana": 3,
-      "scans_semana_anterior": 1,
+      "scans_semana": 0,
+      "scans_semana_anterior": 3,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-08-03",
       "ultimo_scan": "2026-08-22"
+    },
+    {
+      "label": "Evento Roleta",
+      "qr": "Banner de chao + Flyers_roleta",
+      "tipo": "Evento",
+      "local": "Ação presencial no CDC (roleta)",
+      "instalacao": "2026-08-08",
+      "scans_total": 119,
+      "unicos_total": 119,
+      "scans_semana": 119,
+      "scans_semana_anterior": 0,
+      "recorrencia": 1.0,
+      "primeiro_scan": "2026-08-08",
+      "ultimo_scan": "2026-08-25"
     }
   ],
   "semanas": [
@@ -226,7 +232,21 @@
         "Pilastra Boulevard": 0,
         "Flyers": 14,
         "Banner Sao Caetano": 0,
-        "Praca de Alimentacao": 3
+        "Praca de Alimentacao": 3,
+        "Evento Roleta": 0
+      }
+    },
+    {
+      "inicio": "2026-08-23",
+      "fim": "2026-08-29",
+      "parcial": true,
+      "scans": 119,
+      "por_frente": {
+        "Pilastra Boulevard": 0,
+        "Flyers": 0,
+        "Banner Sao Caetano": 0,
+        "Praca de Alimentacao": 0,
+        "Evento Roleta": 119
       }
     }
   ],
