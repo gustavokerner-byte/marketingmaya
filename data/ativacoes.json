@@ -1,5 +1,5 @@
 {
-  "_gerado_em": "2026-08-27T00:00:00-03:00",
+  "_gerado_em": "2026-08-31T00:00:00-03:00",
   "_nota_roleta": "Frente 'Evento Roleta' = ação presencial no CDC (24/08), consolidando os 2 QR do leitor scanned.page (Banner de chão 80 + Flyers_roleta 39 = 119 leituras). Sem quebra semanal no export; atribuída à semana 35 (23-29/08, parcial). Leituras tratadas como scans (sem dedup de únicos).",
   "_fonte": "Exports de QR Code (data/qr/) + historico ativacoes.json",
   "_corte_semanal": "domingo a sabado (alinhado ao BI da CWS)",
@@ -7,13 +7,13 @@
   "semana_referencia": {
     "inicio": "2026-08-23",
     "fim": "2026-08-29",
-    "parcial": true
+    "parcial": false
   },
   "totais": {
-    "scans_total": 269,
-    "unicos_total": 235,
-    "scans_semana": 119,
-    "unicos_semana": 119,
+    "scans_total": 274,
+    "unicos_total": 240,
+    "scans_semana": 124,
+    "unicos_semana": 124,
     "scans_semana_anterior": 17,
     "unicos_semana_anterior": 6,
     "recorrencia": 1.14
@@ -53,13 +53,13 @@
       "tipo": "Banner",
       "local": "Entrada Sao Caetano",
       "instalacao": "2026-06-18",
-      "scans_total": 5,
-      "unicos_total": 5,
-      "scans_semana": 0,
+      "scans_total": 9,
+      "unicos_total": 9,
+      "scans_semana": 4,
       "scans_semana_anterior": 0,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-06-18",
-      "ultimo_scan": "2026-07-24"
+      "ultimo_scan": "2026-08-27"
     },
     {
       "label": "Praca de Alimentacao",
@@ -67,13 +67,13 @@
       "tipo": "Banner",
       "local": "Praca de Alimentacao",
       "instalacao": "2026-08-03",
-      "scans_total": 5,
-      "unicos_total": 5,
-      "scans_semana": 0,
+      "scans_total": 6,
+      "unicos_total": 6,
+      "scans_semana": 1,
       "scans_semana_anterior": 3,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-08-03",
-      "ultimo_scan": "2026-08-22"
+      "ultimo_scan": "2026-08-28"
     },
     {
       "label": "Evento Roleta",
@@ -239,20 +239,20 @@
     {
       "inicio": "2026-08-23",
       "fim": "2026-08-29",
-      "parcial": true,
-      "scans": 119,
+      "parcial": false,
+      "scans": 124,
       "por_frente": {
         "Pilastra Boulevard": 0,
         "Flyers": 0,
-        "Banner Sao Caetano": 0,
-        "Praca de Alimentacao": 0,
+        "Banner Sao Caetano": 4,
+        "Praca de Alimentacao": 1,
         "Evento Roleta": 119
       }
     }
   ],
   "sistema_operacional": {
-    "Android": 97,
-    "iOS": 52,
+    "Android": 101,
+    "iOS": 53,
     "Linux": 1
   },
   "top_cidades": [
@@ -297,5 +297,6 @@
       "scans": 2
     }
   ],
-  "fora_da_capital_pct": 51.9
+  "fora_da_capital_pct": 51.9,
+  "_nota_fechamento": "Fechamento do mes (corte 31/08). Semana 35 (23-29/08) FECHADA. Novos scans incorporados dos exports de QR: Banner Sao Caetano voltou (4 scans em 27/08, estava sem scan desde 24/07) e Praca +1 (28/08). Scans de 02-03/09 (Banner) e o novo QR 'Outdoor_saocaetano' (02/09) sao de setembro (semana 36) e ficam de fora deste corte."
 }

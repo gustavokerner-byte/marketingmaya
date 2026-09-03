@@ -2,64 +2,226 @@
   "descricao": "Frente Promotoras (ativacao presencial + reativacao heavy users). Alimenta a aba 'Promotoras' do dashboard de gestao (dados-usuarios). Atualizado na rodada semanal a partir dos 2 formularios: Tracking de Ativacao CDC Bras + Questionario Heavy Users.",
   "versao": 1,
   "fonte": "Google Forms - Tracking de Ativacao MayaApp CDC Bras; Questionario de Campo Heavy Users MayaApp CDC",
-  "data_corte": "2026-08-24",
+  "data_corte": "2026-08-31",
   "recorte_semana": {
-    "semana": 34,
-    "periodo": "2026-08-16 a 2026-08-22",
+    "semana": 35,
+    "periodo": "2026-08-23 a 2026-08-29",
     "dias_de_campo": [
-      { "data": "2026-08-21", "dia": "sexta", "promotoras": 1 },
-      { "data": "2026-08-22", "dia": "sabado", "promotoras": 2 }
+      {
+        "data": "— a confirmar",
+        "dia": "— a confirmar",
+        "promotoras": 1
+      }
     ],
-    "promotora_dias": 3,
-    "nota": "Formularios preenchidos em 23-24/08 referem-se ao trabalho de campo de sexta 21 e sabado 22 (semana 34). Sempre perguntar ao gestor quais dias e quantas promotoras foram a campo."
+    "promotora_dias": 1,
+    "nota": "Gestor informou 1 promotora, 1 dia de campo na semana 35 (dia especifico A CONFIRMAR). Lote de 3 formularios preenchido em 03/09 refere-se ao campo da semana 35. Recorte pelos dias de campo, nao pelo timestamp."
   },
   "ativacao": {
     "acumulado": {
-      "periodo": "2026-02-27 a 2026-08-24",
-      "abordagens": 427,
-      "instalou_na_hora": 171,
+      "periodo": "2026-02-27 a 2026-08-31",
+      "abordagens": 430,
+      "instalou_na_hora": 174,
       "interesse_posterior": 159,
       "sem_interesse": 96,
       "instalou_e_desinstalou": 1,
       "receptividade_media": 4.0,
-      "receptividade_dist": { "5": 191, "4": 93, "3": 93, "2": 33, "1": 17 },
+      "receptividade_dist": {
+        "5": 194,
+        "4": 93,
+        "3": 93,
+        "2": 33,
+        "1": 17
+      },
       "pct_instalacao_imediata": 40,
       "pct_interesse": 37,
       "pct_sem_interesse": 22
     },
     "semana": {
-      "abordagens": 32,
-      "instalou_na_hora": 2,
-      "interesse_posterior": 21,
-      "sem_interesse": 9,
-      "receptividade_media": 3.0,
-      "receptividade_dist": { "5": 1, "4": 12, "3": 7, "2": 11, "1": 1 },
-      "pct_instalacao_imediata": 6,
-      "pct_interesse": 66,
-      "pct_sem_interesse": 28
+      "abordagens": 3,
+      "instalou_na_hora": 3,
+      "interesse_posterior": 0,
+      "sem_interesse": 0,
+      "instalou_e_desinstalou": 0,
+      "receptividade_media": 5.0,
+      "receptividade_dist": {
+        "5": 3,
+        "4": 0,
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "pct_instalacao_imediata": 100,
+      "pct_interesse": 0,
+      "pct_sem_interesse": 0
     },
     "serie_semanal_abordagens": [
-      ["2026-02-22", 2], ["2026-03-01", 99], ["2026-03-08", 22], ["2026-03-15", 20],
-      ["2026-03-22", 22], ["2026-03-29", 25], ["2026-04-05", 23], ["2026-04-12", 69],
-      ["2026-04-19", 10], ["2026-04-26", 43], ["2026-05-03", 21], ["2026-05-10", 13],
-      ["2026-05-17", 12], ["2026-05-24", 0], ["2026-05-31", 0], ["2026-06-07", 12],
-      ["2026-06-14", 0], ["2026-06-21", 0], ["2026-06-28", 0], ["2026-07-05", 0],
-      ["2026-07-12", 0], ["2026-07-19", 0], ["2026-07-26", 0], ["2026-08-02", 0],
-      ["2026-08-09", 1], ["2026-08-16", 1], ["2026-08-23", 32]
+      [
+        "2026-02-22",
+        2
+      ],
+      [
+        "2026-03-01",
+        99
+      ],
+      [
+        "2026-03-08",
+        22
+      ],
+      [
+        "2026-03-15",
+        20
+      ],
+      [
+        "2026-03-22",
+        22
+      ],
+      [
+        "2026-03-29",
+        25
+      ],
+      [
+        "2026-04-05",
+        23
+      ],
+      [
+        "2026-04-12",
+        69
+      ],
+      [
+        "2026-04-19",
+        10
+      ],
+      [
+        "2026-04-26",
+        43
+      ],
+      [
+        "2026-05-03",
+        21
+      ],
+      [
+        "2026-05-10",
+        13
+      ],
+      [
+        "2026-05-17",
+        12
+      ],
+      [
+        "2026-05-24",
+        0
+      ],
+      [
+        "2026-05-31",
+        0
+      ],
+      [
+        "2026-06-07",
+        12
+      ],
+      [
+        "2026-06-14",
+        0
+      ],
+      [
+        "2026-06-21",
+        0
+      ],
+      [
+        "2026-06-28",
+        0
+      ],
+      [
+        "2026-07-05",
+        0
+      ],
+      [
+        "2026-07-12",
+        0
+      ],
+      [
+        "2026-07-19",
+        0
+      ],
+      [
+        "2026-07-26",
+        0
+      ],
+      [
+        "2026-08-02",
+        0
+      ],
+      [
+        "2026-08-09",
+        1
+      ],
+      [
+        "2026-08-16",
+        1
+      ],
+      [
+        "2026-08-23",
+        32
+      ],
+      [
+        "2026-08-30",
+        3
+      ]
     ],
-    "serie_semanal_nota": "Barras por semana dom-sab (rotulo = domingo). A ultima barra (registro 23-24/08) refere-se ao campo da semana 34 (sexta 21 + sabado 22). Pico de 01/03 = semana de lancamento.",
-    "perfil_acumulado": { "tradicional": 300, "hibrido": 75, "transicao": 39, "focado_digital": 5 },
-    "perfil_semana": { "tradicional": 24, "hibrido": 7 },
-    "segmento_acumulado": { "moda_feminina": 215, "moda_masculina": 118, "moda_infantil": 36, "unissex_outros": 58, "acessorios": 12, "moda_praia": 7, "outros": 26 },
-    "segmento_semana": { "moda_feminina": 14, "moda_masculina": 7, "unissex": 6, "moda_infantil": 4, "outros": 1 },
-    "sinais_semana": { "ficou_com_flyer": 21, "responsavel_ausente": 6, "barreira_idioma": 3, "celular_sem_espaco": 2, "andar": "todas no terreo", "corredores_top": ["A", "I", "H", "D", "E"] },
+    "serie_semanal_nota": "Barras por semana dom-sab. Convencao do arquivo: rotulo = domingo da semana em que o lote foi REGISTRADO (preenchido). A barra 2026-08-30 (3 abordagens) refere-se ao campo da semana 35, formularios preenchidos em 03/09. DIVERGENCIA: a ROTINA_PROMOTORAS manda rotular pela semana de CAMPO; o arquivo historico rotula pela semana de preenchimento (ex.: batch semana 34 ficou em 2026-08-23). Mantido o padrao historico; reconciliar com o gestor.",
+    "perfil_acumulado": {
+      "tradicional": 301,
+      "hibrido": 75,
+      "transicao": 39,
+      "focado_digital": 7
+    },
+    "perfil_semana": {
+      "focado_digital": 2,
+      "tradicional": 1
+    },
+    "segmento_acumulado": {
+      "moda_feminina": 217,
+      "moda_masculina": 119,
+      "moda_infantil": 36,
+      "unissex_outros": 58,
+      "acessorios": 12,
+      "moda_praia": 7,
+      "outros": 26
+    },
+    "segmento_semana": {
+      "moda_feminina": 2,
+      "moda_masculina": 1
+    },
+    "sinais_semana": {
+      "instalou_na_hora": 3,
+      "ajuda_primeira_publicacao": 2,
+      "compartilhou_indicou": 1,
+      "andar": "todas no terreo",
+      "corredores_top": [
+        "21",
+        "26",
+        "28"
+      ]
+    },
     "comentarios_semana": [
-      { "texto": "A Cris ja tinha visto o app pelo Instagram e achava que era so geracao de fotos. Depois que expliquei cada cenario, ficou curiosa e topou baixar e usar. (ativacao por Daniele)", "segmento": "Moda Feminina", "status": "instalou", "receptividade": 5 },
-      { "texto": "Ouviu toda a abordagem, ficou com o flyer e disse que baixaria depois. Vende tambem no Instagram e TikTok.", "segmento": "Moda Feminina", "status": "interesse", "receptividade": 2 },
-      { "texto": "Demonstrou interesse, ouviu tudo e ate tentou baixar, mas estava sem armazenamento no celular. Ficou com o flyer.", "segmento": "Moda Infantil", "status": "interesse", "receptividade": 4 },
-      { "texto": "A loja estava cheia de clientes e ele aceitou o app - pretende usar no novo site que esta montando.", "segmento": "Moda Feminina", "status": "instalou", "receptividade": 4 },
-      { "texto": "Glayson abordado no corredor 27; vai repassar para o responsavel, o Paulo. Vale retornar.", "segmento": "Moda Masculina", "status": "interesse", "receptividade": 3 },
-      { "texto": "O funcionario Mohamad nao entendeu meu idioma, mesmo eu tentando ingles e frances.", "segmento": "Moda Masculina", "status": "sem_interesse", "receptividade": 2 }
+      {
+        "texto": "Fez o download no momento da abordagem, ajudamos a fazer sua primeira publicacao e compartilhou o link para o marido baixar tambem.",
+        "segmento": "Moda Feminina",
+        "status": "instalou",
+        "receptividade": 5
+      },
+      {
+        "texto": "Muito receptivo, baixou o app e comecou o cadastro, mas nao terminou no momento pois chegou cliente.",
+        "segmento": "Moda Masculina",
+        "status": "instalou",
+        "receptividade": 5
+      },
+      {
+        "texto": "Ja tinha o app baixado; ajudamos a fazer a 1a publicacao (a primeira impressao nao tinha sido boa). Adorou - principalmente acrescentar fundo, cenarios e corpos de diversas etnias e tamanhos.",
+        "segmento": "Moda Feminina",
+        "status": "instalou",
+        "receptividade": 5
+      }
     ]
   },
   "reativacao": {
@@ -68,23 +230,79 @@
       "nota_media_app": 4.1,
       "nota_reativacao": 3.9,
       "pct_indicacao": 32,
-      "frequencia": { "ocasional": 15, "parou": 5, "semanal": 2 }
+      "frequencia": {
+        "ocasional": 15,
+        "parou": 5,
+        "semanal": 2
+      },
+      "_periodo_nota": "corte 31/08; sem novo lote de Heavy Users na semana 35 (segue 22 entrevistados)."
     },
-    "semana": { "entrevistados": 4, "detalhe": "2 ocasionais, 2 pararam de usar (batch 24/08)" },
-    "por_que_pararam": { "falta_de_tempo": 6, "nao_gostou_das_fotos": 3, "preferiu_como_fazia_antes": 3, "dificil_ou_demora_processamento": 3 },
-    "finalidades": { "envio_whatsapp": 7, "vendas_redes_sociais": 6, "catalogo": 3 },
-    "beneficios": { "fotos_profissionais_descricao": 6, "atrai_clientes_divulgacao": 4, "gratuito_pratico_agil": 3 },
+    "semana": {
+      "entrevistados": 0,
+      "detalhe": "Sem novo lote de Heavy Users na semana 35."
+    },
+    "por_que_pararam": {
+      "falta_de_tempo": 6,
+      "nao_gostou_das_fotos": 3,
+      "preferiu_como_fazia_antes": 3,
+      "dificil_ou_demora_processamento": 3
+    },
+    "finalidades": {
+      "envio_whatsapp": 7,
+      "vendas_redes_sociais": 6,
+      "catalogo": 3
+    },
+    "beneficios": {
+      "fotos_profissionais_descricao": 6,
+      "atrai_clientes_divulgacao": 4,
+      "gratuito_pratico_agil": 3
+    },
     "feedback_positivo": "Cria fotos profissionais com rapidez e facilita encaminhar para os clientes. Monta os looks no manequim e ja traz titulo e descricao.",
     "feedback_negativo": "As fotos ficam muito diferentes da original e a pessoa fica parecendo um boneco, artificial. E a demora no processamento (~meia hora) me fez desinstalar."
   },
   "sugestoes_funcionalidades": [
-    { "rank": 1, "tema": "Catalogo e envio por WhatsApp / PDF", "mencoes": 5, "exemplos": "enviar catalogo pelo WhatsApp; mandar produtos em PDF para clientes; selecionar itens do catalogo" },
-    { "rank": 2, "tema": "Fotos mais realistas / fidelidade", "mencoes": 5, "exemplos": "menos 'boneco'; corrigir pes descalcos, gola; manequim masculino para roupa masculina" },
-    { "rank": 3, "tema": "Vender pelo app / integracao com marketplaces", "mencoes": 4, "exemplos": "que fosse um canal de vendas; Shopee e Mercado Livre" },
-    { "rank": 4, "tema": "Mais rapidez na geracao das fotos", "mencoes": 3, "exemplos": "relato de ~30 min de processamento - motivo citado de abandono" },
-    { "rank": 5, "tema": "Video e lives", "mencoes": 2, "exemplos": "seria legal video e lives" },
-    { "rank": 6, "tema": "Tutorial / passo a passo apos tirar a foto", "mencoes": 2, "exemplos": "me perco depois que tira a foto; usuarias com pouca familiaridade digital" },
-    { "rank": 7, "tema": "Outras categorias, comando por voz, carrossel de cores", "mencoes": 3, "exemplos": "ex.: tenis; pedir por microfone; escolher cores sem tirar foto a foto" }
+    {
+      "rank": 1,
+      "tema": "Catalogo e envio por WhatsApp / PDF",
+      "mencoes": 5,
+      "exemplos": "enviar catalogo pelo WhatsApp; mandar produtos em PDF para clientes; selecionar itens do catalogo"
+    },
+    {
+      "rank": 2,
+      "tema": "Fotos mais realistas / fidelidade",
+      "mencoes": 5,
+      "exemplos": "menos 'boneco'; corrigir pes descalcos, gola; manequim masculino para roupa masculina"
+    },
+    {
+      "rank": 3,
+      "tema": "Vender pelo app / integracao com marketplaces",
+      "mencoes": 4,
+      "exemplos": "que fosse um canal de vendas; Shopee e Mercado Livre"
+    },
+    {
+      "rank": 4,
+      "tema": "Mais rapidez na geracao das fotos",
+      "mencoes": 3,
+      "exemplos": "relato de ~30 min de processamento - motivo citado de abandono"
+    },
+    {
+      "rank": 5,
+      "tema": "Video e lives",
+      "mencoes": 2,
+      "exemplos": "seria legal video e lives"
+    },
+    {
+      "rank": 6,
+      "tema": "Tutorial / passo a passo apos tirar a foto",
+      "mencoes": 2,
+      "exemplos": "me perco depois que tira a foto; usuarias com pouca familiaridade digital"
+    },
+    {
+      "rank": 7,
+      "tema": "Outras categorias, comando por voz, carrossel de cores",
+      "mencoes": 3,
+      "exemplos": "ex.: tenis; pedir por microfone; escolher cores sem tirar foto a foto"
+    }
   ],
   "metodo": "Ativacao: recorte da semana = lote de formularios preenchidos apos o campo, atribuido a semana de campo informada pelo gestor (nao pelo timestamp). Reativacao: questionario continuo; a coluna 'semana' reflete o lote da semana. Percentuais inteiros. Dado ausente vira '-' na tela, nunca zero."
 }

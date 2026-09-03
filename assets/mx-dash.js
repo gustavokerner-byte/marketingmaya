@@ -500,7 +500,7 @@
   // -------------------------------------------------------------- Promotoras
   var PERFIL_LBL = { tradicional: "Tradicional", hibrido: "Híbrido", transicao: "Em transição", focado_digital: "Focado no digital" };
   var SEG_LBL = { moda_feminina: "Moda Feminina", moda_masculina: "Moda Masculina", moda_infantil: "Moda Infantil", unissex_outros: "Unissex / Outros", unissex: "Unissex", acessorios: "Acessórios", moda_praia: "Moda Praia", outros: "Outros" };
-  var SINAIS_LBL = { ficou_com_flyer: "Ficou com o flyer p/ baixar depois", responsavel_ausente: "Dona/responsável ausente", barreira_idioma: "Barreira de idioma", celular_sem_espaco: "Celular sem espaço / travou" };
+  var SINAIS_LBL = { ficou_com_flyer: "Ficou com o flyer p/ baixar depois", responsavel_ausente: "Dona/responsável ausente", barreira_idioma: "Barreira de idioma", celular_sem_espaco: "Celular sem espaço / travou", instalou_na_hora: "Instalou na hora", ajuda_primeira_publicacao: "Ajuda na 1ª publicação", compartilhou_indicou: "Compartilhou / indicou" };
   var FREQ_LBL = { semanal: "Semanal", ocasional: "Ocasional", parou: "Parou de usar" };
   var PAROU_LBL = { falta_de_tempo: "Falta de tempo / não se organizou", nao_gostou_das_fotos: "Não gostou do resultado das fotos", preferiu_como_fazia_antes: "“Preferi continuar como fazia antes”", dificil_ou_demora_processamento: "Achou difícil / demora no processamento" };
   var FIN_LBL = { envio_whatsapp: "Envio por WhatsApp", vendas_redes_sociais: "Vendas nas redes sociais", catalogo: "Catálogo" };
@@ -540,32 +540,23 @@
     var convWorse = S.pct_instalacao_imediata != null && A.pct_instalacao_imediata != null && S.pct_instalacao_imediata < A.pct_instalacao_imediata;
     var recWorse = S.receptividade_media != null && A.receptividade_media != null && S.receptividade_media < A.receptividade_media;
 
-    // 1) faixa da semana + insights
+    // 1) faixa: acumulado da campanha (headline) + a semana como nota
+    var acPer = (A.periodo || "").split(" a ");
     var band =
       '<div class="pr-band"><div class="pr-band-top"><div>' +
-        '<div class="lbl">Recorte da semana</div>' +
-        '<h3>Semana ' + esc(rec.semana) + ' · ' + esc(periodoLbl) + '</h3>' +
-        '<div class="pr-field">Campo: ' + (dias || "— a confirmar") +
-          (rec.promotora_dias ? ' &nbsp;·&nbsp; ' + rec.promotora_dias + ' promotora-dias' : '') + '</div>' +
-      '</div><div class="pr-pill">' + num(S.abordagens) + ' abordagens na semana</div></div>' +
+        '<div class="lbl">Ativação de campo · acumulado da campanha</div>' +
+        '<h3>' + num(A.abordagens) + ' abordagens · ' + num(A.instalou_na_hora) + ' instalações</h3>' +
+        '<div class="pr-field">Período: <b>' + (acPer.length === 2 ? dm(acPer[0]) + " → " + dm(acPer[1]) : "—") + '</b>' +
+          ' &nbsp;·&nbsp; Semana ' + esc(rec.semana) + ' (' + esc(periodoLbl) + '): ' + num(S.abordagens) + ' abordagens · ' + num(S.instalou_na_hora) + ' instalações · receptividade ' + dec1(S.receptividade_media) + '</div>' +
+      '</div><div class="pr-pill">' + pInt(A.pct_instalacao_imediata) + ' de conversão imediata</div></div>' +
       '<div class="pr-insights">' +
-        '<div class="pr-ic"><div class="k pr-num">' + num(S.abordagens) + '</div><div class="t">abordagens de campo' +
-          (rec.promotora_dias ? ' (' + rec.promotora_dias + ' promotora-dias)' : '') + '</div>' +
-          (perDia != null ? '<div class="d pr-d-good">≈ ' + perDia + ' por promotora-dia</div>' : '') + '</div>' +
-        '<div class="pr-ic"><div class="k pr-num">' + num(S.instalou_na_hora) + '</div><div class="t">instalações na hora</div>' +
-          '<div class="d ' + (convWorse ? 'pr-d-crit' : 'pr-d-good') + '">' + pInt(S.pct_instalacao_imediata) + ' imediata (vs. ' + pInt(A.pct_instalacao_imediata) + ' acum.)</div></div>' +
-        '<div class="pr-ic"><div class="k pr-num">' + num(S.interesse_posterior) + '</div><div class="t">interesse posterior (ficou com flyer)</div>' +
-          '<div class="d pr-d-warn">' + pInt(S.pct_interesse) + ' — follow-up pendente</div></div>' +
-        '<div class="pr-ic"><div class="k pr-num">' + dec1(S.receptividade_media) + '</div><div class="t">receptividade média (1–5)</div>' +
-          '<div class="d ' + (recWorse ? 'pr-d-crit' : 'pr-d-good') + '">' + (recWorse ? 'abaixo dos ' + dec1(A.receptividade_media) + ' do acum.' : 'acum. ' + dec1(A.receptividade_media)) + '</div></div>' +
+        '<div class="pr-ic"><div class="k pr-num">' + num(A.abordagens) + '</div><div class="t">abordagens acumuladas</div><div class="d pr-d-good">+' + num(S.abordagens) + ' na semana ' + esc(rec.semana) + '</div></div>' +
+        '<div class="pr-ic"><div class="k pr-num">' + num(A.instalou_na_hora) + '</div><div class="t">instalações na hora</div><div class="d pr-d-good">' + pInt(A.pct_instalacao_imediata) + ' de conversão imediata</div></div>' +
+        '<div class="pr-ic"><div class="k pr-num">' + num(A.interesse_posterior) + '</div><div class="t">interesse posterior</div><div class="d pr-d-warn">' + pInt(A.pct_interesse) + ' — follow-up</div></div>' +
+        '<div class="pr-ic"><div class="k pr-num">' + dec1(A.receptividade_media) + '</div><div class="t">receptividade média (1–5)</div><div class="d pr-d-good">' + num(A.abordagens) + ' avaliações</div></div>' +
       '</div></div>';
 
-    var leitura = '<div class="pr-callout"><b>Leitura da semana:</b> boa cobertura de abordagem (' +
-      num(S.abordagens) + (rec.promotora_dias ? ' em ' + rec.promotora_dias + ' promotora-dias' : '') +
-      '), mas conversão imediata baixa — ' + num(S.instalou_na_hora) + ' instalaram na hora contra ' +
-      num(S.interesse_posterior) + ' que ficaram com o flyer para baixar depois. O gargalo é o <b>follow-up dos ' +
-      num(S.interesse_posterior) + ' interessados</b>, não a abordagem' +
-      (sin.barreira_idioma ? '. Aparece também <b>barreira de idioma</b> em ' + sin.barreira_idioma + ' casos' : '') + '.</div>';
+    var leitura = "";
 
     // 2) visão geral
     var ovw =
@@ -646,9 +637,7 @@
     var perfilSemana = av.perfil_semana ? Object.keys(av.perfil_semana).map(function (k) { return (PERFIL_LBL[k] || k) + " " + av.perfil_semana[k]; }).join(" · ") : "";
     var segSemana = av.segmento_semana ? Object.keys(av.segmento_semana).map(function (k) { return (SEG_LBL[k] || k) + " " + av.segmento_semana[k]; }).join(" · ") : "";
     var corredores = (sin.corredores_top || []).join(", ");
-    var perfilBlock = '<div class="pr-pgrid">' +
-      '<div class="card pr-mini"><div class="mh">Perfil do lojista</div><div class="ms">acumulado</div>' + mrows(av.perfil_acumulado, PERFIL_LBL, true) +
-        (perfilSemana ? '<div class="ms" style="margin-top:10px">Semana ' + esc(rec.semana) + ': ' + esc(perfilSemana) + '</div>' : "") + '</div>' +
+    var perfilBlock = '<div class="pr-tworow">' +
       '<div class="card pr-mini"><div class="mh">Segmento da loja</div><div class="ms">acumulado</div>' + mrows(av.segmento_acumulado, SEG_LBL, true) +
         (segSemana ? '<div class="ms" style="margin-top:10px">Semana ' + esc(rec.semana) + ': ' + esc(segSemana) + '</div>' : "") + '</div>' +
       '<div class="card pr-mini"><div class="mh">Sinais da semana</div><div class="ms">o que as promotoras registraram</div>' + mrows(sin, SINAIS_LBL, false) +
@@ -708,7 +697,7 @@
       '<div class="mx-block">' + chartBlock + '</div>' +
       sec("Funil de instalação e receptividade", "barra = acumulado · coluna direita = semana", funBlock) +
       sec("Principais comentários da semana", "qualitativo · semana " + esc(rec.semana), comentBlock) +
-      sec("Perfil e feedbacks", "quem foi abordado", perfilBlock) +
+      sec("Segmento e sinais", "acumulado · semana", perfilBlock) +
       '<div class="mx-block">' + reaBlock + '</div>' +
       '<div class="mx-block">' + sugBlock + '</div>'
     );
@@ -719,18 +708,18 @@
     var host = document.getElementById("mx-resumo");
     if (!host) return;
     var av = P.ativacao || {}, A = av.acumulado || {}, S = av.semana || {}, rec = P.recorte_semana || {};
-    var lead = "Semana " + esc(rec.semana) + ": " + num(S.abordagens) + " abordagens de campo, " +
-      num(S.instalou_na_hora) + " instalações na hora (" + pInt(S.pct_instalacao_imediata) + ") e " +
-      num(S.interesse_posterior) + " interessados para follow-up. Acumulado: " + num(A.abordagens) +
-      " abordagens / " + num(A.instalou_na_hora) + " instalações (" + pInt(A.pct_instalacao_imediata) + ").";
+    var lead = "Acumulado da campanha: " + num(A.abordagens) + " abordagens · " +
+      num(A.instalou_na_hora) + " instalações na hora (" + pInt(A.pct_instalacao_imediata) + ") · " +
+      num(A.interesse_posterior) + " com interesse posterior · receptividade " + dec1(A.receptividade_media) + "/5. " +
+      "Semana " + esc(rec.semana) + ": " + num(S.abordagens) + " abordagens · " + num(S.instalou_na_hora) + " instalações.";
     var grid =
-      kpi("Abordagens na semana", num(S.abordagens), false, "acumulado: " + num(A.abordagens)) +
-      kpi("Instalações na hora", num(S.instalou_na_hora), false, pInt(S.pct_instalacao_imediata) + " · acum. " + num(A.instalou_na_hora)) +
-      kpi("Interesse posterior", num(S.interesse_posterior), false, pInt(S.pct_interesse) + " da semana") +
-      kpi("Receptividade (semana)", dec1(S.receptividade_media), false, "acum. " + dec1(A.receptividade_media) + " / 5");
+      kpi("Abordagens (acum.)", num(A.abordagens), false, "semana " + esc(rec.semana) + ": " + num(S.abordagens)) +
+      kpi("Instalações na hora", num(A.instalou_na_hora), false, pInt(A.pct_instalacao_imediata) + " · +" + num(S.instalou_na_hora) + " na semana") +
+      kpi("Interesse posterior", num(A.interesse_posterior), false, pInt(A.pct_interesse) + " do acumulado") +
+      kpi("Receptividade média", dec1(A.receptividade_media), false, "de " + num(A.abordagens) + " avaliações");
     host.insertAdjacentHTML("beforeend",
       '<div class="mx-block"><div class="mx-block-head"><h3>Promotoras — ativação de campo</h3>' +
-        '<span class="mx-eyebrow">semana ' + esc(rec.semana) + '</span></div>' +
+        '<span class="mx-eyebrow">acumulado · semana ' + esc(rec.semana) + '</span></div>' +
         '<p class="pr-resumo-lead">' + lead + '</p>' +
         '<div class="mx-kpis" style="margin-top:14px">' + grid + '</div></div>');
   }
