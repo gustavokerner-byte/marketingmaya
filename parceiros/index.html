@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parceiros MayaApp</title>
-<meta name="description" content="Programa de Parceiros MayaApp: leve inteligência artificial para os lojistas do Brasil e receba comissão recorrente todo mês.">
+<meta name="description" content="Programa de Parceiros MayaApp: leve inteligência artificial para os lojistas do Brasil e construa uma renda recorrente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap">
 <style>
 :root{
   --navy:#1A0A2E;
-  --navy-deep:#12061F;
   --purple:#7C3AED;
   --purple-lift:#9B6BFF;
   --gold:#FFD84D;
@@ -47,10 +46,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--ground);color:var(--ink);
-  font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
-}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;text-wrap:balance;letter-spacing:-.02em}
 h1{font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:800}
@@ -59,46 +55,37 @@ h3{font-size:1.06rem;font-weight:700;letter-spacing:-.01em}
 p{margin:0}
 a{color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-.eyebrow{
-  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--purple-lift);
-}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-lift)}
 .lede{font-size:clamp(1rem,1.6vw,1.12rem);color:var(--ink-soft);max-width:62ch}
 
+/* ---------- logo ---------- */
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{height:30px;width:auto}
+.logo .mark{width:30px;height:30px}
+.logo .word{font-family:var(--display);font-weight:700;font-size:1.12rem;letter-spacing:-.02em;color:#fff;line-height:1.05}
+.logo .word small{display:block;font-family:var(--body);font-weight:500;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#B9A9E8}
+
 /* ---------- top bar ---------- */
-.bar{
-  position:sticky;top:0;z-index:20;background:rgba(18,6,31,.88);
-  backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);
-}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px}
-.brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--display);font-weight:700;letter-spacing:-.01em}
-.brand svg{width:28px;height:28px}
-.brand span small{display:block;font-family:var(--body);font-weight:500;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#B9A9E8}
+.bar{position:sticky;top:0;z-index:20;background:rgba(18,6,31,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
 
 /* ---------- buttons ---------- */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  font-family:var(--body);font-weight:700;font-size:.95rem;
-  padding:13px 22px;border-radius:10px;border:1px solid transparent;
-  cursor:pointer;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:.95rem;padding:13px 22px;border-radius:10px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
 .btn-gold{background:var(--gold);color:#2B1A00;box-shadow:0 6px 20px rgba(255,216,77,.35)}
 .btn-gold:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(255,216,77,.45)}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.32)}
 .btn-ghost:hover{background:rgba(255,255,255,.10)}
-.btn-purple{background:var(--purple);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,.32)}
+.btn-purple{background:var(--purple);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,.30)}
 .btn-purple:hover{transform:translateY(-1px)}
 .btn-sm{padding:9px 16px;font-size:.85rem;border-radius:8px}
 :where(a,button,input,select,textarea):focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
-/* ---------- 1. hero ---------- */
-.hero{
-  background:
+/* ---------- hero ---------- */
+.hero{background:
     radial-gradient(900px 520px at 12% -10%, rgba(124,58,237,.55), transparent 60%),
     radial-gradient(680px 420px at 88% 8%, rgba(59,130,246,.28), transparent 62%),
     linear-gradient(180deg,#1A0A2E 0%, #12061F 100%);
-  color:#fff;padding:64px 0 0;position:relative;overflow:hidden;
-}
+  color:#fff;padding:64px 0 0;position:relative;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
 .hero h1{color:#fff}
 .hero h1 em{font-style:normal;color:var(--gold)}
@@ -108,25 +95,17 @@ a{color:inherit}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px}
 .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(255,216,77,.18)}
 .hero-eyebrow span{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D9CBFF}
-
-/* proof strip */
-.proof{
-  margin-top:56px;border-top:1px solid rgba(255,255,255,.12);
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
+.proof{margin-top:56px;border-top:1px solid rgba(255,255,255,.12);display:grid;grid-template-columns:repeat(4,1fr)}
 .proof div{padding:22px 20px 26px;border-right:1px solid rgba(255,255,255,.10)}
 .proof div:last-child{border-right:0}
 .proof b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:700;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}
 .proof small{display:block;margin-top:5px;font-size:.8rem;color:#A797C9;line-height:1.4}
 
-/* ---------- image placeholder ---------- */
-.ph{
-  border:1.5px dashed var(--line-strong);border-radius:16px;background:var(--surface);
-  display:flex;flex-direction:column;justify-content:center;gap:8px;padding:24px;text-align:center;color:var(--ink-soft);
-}
+/* ---------- placeholders ---------- */
+.ph{border:1.5px dashed var(--line-strong);border-radius:16px;background:var(--surface);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:24px;text-align:center;color:var(--ink-soft)}
 .ph b{font-family:var(--display);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
 .ph span{font-size:.85rem;line-height:1.5}
-.ph code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;color:var(--ink-soft);opacity:.85}
+.ph code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;opacity:.85}
 .hero .ph{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:#C6B8E3;aspect-ratio:4/4.6}
 .hero .ph b{color:var(--gold)}
 .hero .ph code{color:#A797C9}
@@ -138,108 +117,80 @@ section{padding:78px 0}
 .sec-head p{margin-top:12px}
 .alt{background:var(--surface)}
 
-/* why cards */
-.why{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{
-  background:var(--ground);border:1px solid var(--line);border-radius:14px;padding:24px;
-  box-shadow:var(--shadow-sm);
-}
-.card h3{margin-bottom:8px}
-.card p{color:var(--ink-soft);font-size:.94rem}
-.card .ic{width:36px;height:36px;margin-bottom:14px;color:var(--purple)}
-.card.gold{border-color:rgba(184,134,11,.45);background:linear-gradient(180deg,rgba(255,216,77,.10),transparent 70%)}
-.card.gold .ic{color:var(--gold-deep)}
+/* what is maya */
+.what{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+.what .ph{aspect-ratio:4/3}
+.does{display:grid;gap:14px}
+.do{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--ground);box-shadow:var(--shadow-sm)}
+.do svg{width:26px;height:26px;flex:0 0 26px;color:var(--purple);margin-top:2px}
+.do b{display:block;font-family:var(--display);font-size:1rem;margin-bottom:3px}
+.do small{color:var(--ink-soft);font-size:.9rem;line-height:1.5}
+.what-quote{margin-top:26px;padding-left:16px;border-left:3px solid var(--gold);font-size:1.02rem;color:var(--ink-soft)}
 
-.market{
-  margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--ground);
-}
-.market div{padding:22px 20px;border-right:1px solid var(--line)}
-.market div:last-child{border-right:0}
-.market b{display:block;font-family:var(--display);font-size:1.9rem;font-weight:800;color:var(--purple);font-variant-numeric:tabular-nums}
-.market small{display:block;margin-top:4px;color:var(--ink-soft);font-size:.85rem;line-height:1.45}
-.source{margin-top:12px;font-size:.76rem;color:var(--ink-soft);opacity:.8}
+/* video */
+.video{background:linear-gradient(180deg,#1A0A2E,#12061F);color:#fff}
+.video .sec-head{margin-left:auto;margin-right:auto;text-align:center}
+.video h2{color:#fff}
+.video .lede{color:#CDC2E6;margin-left:auto;margin-right:auto}
+.frame{max-width:900px;margin:0 auto;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 24px 70px rgba(0,0,0,.45);background:#000;aspect-ratio:16/9}
+.frame iframe{width:100%;height:100%;border:0;display:block}
+.frame .ph{height:100%;border:0;background:rgba(255,255,255,.05);color:#C6B8E3}
+.frame .ph b{color:var(--gold)}
+.frame .ph code{color:#A797C9}
+.video-cap{max-width:900px;margin:16px auto 0;text-align:center;font-size:.88rem;color:#A797C9}
 
-/* ---------- earnings ---------- */
-.pay{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px}
-.pay-card{border-radius:16px;padding:28px 26px;border:1px solid var(--line);background:var(--ground);box-shadow:var(--shadow-sm)}
-.pay-card .k{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--purple)}
-.pay-card .v{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6vw,3.6rem);line-height:1;margin:10px 0 6px;letter-spacing:-.03em}
-.pay-card .t{font-family:var(--display);font-weight:700;font-size:1.05rem}
-.pay-card .d{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.92rem}
-.pay-card.dark{background:linear-gradient(155deg,#241442,#12061F);border-color:rgba(255,216,77,.5);color:#fff;box-shadow:0 0 0 1px rgba(255,216,77,.12),var(--shadow-md)}
-.pay-card.dark .k{color:var(--gold)}
-.pay-card.dark .v{color:var(--gold)}
-.pay-card.dark .d{border-top-color:rgba(255,255,255,.16);color:#C6B8E3}
-
-.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--ground)}
-table{width:100%;border-collapse:collapse;min-width:520px;font-variant-numeric:tabular-nums}
-thead th{
-  background:var(--navy);color:#fff;font-family:var(--display);font-weight:600;
-  font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 18px;text-align:right;
-}
-thead th:first-child{text-align:left}
-tbody td{padding:14px 18px;text-align:right;border-top:1px solid var(--line);font-weight:600}
-tbody td:first-child{text-align:left;font-family:var(--display);font-weight:700;font-size:1.05rem}
-tbody tr:last-child{background:linear-gradient(90deg,rgba(255,216,77,.16),rgba(255,216,77,.05))}
-tbody tr:last-child td{font-weight:800}
-.tbl-note{margin-top:12px;font-size:.88rem;color:var(--ink-soft);border-left:3px solid var(--gold);padding-left:12px}
-
-/* ---------- how it works ---------- */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:34px}
+/* steps + support */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:36px}
 .step{position:relative;padding:0 18px 0 0}
-.step .n{
-  width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;
-  margin-bottom:14px;position:relative;z-index:2;
-}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;margin-bottom:14px;position:relative;z-index:2}
 .step:last-child .n{background:var(--gold);color:#2B1A00}
 .step::before{content:"";position:absolute;left:19px;top:19px;width:100%;height:2px;background:var(--line-strong)}
 .step:last-child::before{display:none}
 .step h3{margin-bottom:6px}
 .step p{color:var(--ink-soft);font-size:.9rem;padding-right:14px}
-
 .support{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .sup{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--ground)}
 .sup svg{width:20px;height:20px;flex:0 0 20px;color:var(--purple);margin-top:2px}
 .sup b{display:block;font-family:var(--display);font-size:.95rem}
 .sup small{color:var(--ink-soft);font-size:.85rem;line-height:1.45}
-
 .reqs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.req{
-  display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;
-  background:var(--surface-2);border:1px solid var(--line);font-size:.87rem;font-weight:600;
-}
+.req{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);font-size:.87rem;font-weight:600}
 .req i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block}
 
-/* ---------- signup ---------- */
-.signup{
-  background:
-    radial-gradient(700px 420px at 85% 0%, rgba(124,58,237,.45), transparent 60%),
-    linear-gradient(180deg,#1A0A2E,#12061F);
-  color:#fff;
-}
+/* why consultant */
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--ground);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow-sm)}
+.card h3{margin-bottom:8px}
+.card p{color:var(--ink-soft);font-size:.94rem}
+.card .ic{width:36px;height:36px;margin-bottom:14px;color:var(--purple)}
+.card.gold{border-color:rgba(184,134,11,.45);background:linear-gradient(180deg,rgba(255,216,77,.10),transparent 70%)}
+.card.gold .ic{color:var(--gold-deep)}
+.market{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--ground)}
+.market div{padding:22px 20px;border-right:1px solid var(--line)}
+.market div:last-child{border-right:0}
+.market b{display:block;font-family:var(--display);font-size:1.9rem;font-weight:800;color:var(--purple);font-variant-numeric:tabular-nums}
+.market small{display:block;margin-top:4px;color:var(--ink-soft);font-size:.85rem;line-height:1.45}
+.source{margin-top:12px;font-size:.76rem;color:var(--ink-soft);opacity:.8}
+.close{margin-top:34px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:26px;border-radius:16px;background:linear-gradient(120deg,var(--surface-2),transparent);border:1px solid var(--line)}
+.close p{font-family:var(--display);font-weight:700;font-size:1.15rem;max-width:46ch}
+
+/* signup */
+.signup{background:radial-gradient(700px 420px at 85% 0%, rgba(124,58,237,.45), transparent 60%),linear-gradient(180deg,#1A0A2E,#12061F);color:#fff}
 .signup h2{color:#fff}
 .signup .lede{color:#CDC2E6}
 .form-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:start}
 form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:26px;backdrop-filter:blur(4px)}
 .f{display:grid;gap:6px;margin-bottom:14px}
 .f label{font-size:.8rem;font-weight:600;color:#CDC2E6}
-.f input,.f select{
-  font-family:var(--body);font-size:.95rem;color:#fff;background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:12px 13px;width:100%;
-}
+.f input,.f select{font-family:var(--body);font-size:.95rem;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:12px 13px;width:100%}
 .f input::placeholder{color:#8E7EB2}
 .f select option{color:#1A0A2E;background:#fff}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 form .btn{width:100%;margin-top:6px}
 .form-legal{margin-top:12px;font-size:.78rem;color:#9C8CBE;line-height:1.5}
-.form-ok{
-  display:none;margin-top:14px;padding:12px 14px;border-radius:10px;
-  background:rgba(255,216,77,.14);border:1px solid rgba(255,216,77,.45);color:#FFE694;font-size:.9rem;
-}
-.pitch li{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;list-style:none}
+.form-ok{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(255,216,77,.14);border:1px solid rgba(255,216,77,.45);color:#FFE694;font-size:.9rem}
 .pitch{padding:0;margin:24px 0 0}
+.pitch li{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;list-style:none}
 .pitch svg{width:22px;height:22px;flex:0 0 22px;color:var(--gold);margin-top:2px}
 .pitch b{font-family:var(--display);display:block;font-size:1rem}
 .pitch small{color:#B4A6D2;font-size:.88rem;line-height:1.5}
@@ -249,14 +200,14 @@ form .btn{width:100%;margin-top:6px}
 
 footer{background:#0D0418;color:#8E7EB2;padding:26px 0;font-size:.82rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer .logo .word{font-size:1rem}
 
 @media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-grid,.what,.form-grid,.why{grid-template-columns:1fr;gap:32px}
   .hero .ph{aspect-ratio:4/3}
   .proof{grid-template-columns:1fr 1fr}
   .proof div:nth-child(2){border-right:0}
   .proof div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.10)}
-  .why,.pay,.form-grid{grid-template-columns:1fr}
   .market{grid-template-columns:1fr}
   .market div{border-right:0;border-bottom:1px solid var(--line)}
   .market div:last-child{border-bottom:0}
@@ -269,23 +220,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .steps{grid-template-columns:1fr}
   .bar .btn{display:none}
   .f-row{grid-template-columns:1fr}
+  .close{flex-direction:column;align-items:flex-start}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap">
-    <div class="brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="MayaApp">
+    <!-- LOGO: assim que o arquivo img/logo-mayaapp.svg (ou .png) existir, ele aparece
+         automaticamente no lugar da marca provisória abaixo. -->
+    <a class="logo" href="#" aria-label="MayaApp">
+      <img src="img/logo-mayaapp.svg" alt="MayaApp" class="logo-file" onerror="this.remove()">
+      <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
         <path d="M32 3.5l1.9 4.2 4.6.5-3.4 3.1.95 4.5L32 13.6l-4.05 2.2.95-4.5-3.4-3.1 4.6-.5L32 3.5z" fill="#FFD84D"/>
         <path d="M10 22c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-2l-5.5 6.2V40H18c-4.4 0-8-3.6-8-8V22z" fill="#7C3AED"/>
         <path d="M28 30c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-4v6.2L40.5 48H36c-4.4 0-8-3.6-8-8V30z" fill="#7C3AED" fill-opacity=".55"/>
       </svg>
-      <span>MayaApp<small>Programa de Parceiros</small></span>
-    </div>
-    <a class="btn btn-gold btn-sm" href="#inscricao">Quero ser parceiro</a>
+      <span class="word">MayaApp<small>Programa de Parceiros</small></span>
+    </a>
+    <a class="btn btn-gold btn-sm" href="#inscricao">Quero ser consultor</a>
   </div>
 </header>
 
@@ -295,144 +250,103 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     <div class="hero-grid">
       <div>
         <div class="hero-eyebrow"><i class="dot"></i><span>Programa de Parceiros MayaApp</span></div>
-        <h1>Leve inteligência artificial para os lojistas do Brasil e <em>receba todo mês</em>.</h1>
-        <p class="lede">Você apresenta a MayaApp na loja, o lojista assina por R$ 49,90/mês e cada assinatura ativa entra na sua carteira. <strong style="color:#fff">10% de comissão recorrente</strong> enquanto o cliente continuar pagando.</p>
+        <h1>Leve inteligência artificial para os lojistas do Brasil e construa uma <em>renda recorrente</em>.</h1>
+        <p class="lede">Você apresenta a MayaApp dentro da loja, o lojista assina, e cada assinatura ativa entra na sua carteira. Enquanto o cliente continuar usando, você continua recebendo.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#inscricao">Quero ser parceiro</a>
-          <a class="btn btn-ghost" href="#ganhos">Ver quanto dá para ganhar</a>
+          <a class="btn btn-gold" href="#inscricao">Quero ser consultor</a>
+          <a class="btn btn-ghost" href="#o-que-e">O que é a MayaApp</a>
         </div>
         <p class="hero-note">Sem exclusividade · Sem meta obrigatória · Basta ter MEI ou PJ</p>
       </div>
 
-      <!-- IMAGEM 1 — substituir a div .ph inteira por: <img src="img/hero-maya.png" alt="Lojista usando a MayaApp no celular"> -->
+      <!-- IMAGEM 1 — trocar esta div inteira por: <img src="img/hero-maya.png" alt="Lojista usando a MayaApp"> -->
       <div class="ph">
         <b>Imagem 1 — Hero</b>
-        <span>Lojista real segurando o celular com a MayaApp aberta (tela do app visível), ou o mockup do app sobre a foto de uma peça gerada pela IA.</span>
-        <code>img/hero-maya.png · 1000×1150px · PNG/JPG</code>
+        <span>Lojista segurando o celular com a MayaApp aberta, ou mockup do app sobre uma foto de peça gerada pela IA.</span>
+        <code>img/hero-maya.png · 1000×1150px</code>
       </div>
     </div>
 
     <div class="proof">
-      <div><b>450+</b><small>lojistas já usando a MayaApp</small></div>
-      <div><b>20 mil+</b><small>imagens de produto geradas</small></div>
+      <div><b>600+</b><small>lojistas já usando a MayaApp</small></div>
+      <div><b>25 mil+</b><small>imagens de produto geradas</small></div>
       <div><b>R$ 2 bi</b><small>transacionados por ano no polo onde já operamos</small></div>
       <div><b>SBT Brasil</b><small>a MayaApp no jornal nacional como caso de IA no varejo</small></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 2. POR QUE SER PARCEIRO ============ -->
-<section id="oportunidade">
+<!-- ============ 2. O QUE É A MAYAAPP ============ -->
+<section id="o-que-e">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Por que ser parceiro</p>
-      <h2>Um produto que já funciona, num mercado que ninguém foi atender.</h2>
-      <p class="lede">São 2 milhões de empresas no setor de moda brasileiro. Quase nenhuma tem vitrine digital estruturada — e quase nenhuma recebeu a visita de alguém oferecendo isso.</p>
+      <p class="eyebrow">O que é a MayaApp</p>
+      <h2>Uma assistente de IA que vive no celular do lojista.</h2>
+      <p class="lede">Ela não responde perguntas: ela executa. O lojista fotografa a peça e, na mesma conversa, recebe a foto profissional, a descrição e o material pronto para vender.</p>
     </div>
 
-    <div class="why">
-      <div class="card">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.4l2.5 2.4 4.6-5"/></svg>
-        <h3>Produto que já funciona</h3>
-        <p>Mais de 450 lojistas usando e 20 mil imagens geradas no maior polo de varejo popular do país. Você vende algo que já está rodando, não uma promessa.</p>
+    <div class="what">
+      <!-- IMAGEM 2 — trocar esta div inteira por: <img src="img/app-maya.png" alt="Telas da MayaApp"> -->
+      <div class="ph">
+        <b>Imagem 2 — O produto</b>
+        <span>Antes e depois de uma peça (foto crua do celular × imagem gerada pela MayaApp), ou duas telas do app lado a lado.</span>
+        <code>img/app-maya.png · 1200×900px</code>
       </div>
-      <div class="card">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5L5 5h14l1.5 4.5a2.5 2.5 0 01-4.7 1.3 2.5 2.5 0 01-4.6 0 2.5 2.5 0 01-4.6 0 2.5 2.5 0 01-3.1-1.3z"/><path d="M5 11.5V19h14v-7.5"/></svg>
-        <h3>Mercado que ninguém atendeu</h3>
-        <p>A maioria dos lojistas nunca foi procurada por alguém oferecendo digitalização. Você chega antes, com uma solução que cabe no bolso dele.</p>
-      </div>
-      <div class="card">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 18.2h.01"/><path d="M19.5 5.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/></svg>
-        <h3>Venda que se explica sozinha</h3>
-        <p>Você fotografa a peça do próprio lojista na frente dele e mostra o resultado em segundos. O produto convence, você só conduz a conversa.</p>
-      </div>
-      <div class="card gold">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V11m5 8.5V7.5m5 12V13m5 6.5V4.5"/></svg>
-        <h3>Renda que se acumula</h3>
-        <p>O cliente que você traz hoje continua pagando comissão nos próximos meses. Sua carteira cresce, o seu ganho cresce junto — mesmo vendendo o mesmo tanto.</p>
-      </div>
-    </div>
 
-    <div class="market">
-      <div><b>2 milhões</b><small>de empresas no setor de moda brasileiro</small></div>
-      <div><b>97%</b><small>são micro ou pequenas empresas</small></div>
-      <div><b>7%</b><small>têm presença digital estruturada</small></div>
+      <div>
+        <div class="does">
+          <div class="do">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10.5" r="1.8"/><path d="M3.5 17l4.5-4 3.5 3 3.5-3.5 5.5 5"/></svg>
+            <div><b>Catálogo de produtos</b><small>Fotos e descrições de produto geradas com qualidade para vender online, a partir da peça que o lojista já tem.</small></div>
+          </div>
+          <div class="do">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h8l4.5 4.5V20a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5V4a.5.5 0 01.5-.5z"/><path d="M13.5 3.8V8.5H18M8.5 13h7M8.5 16.5h4.5"/></svg>
+            <div><b>Catálogo em PDF</b><small>Um catálogo visual pronto para mandar no WhatsApp do cliente, montado em minutos.</small></div>
+          </div>
+          <div class="do">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="3"/><circle cx="12" cy="12" r="3.4"/><circle cx="16.6" cy="7.4" r=".9" fill="currentColor"/></svg>
+            <div><b>Conteúdo para redes</b><small>O lojista descreve o que quer e recebe imagens de campanha prontas para publicar.</small></div>
+          </div>
+        </div>
+        <p class="what-quote">São 2 milhões de lojistas no Brasil que têm produto, mas não têm tempo nem estrutura para digitalizar. A MayaApp resolve isso dentro de uma conversa, pelo celular.</p>
+      </div>
     </div>
-    <p class="source">Fontes: SEBRAE (Agência SEBRAE de Notícias) e NuvemCommerce 2024 (Nuvemshop).</p>
   </div>
 </section>
 
-<!-- ============ 3. QUANTO VOCÊ GANHA ============ -->
-<section id="ganhos" class="alt">
+<!-- ============ 3. VÍDEO ============ -->
+<section class="video" id="video">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Remuneração</p>
-      <h2>Comissão recorrente todo mês, mais bônus por volume.</h2>
-      <p class="lede">Cada lojista que você fecha fica vinculado ao seu código de forma permanente. Enquanto ele pagar a assinatura, você recebe.</p>
+      <p class="eyebrow">Veja na prática</p>
+      <h2>A MayaApp dentro da loja.</h2>
+      <p class="lede">Menos de 3 minutos para entender o que você vai demonstrar na frente do lojista.</p>
     </div>
-
-    <div class="pay">
-      <div class="pay-card">
-        <p class="k">Comissão recorrente</p>
-        <p class="v">10%</p>
-        <p class="t">sobre a assinatura, todo mês</p>
-        <p class="d">Enquanto o cliente permanecer ativo, você continua recebendo — sem precisar vender de novo.</p>
-      </div>
-      <div class="pay-card dark">
-        <p class="k">★ Bônus por volume</p>
-        <p class="v">R$ 250</p>
-        <p class="t">a cada 10 assinantes no mês</p>
-        <p class="d">Pago todo mês, conforme o volume que você trouxer. Acumulativo com a comissão recorrente.</p>
+    <div class="frame" id="video-frame">
+      <!-- O vídeo entra automaticamente quando o ID for preenchido no bloco CONFIGURAÇÃO (fim do arquivo). -->
+      <div class="ph">
+        <b>Vídeo do YouTube</b>
+        <span>Cole o link do vídeo em <code>YOUTUBE_ID</code>, no bloco CONFIGURAÇÃO no fim do arquivo.</span>
+        <code>ex.: youtube.com/watch?v=<b style="color:inherit">ABC123xyz</b></code>
       </div>
     </div>
-
-    <div class="tbl-wrap">
-      <table>
-        <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Projeção de ganho mensal por ritmo de novos clientes</caption>
-        <thead>
-          <tr><th scope="col">Novos clientes por mês</th><th scope="col">Mês 1</th><th scope="col">Mês 6</th><th scope="col">Mês 12</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25</td><td>R$ 625</td><td>R$ 1.162</td><td>R$ 1.649</td></tr>
-          <tr><td>50</td><td>R$ 1.500</td><td>R$ 2.575</td><td>R$ 3.548</td></tr>
-          <tr><td>100</td><td>R$ 3.000</td><td>R$ 5.149</td><td>R$ 7.096</td></tr>
-          <tr><td>200</td><td>R$ 6.000</td><td>R$ 10.298</td><td>R$ 14.193</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tbl-note">Valores de referência com comissão recorrente + bônus, considerando a carteira ativa acumulada. Pode ser maior se seus clientes consumirem créditos adicionais.</p>
+    <p class="video-cap" id="video-cap">Reportagem do SBT Brasil sobre inteligência artificial no varejo físico, com a MayaApp como exemplo prático.</p>
   </div>
 </section>
 
-<!-- ============ 4. COMO FUNCIONA + APOIO ============ -->
-<section id="como-funciona">
+<!-- ============ 4. COMO FUNCIONA A PARCERIA ============ -->
+<section id="como-funciona" class="alt">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Como funciona</p>
-      <h2>Da conversa à primeira comissão, em menos de uma semana.</h2>
+      <h2>Da conversa à primeira visita, em menos de uma semana.</h2>
     </div>
 
     <div class="steps">
-      <div class="step">
-        <div class="n">1</div>
-        <h3>Conversar</h3>
-        <p>A gente alinha condições, território e tira as dúvidas que ficaram.</p>
-      </div>
-      <div class="step">
-        <div class="n">2</div>
-        <h3>Formalizar</h3>
-        <p>Acordo simples, sem exclusividade e sem meta obrigatória. Basta ter MEI ou PJ.</p>
-      </div>
-      <div class="step">
-        <div class="n">3</div>
-        <h3>Treinar</h3>
-        <p>Uma sessão de produto e você já sai sabendo demonstrar a MayaApp ao vivo.</p>
-      </div>
-      <div class="step">
-        <div class="n">4</div>
-        <h3>Começar</h3>
-        <p>Você recebe seu código, o material de venda e vai para a primeira visita.</p>
-      </div>
+      <div class="step"><div class="n">1</div><h3>Conversar</h3><p>A gente alinha as condições, o território e tira as dúvidas que ficaram.</p></div>
+      <div class="step"><div class="n">2</div><h3>Formalizar</h3><p>Acordo simples, sem exclusividade e sem meta obrigatória. Basta ter MEI ou PJ.</p></div>
+      <div class="step"><div class="n">3</div><h3>Treinar</h3><p>Uma sessão de produto e você já sai sabendo demonstrar a MayaApp ao vivo.</p></div>
+      <div class="step"><div class="n">4</div><h3>Começar</h3><p>Você recebe seu código de consultor, o material de venda e vai para a primeira visita.</p></div>
     </div>
 
     <div class="support">
@@ -442,7 +356,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       </div>
       <div class="sup">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h8l4.5 4.5V20a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5V4a.5.5 0 01.5-.5z"/><path d="M13.5 3.8V8.5H18"/></svg>
-        <div><b>Material de venda e proposta</b><small>Apresentação, folheto, argumentário de objeções e proposta pronta com os valores oficiais.</small></div>
+        <div><b>Material de venda e proposta</b><small>Apresentação, folheto, argumentário de objeções e proposta pronta para entregar na hora.</small></div>
       </div>
       <div class="sup">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.5 1.7-2.2 3-2.2s2.4.7 3 2.2M14.5 10.5H18M14.5 13.5H18"/></svg>
@@ -454,11 +368,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       </div>
       <div class="sup">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9h17M8 3v3M16 3v3M8 15.5h3M8 12.5h8"/></svg>
-        <div><b>Relatório todo dia 10</b><small>Carteira ativa, novos clientes do mês e o valor a receber, sem você ter que perguntar.</small></div>
+        <div><b>Relatório mensal</b><small>Sua carteira ativa, os novos clientes do mês e o valor a receber, todo dia 10.</small></div>
       </div>
       <div class="sup">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11"/><path d="M9.5 20v-5.5h5V20"/></svg>
-        <div><b>Duas formas de vender</b><small>Assinaturas individuais, loja a loja — ou pacotes de licenças e créditos para indústrias, confecções e redes.</small></div>
+        <div><b>Duas formas de vender</b><small>Assinaturas individuais, loja a loja — ou pacotes de licenças para indústrias, confecções e redes.</small></div>
       </div>
     </div>
 
@@ -466,20 +380,66 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <span class="req"><i></i>MEI ou PJ</span>
       <span class="req"><i></i>Sem exclusividade</span>
       <span class="req"><i></i>Sem meta obrigatória</span>
-      <span class="req"><i></i>Comissão paga todo mês</span>
+      <span class="req"><i></i>Sem taxa de adesão</span>
       <span class="req"><i></i>Território alinhado com você</span>
     </div>
   </div>
 </section>
 
-<!-- ============ 5. INSCRIÇÃO ============ -->
+<!-- ============ 5. POR QUE SER UM CONSULTOR MAYAAPP ============ -->
+<section id="por-que">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Por que ser consultor</p>
+      <h2>Por que ser um consultor MayaApp.</h2>
+      <p class="lede">Um produto pronto, um mercado que ninguém foi atender e uma carteira que continua rendendo depois da venda.</p>
+    </div>
+
+    <div class="why">
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.4l2.5 2.4 4.6-5"/></svg>
+        <h3>Produto que já funciona</h3>
+        <p>Mais de 600 lojistas usando e 25 mil imagens geradas no maior polo de varejo popular do país. Você vende algo que já está rodando, não uma promessa.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5L5 5h14l1.5 4.5a2.5 2.5 0 01-4.7 1.3 2.5 2.5 0 01-4.6 0 2.5 2.5 0 01-4.6 0 2.5 2.5 0 01-3.1-1.3z"/><path d="M5 11.5V19h14v-7.5"/></svg>
+        <h3>Mercado que ninguém atendeu</h3>
+        <p>A maioria dos lojistas nunca foi procurada por alguém oferecendo digitalização. Você chega antes, com uma solução que cabe no bolso dele.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 18.2h.01"/><path d="M19.5 5.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/></svg>
+        <h3>Venda que se explica sozinha</h3>
+        <p>Você fotografa a peça do próprio lojista na frente dele e mostra o resultado em segundos. O produto convence, você conduz a conversa.</p>
+      </div>
+      <div class="card gold">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V11m5 8.5V7.5m5 12V13m5 6.5V4.5"/></svg>
+        <h3>Renda recorrente</h3>
+        <p>Comissão todo mês enquanto o cliente estiver ativo, mais bônus por volume. O esforço de cada mês soma ao anterior: sua carteira cresce, seu ganho cresce junto.</p>
+      </div>
+    </div>
+
+    <div class="market">
+      <div><b>2 milhões</b><small>de empresas no setor de moda brasileiro</small></div>
+      <div><b>97%</b><small>são micro ou pequenas empresas</small></div>
+      <div><b>7%</b><small>têm presença digital estruturada</small></div>
+    </div>
+    <p class="source">Fontes: SEBRAE (Agência SEBRAE de Notícias) e NuvemCommerce 2024 (Nuvemshop).</p>
+
+    <div class="close">
+      <p>A MayaApp está evoluindo. Você pode ser nosso parceiro para crescermos juntos.</p>
+      <a class="btn btn-purple" href="#inscricao">Quero ser consultor MayaApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. INSCRIÇÃO ============ -->
 <section id="inscricao" class="signup">
   <div class="wrap">
     <div class="form-grid">
       <div>
         <p class="eyebrow">Inscrição</p>
         <h2>Vamos começar?</h2>
-        <p class="lede">Preencha em 30 segundos. A gente entra em contato pelo WhatsApp para alinhar condições e território.</p>
+        <p class="lede">Preencha em 30 segundos. A gente entra em contato pelo WhatsApp para apresentar as condições e alinhar o seu território.</p>
         <ul class="pitch">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.4l2.5 2.4 4.6-5"/></svg>
@@ -530,7 +490,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
           <select id="modelo" name="modelo" required>
             <option value="">Selecione</option>
             <option>Assinaturas individuais (loja a loja)</option>
-            <option>Licenças e créditos (indústria, confecção, rede)</option>
+            <option>Licenças para indústria, confecção ou rede</option>
             <option>As duas formas</option>
           </select>
         </div>
@@ -542,7 +502,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
             <option>Ainda não, mas posso abrir</option>
           </select>
         </div>
-        <button class="btn btn-gold" type="submit">Quero ser parceiro MayaApp</button>
+        <button class="btn btn-gold" type="submit">Quero ser consultor MayaApp</button>
         <p class="form-legal">Ao enviar, você concorda em ser contatado pela equipe da MayaApp (ETER.IA Tecnologia) por WhatsApp ou e-mail sobre o Programa de Parceiros.</p>
         <p class="form-ok" id="form-ok" role="status">Recebemos sua inscrição. Abrimos o WhatsApp para você confirmar — se não abrir, chame a gente pelo link ao lado.</p>
       </form>
@@ -552,21 +512,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
 <footer>
   <div class="wrap">
-    <span>MayaApp · ETER.IA Tecnologia · 2026</span>
-    <span>Programa de Parceiros Comerciais</span>
+    <span class="logo">
+      <img src="img/logo-mayaapp.svg" alt="MayaApp" class="logo-file" onerror="this.remove()">
+      <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 3.5l1.9 4.2 4.6.5-3.4 3.1.95 4.5L32 13.6l-4.05 2.2.95-4.5-3.4-3.1 4.6-.5L32 3.5z" fill="#FFD84D"/>
+        <path d="M10 22c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-2l-5.5 6.2V40H18c-4.4 0-8-3.6-8-8V22z" fill="#7C3AED"/>
+        <path d="M28 30c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-4v6.2L40.5 48H36c-4.4 0-8-3.6-8-8V30z" fill="#7C3AED" fill-opacity=".55"/>
+      </svg>
+      <span class="word">MayaApp</span>
+    </span>
+    <span>ETER.IA Tecnologia · Programa de Parceiros Comerciais · 2026</span>
   </div>
 </footer>
 
 <script>
 /* ====== CONFIGURAÇÃO — trocar antes de publicar ======================
-   WHATSAPP : número que recebe os leads, formato 55 + DDD + número
-   PLANILHA : URL do Web App do Google Apps Script (termina em /exec).
-              Ver parceiros/SETUP-PLANILHA.md para gerar em 5 minutos.
-              Se ficar vazio, o lead vai só pelo WhatsApp.
+   WHATSAPP   : número que recebe os leads, formato 55 + DDD + número
+   YOUTUBE_ID : o código do vídeo. Em youtube.com/watch?v=ABC123xyz
+                o ID é ABC123xyz (também serve o final de um link youtu.be/).
+   PLANILHA   : URL do Web App do Apps Script (termina em /exec).
+                Passo a passo em parceiros/SETUP-PLANILHA.md
    ==================================================================== */
-const WHATSAPP = "5511900000000";   // <-- trocar pelo número real
-const PLANILHA = "";                 // <-- colar a URL .../exec do Apps Script
+const WHATSAPP   = "5511900000000";   // <-- trocar pelo número real
+const YOUTUBE_ID = "";                 // <-- colar o ID do vídeo
+const PLANILHA   = "";                 // <-- colar a URL .../exec
 
+/* ---- vídeo ---- */
+if (YOUTUBE_ID) {
+  document.getElementById('video-frame').innerHTML =
+    '<iframe src="https://www.youtube-nocookie.com/embed/' + YOUTUBE_ID + '?rel=0" ' +
+    'title="MayaApp" loading="lazy" allowfullscreen ' +
+    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>';
+}
+
+/* ---- formulário ---- */
 const form = document.getElementById('lead-form');
 const okMsg = document.getElementById('form-ok');
 document.getElementById('wa-link').href =
@@ -590,7 +569,7 @@ form.addEventListener('submit', (e) => {
 
   // 2) abre o WhatsApp com o lead já escrito
   const msg =
-    'Quero ser parceiro MayaApp\n' +
+    'Quero ser consultor MayaApp\n' +
     'Nome: ' + d.nome + '\n' +
     'WhatsApp: ' + d.whatsapp + '\n' +
     'Cidade: ' + d.cidade + '\n' +
