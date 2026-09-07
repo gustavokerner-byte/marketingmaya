@@ -59,15 +59,24 @@ a{color:inherit}
 .lede{font-size:clamp(1rem,1.6vw,1.12rem);color:var(--ink-soft);max-width:62ch}
 
 /* ---------- logo ---------- */
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo img{height:30px;width:auto}
-.logo .mark{width:30px;height:30px}
-.logo .word{font-family:var(--display);font-weight:700;font-size:1.12rem;letter-spacing:-.02em;color:#fff;line-height:1.05}
-.logo .word small{display:block;font-family:var(--body);font-weight:500;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#B9A9E8}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo .logo-file{height:34px;width:auto}
+.logo .lockup{display:flex;align-items:center;gap:9px}
+.logo .lockup[hidden]{display:none}
+.logo .mark{width:38px;height:38px;flex:0 0 38px}
+.logo .word{
+  font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.03em;line-height:1;
+  background:linear-gradient(95deg,#6D3BD6 8%,#9B4FD8 55%,#A855D9 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.logo .tag{
+  display:block;font-family:var(--body);font-weight:600;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:3px;
+}
 
 /* ---------- top bar ---------- */
-.bar{position:sticky;top:0;z-index:20;background:rgba(18,6,31,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.bar{position:sticky;top:0;z-index:20;background:var(--ground);background:color-mix(in srgb, var(--ground) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
 
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:.95rem;padding:13px 22px;border-radius:10px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
@@ -86,7 +95,9 @@ a{color:inherit}
     radial-gradient(680px 420px at 88% 8%, rgba(59,130,246,.28), transparent 62%),
     linear-gradient(180deg,#1A0A2E 0%, #12061F 100%);
   color:#fff;padding:64px 0 0;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+.hero-copy{max-width:58ch}
+.hero-art{margin-top:44px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 70px rgba(0,0,0,.4)}
+.hero-art img{width:100%;height:auto;display:block}
 .hero h1{color:#fff}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero .lede{color:#CDC2E6;margin-top:18px}
@@ -106,7 +117,7 @@ a{color:inherit}
 .ph b{font-family:var(--display);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
 .ph span{font-size:.85rem;line-height:1.5}
 .ph code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;opacity:.85}
-.hero .ph{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:#C6B8E3;aspect-ratio:4/4.6}
+.hero .ph{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:#C6B8E3;aspect-ratio:16/9;border-radius:18px;margin-top:44px}
 .hero .ph b{color:var(--gold)}
 .hero .ph code{color:#A797C9}
 
@@ -118,8 +129,11 @@ section{padding:78px 0}
 .alt{background:var(--surface)}
 
 /* what is maya */
-.what{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
-.what .ph{aspect-ratio:4/3}
+.what{display:grid;grid-template-columns:1fr;gap:34px}
+.what-cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.what .ph{aspect-ratio:16/8}
+.what-art{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-sm)}
+.what-art img{width:100%;height:auto;display:block}
 .does{display:grid;gap:14px}
 .do{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--ground);box-shadow:var(--shadow-sm)}
 .do svg{width:26px;height:26px;flex:0 0 26px;color:var(--purple);margin-top:2px}
@@ -185,7 +199,7 @@ form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);bor
 .f input,.f select{font-family:var(--body);font-size:.95rem;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:12px 13px;width:100%}
 .f input::placeholder{color:#8E7EB2}
 .f select option{color:#1A0A2E;background:#fff}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f-row-3{display:grid;grid-template-columns:1.35fr 1fr .7fr;gap:12px}
 form .btn{width:100%;margin-top:6px}
 .form-legal{margin-top:12px;font-size:.78rem;color:#9C8CBE;line-height:1.5}
 .form-ok{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(255,216,77,.14);border:1px solid rgba(255,216,77,.45);color:#FFE694;font-size:.9rem}
@@ -200,11 +214,12 @@ form .btn{width:100%;margin-top:6px}
 
 footer{background:#0D0418;color:#8E7EB2;padding:26px 0;font-size:.82rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-footer .logo .word{font-size:1rem}
+footer .logo .logo-file{filter:brightness(0) invert(1);opacity:.9;height:26px}
+footer .logo .mark{width:28px;height:28px;flex:0 0 28px;filter:brightness(0) invert(1);opacity:.85}
+footer .logo .word{font-size:1.05rem;background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#CFC3E6}
 
 @media (max-width:900px){
-  .hero-grid,.what,.form-grid,.why{grid-template-columns:1fr;gap:32px}
-  .hero .ph{aspect-ratio:4/3}
+  .what,.form-grid,.why{grid-template-columns:1fr;gap:32px}
   .proof{grid-template-columns:1fr 1fr}
   .proof div:nth-child(2){border-right:0}
   .proof div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.10)}
@@ -219,7 +234,7 @@ footer .logo .word{font-size:1rem}
 @media (max-width:560px){
   .steps{grid-template-columns:1fr}
   .bar .btn{display:none}
-  .f-row{grid-template-columns:1fr}
+  .f-row-3{grid-template-columns:1fr}
   .close{flex-direction:column;align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -231,40 +246,51 @@ footer .logo .word{font-size:1rem}
   <div class="wrap">
     <!-- LOGO: assim que o arquivo img/logo-mayaapp.svg (ou .png) existir, ele aparece
          automaticamente no lugar da marca provisória abaixo. -->
-    <a class="logo" href="#" aria-label="MayaApp">
-      <img src="img/logo-mayaapp.svg" alt="MayaApp" class="logo-file" onerror="this.remove()">
-      <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M32 3.5l1.9 4.2 4.6.5-3.4 3.1.95 4.5L32 13.6l-4.05 2.2.95-4.5-3.4-3.1 4.6-.5L32 3.5z" fill="#FFD84D"/>
-        <path d="M10 22c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-2l-5.5 6.2V40H18c-4.4 0-8-3.6-8-8V22z" fill="#7C3AED"/>
-        <path d="M28 30c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-4v6.2L40.5 48H36c-4.4 0-8-3.6-8-8V30z" fill="#7C3AED" fill-opacity=".55"/>
-      </svg>
-      <span class="word">MayaApp<small>Programa de Parceiros</small></span>
+    <a class="logo" href="#" aria-label="MayaApp — Programa de Parceiros">
+      <img src="img/logo-mayaapp.svg" alt="MayaApp" class="logo-file"
+           onerror="this.remove();document.querySelectorAll('.lockup').forEach(function(e){e.hidden=false})">
+      <span class="lockup" hidden>
+        <svg class="mark" viewBox="0 0 200 200" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mg-l" x1="26" y1="42" x2="104" y2="168" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#C86BC9"/><stop offset=".55" stop-color="#8A55D8"/><stop offset="1" stop-color="#6D3BD6"/>
+            </linearGradient>
+            <linearGradient id="mg-r" x1="176" y1="52" x2="104" y2="168" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#3E8FD4"/><stop offset=".5" stop-color="#6C6FDD"/><stop offset="1" stop-color="#7A4FD8"/>
+            </linearGradient>
+          </defs>
+          <path d="M42 168V78a30 30 0 0 1 60 0v90l-30-22z" fill="url(#mg-l)"/>
+          <path d="M158 168V78a30 30 0 0 0-60 0v90l30-22z" fill="url(#mg-r)"/>
+          <path d="M100 152s-34-20-34-42a17 17 0 0 1 34-8 17 17 0 0 1 34 8c0 22-34 42-34 42z" fill="#fff"/>
+          <path d="M168 34l5.5 12.5L186 52l-12.5 5.5L168 70l-5.5-12.5L150 52l12.5-5.5z" fill="#F5B942"/>
+        </svg>
+        <span><span class="word">MayaApp</span><span class="tag">Programa de Parceiros</span></span>
+      </span>
     </a>
-    <a class="btn btn-gold btn-sm" href="#inscricao">Quero ser consultor</a>
+    <a class="btn btn-purple btn-sm" href="#inscricao">Quero ser consultor</a>
   </div>
 </header>
 
 <!-- ============ 1. HERO ============ -->
 <section class="hero" style="padding-bottom:0">
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-eyebrow"><i class="dot"></i><span>Programa de Parceiros MayaApp</span></div>
-        <h1>Leve inteligência artificial para os lojistas do Brasil e construa uma <em>renda recorrente</em>.</h1>
-        <p class="lede">Você apresenta a MayaApp dentro da loja, o lojista assina, e cada assinatura ativa entra na sua carteira. Enquanto o cliente continuar usando, você continua recebendo.</p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="#inscricao">Quero ser consultor</a>
-          <a class="btn btn-ghost" href="#o-que-e">O que é a MayaApp</a>
-        </div>
-        <p class="hero-note">Sem exclusividade · Sem meta obrigatória · Basta ter MEI ou PJ</p>
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><i class="dot"></i><span>Programa de Parceiros MayaApp</span></div>
+      <h1>Leve inteligência artificial para os lojistas do Brasil e construa uma <em>renda recorrente</em>.</h1>
+      <p class="lede">Você apresenta a MayaApp dentro da loja, o lojista assina, e cada assinatura ativa entra na sua carteira. Enquanto o cliente continuar usando, você continua recebendo.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#inscricao">Quero ser consultor</a>
+        <a class="btn btn-ghost" href="#o-que-e">O que é a MayaApp</a>
       </div>
+      <p class="hero-note">Sem exclusividade · Sem meta obrigatória · Basta ter MEI ou PJ</p>
+    </div>
 
-      <!-- IMAGEM 1 — trocar esta div inteira por: <img src="img/hero-maya.png" alt="Lojista usando a MayaApp"> -->
-      <div class="ph">
-        <b>Imagem 1 — Hero</b>
-        <span>Lojista segurando o celular com a MayaApp aberta, ou mockup do app sobre uma foto de peça gerada pela IA.</span>
-        <code>img/hero-maya.png · 1000×1150px</code>
-      </div>
+    <!-- IMAGEM 1 — trocar esta div inteira por:
+         <div class="hero-art"><img src="img/hero-maya.png" alt="A MayaApp cuidando de catálogo, conteúdo e atendimento do lojista"></div> -->
+    <div class="ph">
+      <b>Imagem 1 — Hero</b>
+      <span>Ilustração da Maya com as telas flutuando (catálogo, chat, relatório). Fundo escuro, formato deitado.</span>
+      <code>img/hero-maya.png · 1400×800px</code>
     </div>
 
     <div class="proof">
@@ -286,14 +312,15 @@ footer .logo .word{font-size:1rem}
     </div>
 
     <div class="what">
-      <!-- IMAGEM 2 — trocar esta div inteira por: <img src="img/app-maya.png" alt="Telas da MayaApp"> -->
+      <!-- IMAGEM 2 — trocar esta div inteira por:
+           <div class="what-art"><img src="img/app-maya.png" alt="Foto do produto no celular e o resultado gerado pela MayaApp"></div> -->
       <div class="ph">
         <b>Imagem 2 — O produto</b>
-        <span>Antes e depois de uma peça (foto crua do celular × imagem gerada pela MayaApp), ou duas telas do app lado a lado.</span>
-        <code>img/app-maya.png · 1200×900px</code>
+        <span>Print do app cadastrando a peça + a régua de antes e depois das fotos geradas.</span>
+        <code>img/app-maya.png · 1400×640px</code>
       </div>
 
-      <div>
+      <div class="what-cols">
         <div class="does">
           <div class="do">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10.5" r="1.8"/><path d="M3.5 17l4.5-4 3.5 3 3.5-3.5 5.5 5"/></svg>
@@ -308,9 +335,11 @@ footer .logo .word{font-size:1rem}
             <div><b>Conteúdo para redes</b><small>O lojista descreve o que quer e recebe imagens de campanha prontas para publicar.</small></div>
           </div>
         </div>
-        <p class="what-quote">São 2 milhões de lojistas no Brasil que têm produto, mas não têm tempo nem estrutura para digitalizar. A MayaApp resolve isso dentro de uma conversa, pelo celular.</p>
+        <div>
+          <p class="what-quote">São 2 milhões de lojistas no Brasil que têm produto, mas não têm tempo nem estrutura para digitalizar. A MayaApp resolve isso dentro de uma conversa, pelo celular.</p>
+          <p class="what-quote" style="border-color:var(--purple);margin-top:18px">O lojista fotografa a peça pendurada na arara e recebe a foto pronta para o marketplace, com título e descrição. Esse é o momento que fecha a venda na sua demonstração.</p>
+        </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -462,14 +491,47 @@ footer .logo .word{font-size:1rem}
           <label for="nome">Nome completo</label>
           <input id="nome" name="nome" type="text" placeholder="Como podemos te chamar" required>
         </div>
-        <div class="f-row">
+        <div class="f-row-3">
           <div class="f">
             <label for="whats">WhatsApp</label>
             <input id="whats" name="whatsapp" type="tel" inputmode="tel" placeholder="(11) 90000-0000" required>
           </div>
           <div class="f">
-            <label for="cidade">Cidade / UF</label>
-            <input id="cidade" name="cidade" type="text" placeholder="São Paulo / SP" required>
+            <label for="cidade">Cidade</label>
+            <input id="cidade" name="cidade" type="text" placeholder="São Paulo" required>
+          </div>
+          <div class="f">
+            <label for="uf">UF</label>
+            <select id="uf" name="uf" required>
+              <option value="">UF</option>
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
+            </select>
           </div>
         </div>
         <div class="f">
@@ -483,15 +545,6 @@ footer .logo .word{font-size:1rem}
             <option>Sim, represento outras marcas ou produtos</option>
             <option>Sim, trabalho no varejo / atacado</option>
             <option>Não, mas quero começar</option>
-          </select>
-        </div>
-        <div class="f">
-          <label for="modelo">Como pretende atuar</label>
-          <select id="modelo" name="modelo" required>
-            <option value="">Selecione</option>
-            <option>Assinaturas individuais (loja a loja)</option>
-            <option>Licenças para indústria, confecção ou rede</option>
-            <option>As duas formas</option>
           </select>
         </div>
         <div class="f">
@@ -514,12 +567,23 @@ footer .logo .word{font-size:1rem}
   <div class="wrap">
     <span class="logo">
       <img src="img/logo-mayaapp.svg" alt="MayaApp" class="logo-file" onerror="this.remove()">
-      <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M32 3.5l1.9 4.2 4.6.5-3.4 3.1.95 4.5L32 13.6l-4.05 2.2.95-4.5-3.4-3.1 4.6-.5L32 3.5z" fill="#FFD84D"/>
-        <path d="M10 22c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-2l-5.5 6.2V40H18c-4.4 0-8-3.6-8-8V22z" fill="#7C3AED"/>
-        <path d="M28 30c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8h-4v6.2L40.5 48H36c-4.4 0-8-3.6-8-8V30z" fill="#7C3AED" fill-opacity=".55"/>
-      </svg>
-      <span class="word">MayaApp</span>
+      <span class="lockup" hidden>
+        <svg class="mark" viewBox="0 0 200 200" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mg-l" x1="26" y1="42" x2="104" y2="168" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#C86BC9"/><stop offset=".55" stop-color="#8A55D8"/><stop offset="1" stop-color="#6D3BD6"/>
+            </linearGradient>
+            <linearGradient id="mg-r" x1="176" y1="52" x2="104" y2="168" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#3E8FD4"/><stop offset=".5" stop-color="#6C6FDD"/><stop offset="1" stop-color="#7A4FD8"/>
+            </linearGradient>
+          </defs>
+          <path d="M42 168V78a30 30 0 0 1 60 0v90l-30-22z" fill="url(#mg-l)"/>
+          <path d="M158 168V78a30 30 0 0 0-60 0v90l30-22z" fill="url(#mg-r)"/>
+          <path d="M100 152s-34-20-34-42a17 17 0 0 1 34-8 17 17 0 0 1 34 8c0 22-34 42-34 42z" fill="#fff"/>
+          <path d="M168 34l5.5 12.5L186 52l-12.5 5.5L168 70l-5.5-12.5L150 52l12.5-5.5z" fill="#F5B942"/>
+        </svg>
+        <span class="word">MayaApp</span>
+      </span>
     </span>
     <span>ETER.IA Tecnologia · Programa de Parceiros Comerciais · 2026</span>
   </div>
@@ -534,7 +598,7 @@ footer .logo .word{font-size:1rem}
                 Passo a passo em parceiros/SETUP-PLANILHA.md
    ==================================================================== */
 const WHATSAPP   = "5511900000000";   // <-- trocar pelo número real
-const YOUTUBE_ID = "";                 // <-- colar o ID do vídeo
+const YOUTUBE_ID = "8PKEs2xY0jI";      // reportagem SBT Brasil
 const PLANILHA   = "";                 // <-- colar a URL .../exec
 
 /* ---- vídeo ---- */
@@ -572,10 +636,9 @@ form.addEventListener('submit', (e) => {
     'Quero ser consultor MayaApp\n' +
     'Nome: ' + d.nome + '\n' +
     'WhatsApp: ' + d.whatsapp + '\n' +
-    'Cidade: ' + d.cidade + '\n' +
+    'Cidade: ' + d.cidade + ' / ' + d.uf + '\n' +
     (d.email ? 'E-mail: ' + d.email + '\n' : '') +
     'Já vende para lojistas: ' + d.perfil + '\n' +
-    'Forma de atuação: ' + d.modelo + '\n' +
     'MEI/PJ: ' + d.pj;
 
   okMsg.style.display = 'block';

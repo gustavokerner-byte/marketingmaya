@@ -9,8 +9,8 @@
 const ABA = 'Inscrições';
 
 const COLUNAS = [
-  'Data/Hora', 'Nome', 'WhatsApp', 'Cidade/UF', 'E-mail',
-  'Já vende para lojistas', 'Forma de atuação', 'MEI/PJ', 'Origem'
+  'Data/Hora', 'Nome', 'WhatsApp', 'Cidade', 'UF', 'E-mail',
+  'Já vende para lojistas', 'MEI/PJ', 'Origem'
 ];
 
 function doPost(e) {
@@ -23,9 +23,9 @@ function doPost(e) {
       d.nome || '',
       d.whatsapp || '',
       d.cidade || '',
+      d.uf || '',
       d.email || '',
       d.perfil || '',
-      d.modelo || '',
       d.pj || '',
       d.origem || 'landing-parceiros'
     ]);
@@ -35,7 +35,7 @@ function doPost(e) {
     // MailApp.sendEmail('parceiros@mayaapp.com.br',
     //   'Nova inscrição de parceiro: ' + (d.nome || ''),
     //   COLUNAS.slice(1).map((c, i) => c + ': ' + [d.nome, d.whatsapp, d.cidade,
-    //     d.email, d.perfil, d.modelo, d.pj, d.origem][i]).join('\n'));
+    //     d.uf, d.email, d.perfil, d.pj, d.origem][i]).join('\n'));
 
     return json_({ ok: true });
   } catch (err) {
