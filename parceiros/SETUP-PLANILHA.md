@@ -1,11 +1,10 @@
 # Ligar o formulário na planilha do Google (5 minutos)
 
-O formulário da landing faz duas coisas ao ser enviado:
+O formulário da landing grava cada inscrição numa planilha do Google. É o único
+destino dos leads — se o envio falhar, a página avisa a pessoa na hora.
 
-1. **grava a inscrição numa planilha do Google** (registro permanente, mesmo que a pessoa desista de mandar a mensagem);
-2. **abre o WhatsApp** com os dados já escritos, para o contato imediato.
-
-O passo 2 já funciona — falta só o número. O passo 1 precisa destes 6 passos:
+**Já está configurado nesta landing.** O passo a passo abaixo fica como referência,
+caso precise recriar ou trocar a planilha.
 
 ## 1. Criar a planilha
 Crie uma planilha nova no Google Drive, por exemplo **"MayaApp — Inscrições de Parceiros"**.
@@ -36,8 +35,7 @@ No fim aparece a **URL do app da Web**, terminada em `/exec`. Copie.
 Em `parceiros/index.html`, no bloco `CONFIGURAÇÃO` no fim do arquivo:
 
 ```js
-const WHATSAPP = "5511900000000";   // número que recebe os leads (55 + DDD + número)
-const PLANILHA = "";                 // colar aqui a URL .../exec
+const PLANILHA = "";   // colar aqui a URL .../exec
 ```
 
 Pronto. Cada inscrição vira uma linha na planilha.

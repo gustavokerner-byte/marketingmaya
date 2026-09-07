@@ -209,7 +209,9 @@ form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);bor
 .f-row-3{display:grid;grid-template-columns:1.35fr 1fr .7fr;gap:12px}
 form .btn{width:100%;margin-top:6px}
 .form-legal{margin-top:12px;font-size:.78rem;color:#9C8CBE;line-height:1.5}
-.form-ok{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(255,216,77,.14);border:1px solid rgba(255,216,77,.45);color:#FFE694;font-size:.9rem}
+.form-ok{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(255,216,77,.14);border:1px solid rgba(255,216,77,.45);color:#FFE694;font-size:.9rem;line-height:1.5}
+.form-ok.erro{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.5);color:#FFC7C7}
+form.enviado .f,form.enviado .btn,form.enviado .form-legal{display:none}
 .pitch{padding:0;margin:24px 0 0}
 .pitch li{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;list-style:none}
 .pitch svg{width:22px;height:22px;flex:0 0 22px;color:var(--gold);margin-top:2px}
@@ -449,7 +451,7 @@ footer .logo .logo-file{height:30px;opacity:.92}
       <div>
         <p class="eyebrow">Inscrição</p>
         <h2>Vamos começar?</h2>
-        <p class="lede">Preencha em 30 segundos. A gente entra em contato pelo WhatsApp para apresentar as condições e alinhar o seu território.</p>
+        <p class="lede">Preencha em 30 segundos. A gente entra em contato para apresentar as condições e alinhar o seu território.</p>
         <ul class="pitch">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.4l2.5 2.4 4.6-5"/></svg>
@@ -464,7 +466,6 @@ footer .logo .logo-file{height:30px;opacity:.92}
             <div><b>Primeira visita em menos de uma semana</b><small>Treinamento, código de consultor e material na mão para começar a vender.</small></div>
           </li>
         </ul>
-        <p class="wa">Prefere falar agora? <a id="wa-link" href="#" target="_blank" rel="noopener">Chamar no WhatsApp →</a></p>
       </div>
 
       <form id="lead-form" novalidate>
@@ -537,8 +538,8 @@ footer .logo .logo-file{height:30px;opacity:.92}
           </select>
         </div>
         <button class="btn btn-gold" type="submit">Quero ser consultor MayaApp</button>
-        <p class="form-legal">Ao enviar, você concorda em ser contatado pela equipe da MayaApp (ETER.IA Tecnologia) por WhatsApp ou e-mail sobre o Programa de Parceiros.</p>
-        <p class="form-ok" id="form-ok" role="status">Recebemos sua inscrição. Abrimos o WhatsApp para você confirmar — se não abrir, chame a gente pelo link ao lado.</p>
+        <p class="form-legal">Ao enviar, você concorda em ser contatado pela equipe da MayaApp (ETER.IA Tecnologia) para falar sobre o Programa de Parceiros.</p>
+        <p class="form-ok" id="form-ok" role="status"></p>
       </form>
     </div>
   </div>
@@ -554,14 +555,12 @@ footer .logo .logo-file{height:30px;opacity:.92}
 </footer>
 
 <script>
-/* ====== CONFIGURAÇÃO — trocar antes de publicar ======================
-   WHATSAPP   : número que recebe os leads, formato 55 + DDD + número
-   YOUTUBE_ID : o código do vídeo. Em youtube.com/watch?v=ABC123xyz
+/* ====== CONFIGURAÇÃO ==================================================
+   YOUTUBE_ID : código do vídeo. Em youtube.com/watch?v=ABC123xyz
                 o ID é ABC123xyz (também serve o final de um link youtu.be/).
    PLANILHA   : URL do Web App do Apps Script (termina em /exec).
                 Passo a passo em parceiros/SETUP-PLANILHA.md
    ==================================================================== */
-const WHATSAPP   = "5511900000000";   // <-- trocar pelo número real
 const YOUTUBE_ID = "8PKEs2xY0jI";      // reportagem SBT Brasil
 const PLANILHA   = "https://script.google.com/macros/s/AKfycbygahmSc-tXDPnLmvCr92rVHoRqhL7UXNEYG1-AVRzDPrIE1ZluK6HbW12GQWXiOCPsAA/exec";
 
@@ -575,40 +574,50 @@ document.getElementById('video-play').addEventListener('click', () => {
 });
 
 /* ---- formulário ---- */
-const form = document.getElementById('lead-form');
+const form  = document.getElementById('lead-form');
 const okMsg = document.getElementById('form-ok');
-document.getElementById('wa-link').href =
-  'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Olá! Quero saber mais sobre o Programa de Parceiros MayaApp.');
+const botao = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!form.reportValidity()) return;
-  const d = Object.fromEntries(new FormData(form).entries());
 
-  // 1) grava na planilha (fire-and-forget: sem preflight, sem CORS)
-  if (PLANILHA) {
+  const dados = { ...Object.fromEntries(new FormData(form).entries()),
+                  origem: 'landing-parceiros', data: new Date().toISOString() };
+
+  botao.disabled = true;
+  botao.textContent = 'Enviando...';
+  okMsg.className = 'form-ok';
+  okMsg.style.display = 'none';
+
+  let gravou = false;
+  try {
+    // text/plain evita o preflight; o Apps Script responde com CORS liberado
+    const r = await fetch(PLANILHA, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(dados)
+    });
+    gravou = r.ok;
+  } catch (err) {
+    // se o navegador barrar a leitura da resposta, reenvia sem esperar retorno
     try {
-      fetch(PLANILHA, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: JSON.stringify({ ...d, origem: 'landing-parceiros', data: new Date().toISOString() })
-      });
-    } catch (err) { /* a planilha é o registro; o WhatsApp abaixo é a garantia */ }
+      await fetch(PLANILHA, { method: 'POST', mode: 'no-cors', body: JSON.stringify(dados) });
+      gravou = true;
+    } catch (err2) { gravou = false; }
   }
 
-  // 2) abre o WhatsApp com o lead já escrito
-  const msg =
-    'Quero ser consultor MayaApp\n' +
-    'Nome: ' + d.nome + '\n' +
-    'WhatsApp: ' + d.whatsapp + '\n' +
-    'Cidade: ' + d.cidade + ' / ' + d.uf + '\n' +
-    (d.email ? 'E-mail: ' + d.email + '\n' : '') +
-    'Já vende para lojistas: ' + d.perfil + '\n' +
-    'MEI/PJ: ' + d.pj;
-
-  okMsg.style.display = 'block';
-  form.querySelector('button[type="submit"]').textContent = 'Inscrição enviada ✓';
-  window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  if (gravou) {
+    form.classList.add('enviado');
+    okMsg.textContent = 'Inscrição recebida! Nossa equipe entra em contato em até 2 dias úteis para apresentar as condições e alinhar o seu território.';
+    okMsg.style.display = 'block';
+  } else {
+    okMsg.className = 'form-ok erro';
+    okMsg.textContent = 'Não conseguimos enviar agora. Confira sua conexão e tente de novo em alguns instantes.';
+    okMsg.style.display = 'block';
+    botao.disabled = false;
+    botao.textContent = 'Quero ser consultor MayaApp';
+  }
 });
 </script>
 </body>
