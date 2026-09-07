@@ -544,7 +544,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         </div>
         <button class="btn btn-gold" type="submit">Quero ser parceiro MayaApp</button>
         <p class="form-legal">Ao enviar, você concorda em ser contatado pela equipe da MayaApp (ETER.IA Tecnologia) por WhatsApp ou e-mail sobre o Programa de Parceiros.</p>
-        <p class="form-ok" id="form-ok" role="status">Inscrição enviada. Abrimos o WhatsApp para você confirmar o envio — se não abrir, chame a gente pelo link ao lado.</p>
+        <p class="form-ok" id="form-ok" role="status">Recebemos sua inscrição. Abrimos o WhatsApp para você confirmar — se não abrir, chame a gente pelo link ao lado.</p>
       </form>
     </div>
   </div>
@@ -560,33 +560,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <script>
 /* ====== CONFIGURAÇÃO — trocar antes de publicar ======================
    WHATSAPP : número que recebe os leads, formato 55 + DDD + número
-   ENDPOINT : (opcional) URL que recebe o POST do formulário
-              (Formspree, Google Apps Script, n8n, Make, API própria...)
-              Se ficar vazio, o lead é enviado como mensagem de WhatsApp.
+   PLANILHA : URL do Web App do Google Apps Script (termina em /exec).
+              Ver parceiros/SETUP-PLANILHA.md para gerar em 5 minutos.
+              Se ficar vazio, o lead vai só pelo WhatsApp.
    ==================================================================== */
-const WHATSAPP = "5511900000000";
-const ENDPOINT = "";
+const WHATSAPP = "5511900000000";   // <-- trocar pelo número real
+const PLANILHA = "";                 // <-- colar a URL .../exec do Apps Script
 
 const form = document.getElementById('lead-form');
 const okMsg = document.getElementById('form-ok');
 document.getElementById('wa-link').href =
   'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Olá! Quero saber mais sobre o Programa de Parceiros MayaApp.');
 
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!form.reportValidity()) return;
   const d = Object.fromEntries(new FormData(form).entries());
 
-  if (ENDPOINT) {
+  // 1) grava na planilha (fire-and-forget: sem preflight, sem CORS)
+  if (PLANILHA) {
     try {
-      await fetch(ENDPOINT, {
+      fetch(PLANILHA, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...d, origem: 'landing-parceiros' })
+        mode: 'no-cors',
+        body: JSON.stringify({ ...d, origem: 'landing-parceiros', data: new Date().toISOString() })
       });
-    } catch (err) { /* segue para o WhatsApp mesmo se o envio falhar */ }
+    } catch (err) { /* a planilha é o registro; o WhatsApp abaixo é a garantia */ }
   }
 
+  // 2) abre o WhatsApp com o lead já escrito
   const msg =
     'Quero ser parceiro MayaApp\n' +
     'Nome: ' + d.nome + '\n' +
@@ -598,6 +600,7 @@ form.addEventListener('submit', async (e) => {
     'MEI/PJ: ' + d.pj;
 
   okMsg.style.display = 'block';
+  form.querySelector('button[type="submit"]').textContent = 'Inscrição enviada ✓';
   window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
 });
 </script>
