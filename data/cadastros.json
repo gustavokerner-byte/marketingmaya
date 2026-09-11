@@ -1,55 +1,55 @@
 {
   "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
   "_corte_semanal": "domingo a sabado",
-  "_atualizado_em": "2026-08-31",
+  "_atualizado_em": "2026-09-11",
   "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
-  "_nota_fechamento": "FECHAMENTO DO MES - corte 31/08/2026. Semana 35 (23-29/08) fechada e movida para 'semanas'. Sem semana parcial: 30-31/08 iniciam a semana 36 e entram apenas no acumulado (632); ainda nao formam semana fechada. Downloads NAO atualizado nesta rodada (sem prints das lojas). Atualizado somente 'cadastros' (ativacoes/promotoras mantidos na versao atual enviada pelo gestor).",
+  "_nota_fechamento": "PARCIAL semana 37 - corte 10/09/2026. Fechada tambem a semana 36 (30/08-05/09, print dom-sab). Atualizados: acumulado (10/09), mes (setembro parcial), mes_anterior (agosto fechado), semanas (+semana 36) e semana_parcial (semana 37). Downloads NAO atualizados (opcao do gestor). ativacoes/promotoras em arquivos proprios.",
   "semana_referencia": {
-    "inicio": "2026-08-23",
-    "fim": "2026-08-29",
-    "parcial": false
+    "inicio": "2026-09-06",
+    "fim": "2026-09-10",
+    "parcial": true
   },
   "acumulado": {
-    "_periodo": "2026-02-01 a 2026-08-31",
-    "cadastros": 632,
-    "primeiro_uso": 439,
+    "_periodo": "2026-02-01 a 2026-09-10",
+    "cadastros": 659,
+    "primeiro_uso": 461,
     "assinantes": 0,
-    "ativos_mes": 90,
+    "ativos_mes": 45,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2628,
-    "produtos_sucesso": 2616,
-    "produtos_salvos": 1490,
-    "imagens_geradas": 28505,
-    "imagens_sucesso": 23322,
-    "imagens_salvas": 9247,
-    "heavy_users": 105,
-    "heavy_users_pct": 26,
+    "produtos_cadastrados": 2767,
+    "produtos_sucesso": 2755,
+    "produtos_salvos": 1554,
+    "imagens_geradas": 30062,
+    "imagens_sucesso": 24579,
+    "imagens_salvas": 9595,
+    "heavy_users": 113,
+    "heavy_users_pct": 27,
     "frequencia": [
       {
         "faixa": "1-5 cadastros",
-        "usuarios": 295
+        "usuarios": 309
       },
       {
         "faixa": "6-10 cadastros",
-        "usuarios": 40
+        "usuarios": 43
       },
       {
         "faixa": "11-15 cadastros",
-        "usuarios": 19
+        "usuarios": 23
       },
       {
         "faixa": "16+ cadastros",
-        "usuarios": 46
+        "usuarios": 47
       }
     ],
     "top_clientes": [
       {
         "nome": "Fouzi Mimiuni",
-        "cadastros": 96,
-        "imagens": 781,
+        "cadastros": 103,
+        "imagens": 844,
         "erros": 0,
-        "sucesso_pct": 90.4
+        "sucesso_pct": 91.0
       },
       {
         "nome": "Stark Multi",
@@ -59,16 +59,34 @@
         "sucesso_pct": 93.1
       },
       {
-        "nome": "Ielma Carla Nogueira Carla",
-        "cadastros": 73,
-        "imagens": 507,
-        "erros": 18,
-        "sucesso_pct": 74.1
+        "nome": "Solange Severo",
+        "cadastros": 74,
+        "imagens": 675,
+        "erros": 0,
+        "sucesso_pct": 100.0
       }
     ],
-    "_obs_base": "Base ao corte 31/08 reflete varredura de ~17 cadastros de teste/duplicados removidos na semana 35 (confirmado pelo time). Print acumulado: novos cadastros 632 = usuarios cadastrados 632 -> cobre 100% da base. 632 >= 580 da rodada anterior."
+    "_obs_base": "Print acumulado (corte 10/09): novos cadastros 659 = usuarios cadastrados 659 -> cobre 100% da base. 659 >= 632 da rodada anterior (31/08). Encadeamento fino: 632 (31/08) + 28 novos de setembro = 660 vs 659 no print (e primeiro uso 439+23=462 vs 461); diferenca de 1 compativel com varredura residual de teste/duplicado. Autovalidacao do print (novos=total) prevalece."
   },
   "mes": {
+    "_periodo": "2026-09-01 a 2026-09-10",
+    "label": "Setembro 2026 (parcial ate 10/09)",
+    "fechado": false,
+    "cadastros": 28,
+    "primeiro_uso": 23,
+    "assinantes": 0,
+    "ativos_mes": 45,
+    "produtos_cadastrados": 140,
+    "produtos_sucesso": 140,
+    "produtos_salvos": 65,
+    "imagens_geradas": 1570,
+    "imagens_sucesso": 1266,
+    "imagens_salvas": 354,
+    "heavy_users": 7,
+    "heavy_users_pct": 16,
+    "_nota": "Setembro parcial (01-10/09, 10 dias). Base chega a 659 em 10/09. Fecha quando vier o print do mes cheio."
+  },
+  "mes_anterior": {
     "_periodo": "2026-08-01 a 2026-08-31",
     "label": "Agosto 2026 (fechado)",
     "fechado": true,
@@ -84,25 +102,8 @@
     "imagens_salvas": 1044,
     "heavy_users": 13,
     "heavy_users_pct": 14,
-    "_nota": "Agosto fechado (01-31/08). Encadeia: julho fim 427 + 205 novos = 632 (base acumulada em 31/08)."
-  },
-  "mes_anterior": {
-    "_periodo": "2026-07-01 a 2026-07-31",
-    "label": "Julho 2026 (fechado)",
-    "cadastros": 49,
-    "primeiro_uso": 28,
-    "assinantes": 0,
-    "ativos_mes": 51,
-    "base_cadastrada_fim": 427,
-    "produtos_cadastrados": 221,
-    "produtos_sucesso": 221,
-    "produtos_salvos": 134,
-    "imagens_geradas": 2519,
-    "imagens_sucesso": 1998,
-    "imagens_salvas": 914,
-    "heavy_users": 14,
-    "heavy_users_pct": 27,
-    "_nota": "Comparativo do fechamento de agosto = julho fechado (mesmo corte de fim de mes)."
+    "_nota": "Agosto fechado (01-31/08). Comparativo do parcial de setembro = agosto fechado. Encadeia: julho fim 427 + 205 novos = 632.",
+    "base_cadastrada_fim": 632
   },
   "julho_fechado": {
     "_periodo": "2026-07-01 a 2026-07-31",
@@ -236,7 +237,41 @@
       "heavy_users_pct": 17,
       "_acao": "Inclui a acao presencial de 24/08 (~118 cadastros).",
       "_base": "Varredura confirmada pelo time: ~17 cadastros de teste/duplicados removidos na semana 35. 478 (fim sem.34) + 128 novos - 17 = 589."
+    },
+    {
+      "inicio": "2026-08-30",
+      "fim": "2026-09-05",
+      "cadastros": 63,
+      "primeiro_uso": 42,
+      "ativos_mes": 35,
+      "base_cadastrada_fim": 651,
+      "produtos_cadastrados": 139,
+      "produtos_sucesso": 139,
+      "produtos_salvos": 76,
+      "imagens_geradas": 1581,
+      "imagens_sucesso": 1257,
+      "imagens_salvas": 392,
+      "heavy_users": 7,
+      "heavy_users_pct": 12,
+      "_nota": "Semana 36 fechada (dom 30/08 a sab 05/09). Encadeia: 589 (fim sem.35) + 63 = 652 vs 651 no print (-1 varredura residual de teste/duplicado). Absorve spillover de registros da acao de 24/08."
     }
   ],
-  "semana_parcial": null
+  "semana_parcial": {
+    "inicio": "2026-09-06",
+    "fim": "2026-09-10",
+    "parcial": true,
+    "cadastros": 8,
+    "primeiro_uso": 5,
+    "ativos_mes": 45,
+    "base_cadastrada_fim": 659,
+    "produtos_cadastrados": 60,
+    "produtos_sucesso": 60,
+    "produtos_salvos": 16,
+    "imagens_geradas": 699,
+    "imagens_sucesso": 549,
+    "imagens_salvas": 90,
+    "heavy_users": 4,
+    "heavy_users_pct": 25,
+    "_nota": "Semana 37 parcial (dom 06 a qui 10/09). Semana 36 (30/08-05/09) fechada em 'semanas'; base encadeia 651 (05/09) -> 659 (10/09)."
+  }
 }

@@ -298,15 +298,18 @@
       kpi("Usuários ativos no mês", num(sem.ativos_mes), false, "acumulado do mês");
 
     var mes = cad.mes || {}, mant = cad.mes_anterior || {};
+    // Mês parcial (fechado:false) não é comparável a um mês cheio -> sem badge de variação
+    var mesParc = mes.fechado === false;
+    var md = function (a, b) { return mesParc ? false : delta(a, b); };
     var mesKpis =
-      kpi("Cadastros no mês", num(mes.cadastros), delta(mes.cadastros, mant.cadastros),
+      kpi("Cadastros no mês", num(mes.cadastros), md(mes.cadastros, mant.cadastros),
         esc(mant.label || "mês anterior") + ": " + num(mant.cadastros)) +
-      kpi("1º uso no mês", num(mes.primeiro_uso), delta(mes.primeiro_uso, mant.primeiro_uso),
+      kpi("1º uso no mês", num(mes.primeiro_uso), md(mes.primeiro_uso, mant.primeiro_uso),
         esc(mant.label || "mês anterior") + ": " + num(mant.primeiro_uso)) +
       kpi("Produtos no mês", num(mes.produtos_cadastrados),
-        delta(mes.produtos_cadastrados, mant.produtos_cadastrados),
+        md(mes.produtos_cadastrados, mant.produtos_cadastrados),
         esc(mant.label || "mês anterior") + ": " + num(mant.produtos_cadastrados)) +
-      kpi("Imagens no mês", num(mes.imagens_geradas), delta(mes.imagens_geradas, mant.imagens_geradas),
+      kpi("Imagens no mês", num(mes.imagens_geradas), md(mes.imagens_geradas, mant.imagens_geradas),
         esc(mant.label || "mês anterior") + ": " + num(mant.imagens_geradas));
 
     mount("mx-resumo", '' +
@@ -582,7 +585,9 @@
       '</div>';
 
     // 4) colunas por semana
-    var serie = av.serie_semanal_abordagens || [];
+    var serie = (av.serie_semanal_abordagens || []).filter(function (d, i, arr) {
+      return i === 0 || d[0] !== arr[i - 1][0]; // remove barras de semana duplicadas (mesma data)
+    });
     var maxSerie = Math.max.apply(null, serie.map(function (d) { return d[1]; }).concat([1]));
     var cols = serie.map(function (d, i) {
       var hot = i === serie.length - 1;
@@ -640,7 +645,8 @@
     var perfilBlock = '<div class="pr-tworow">' +
       '<div class="card pr-mini"><div class="mh">Segmento da loja</div><div class="ms">acumulado</div>' + mrows(av.segmento_acumulado, SEG_LBL, true) +
         (segSemana ? '<div class="ms" style="margin-top:10px">Semana ' + esc(rec.semana) + ': ' + esc(segSemana) + '</div>' : "") + '</div>' +
-      '<div class="card pr-mini"><div class="mh">Sinais da semana</div><div class="ms">o que as promotoras registraram</div>' + mrows(sin, SINAIS_LBL, false) +
+      '<div class="card pr-mini"><div class="mh">Sinais da semana</div><div class="ms">o que as promotoras registraram</div>' +
+        (mrows(sin, SINAIS_LBL, false) || (sin.nota ? '<p class="ms" style="line-height:1.55;margin-top:2px">' + esc(sin.nota) + '</p>' : '<div class="ms">—</div>')) +
         ((sin.andar || corredores) ? '<div class="ms" style="margin-top:10px">' + (sin.andar ? 'Abordagens no <b>' + esc(sin.andar) + '</b>' : "") + (corredores ? '; corredores ' + esc(corredores) + ' os mais cobertos' : "") + '.</div>' : "") + '</div>' +
       '</div>';
 

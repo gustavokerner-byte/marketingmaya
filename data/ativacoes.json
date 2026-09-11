@@ -1,22 +1,22 @@
 {
-  "_gerado_em": "2026-08-31T00:00:00-03:00",
+  "_gerado_em": "2026-09-11T00:00:00-03:00",
   "_nota_roleta": "Frente 'Evento Roleta' = ação presencial no CDC (24/08), consolidando os 2 QR do leitor scanned.page (Banner de chão 80 + Flyers_roleta 39 = 119 leituras). Sem quebra semanal no export; atribuída à semana 35 (23-29/08, parcial). Leituras tratadas como scans (sem dedup de únicos).",
   "_fonte": "Exports de QR Code (data/qr/) + historico ativacoes.json",
   "_corte_semanal": "domingo a sabado (alinhado ao BI da CWS)",
   "_nota": "Frente 'Flyers' consolida Adesivo (original) + Bras + CDC (CDC novo nesta rodada) como uma unica frente, por decisao do gestor. Pilastra e Praca vem do export. Banner Sao Caetano sem scans desde 24/07. SEMANA 34 (16-22/08): 17 scans / 6 unicos, concentrados em 22/08 e com recorrencia alta (Flyers 14 scans / 3 unicos) - provaveis scans de teste/demonstracao dos QR de Bras e CDC no dia 22. Uniques acumulados aproximados: dedup cross-QR nao e possivel com export parcial do Adesivo. top_cidades e fora_da_capital_pct referem-se ate a rodada anterior.",
   "semana_referencia": {
-    "inicio": "2026-08-23",
-    "fim": "2026-08-29",
-    "parcial": false
+    "inicio": "2026-09-06",
+    "fim": "2026-09-12",
+    "parcial": true
   },
   "totais": {
-    "scans_total": 274,
-    "unicos_total": 240,
-    "scans_semana": 124,
-    "unicos_semana": 124,
-    "scans_semana_anterior": 17,
-    "unicos_semana_anterior": 6,
-    "recorrencia": 1.14
+    "scans_total": 310,
+    "unicos_total": 262,
+    "scans_semana": 4,
+    "unicos_semana": 4,
+    "scans_semana_anterior": 32,
+    "unicos_semana_anterior": 18,
+    "recorrencia": 1.18
   },
   "frentes": [
     {
@@ -25,13 +25,13 @@
       "tipo": "Flyer",
       "local": "Distribuicao em campo",
       "instalacao": "2026-06-02",
-      "scans_total": 79,
-      "unicos_total": 55,
+      "scans_total": 89,
+      "unicos_total": 58,
       "scans_semana": 0,
-      "scans_semana_anterior": 14,
+      "scans_semana_anterior": 10,
       "recorrencia": 1.44,
       "primeiro_scan": "2026-06-02",
-      "ultimo_scan": "2026-08-22"
+      "ultimo_scan": "2026-09-05"
     },
     {
       "label": "Pilastra Boulevard",
@@ -39,27 +39,27 @@
       "tipo": "Pilastra",
       "local": "Boulevard CDC",
       "instalacao": "2026-06-18",
-      "scans_total": 61,
-      "unicos_total": 51,
-      "scans_semana": 0,
-      "scans_semana_anterior": 0,
+      "scans_total": 74,
+      "unicos_total": 57,
+      "scans_semana": 1,
+      "scans_semana_anterior": 12,
       "recorrencia": 1.2,
       "primeiro_scan": "2026-06-18",
-      "ultimo_scan": "2026-08-12"
+      "ultimo_scan": "2026-09-10"
     },
     {
       "label": "Banner Sao Caetano",
-      "qr": "Entrada Sao Caetano",
+      "qr": "Entrada Sao Caetano + Outdoor_saocaetano",
       "tipo": "Banner",
-      "local": "Entrada Sao Caetano",
+      "local": "Sao Caetano (Entrada + Outdoor, mesma regiao, 2 QRs)",
       "instalacao": "2026-06-18",
-      "scans_total": 9,
-      "unicos_total": 9,
-      "scans_semana": 4,
-      "scans_semana_anterior": 0,
+      "scans_total": 13,
+      "unicos_total": 13,
+      "scans_semana": 1,
+      "scans_semana_anterior": 3,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-06-18",
-      "ultimo_scan": "2026-08-27"
+      "ultimo_scan": "2026-09-09"
     },
     {
       "label": "Praca de Alimentacao",
@@ -67,13 +67,13 @@
       "tipo": "Banner",
       "local": "Praca de Alimentacao",
       "instalacao": "2026-08-03",
-      "scans_total": 6,
-      "unicos_total": 6,
-      "scans_semana": 1,
-      "scans_semana_anterior": 3,
+      "scans_total": 8,
+      "unicos_total": 8,
+      "scans_semana": 2,
+      "scans_semana_anterior": 0,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-08-03",
-      "ultimo_scan": "2026-08-28"
+      "ultimo_scan": "2026-09-10"
     },
     {
       "label": "Evento Roleta",
@@ -81,13 +81,13 @@
       "tipo": "Evento",
       "local": "Ação presencial no CDC (roleta)",
       "instalacao": "2026-08-08",
-      "scans_total": 119,
-      "unicos_total": 119,
-      "scans_semana": 119,
-      "scans_semana_anterior": 0,
+      "scans_total": 126,
+      "unicos_total": 126,
+      "scans_semana": 0,
+      "scans_semana_anterior": 7,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-08-08",
-      "ultimo_scan": "2026-08-25"
+      "ultimo_scan": "2026-09-01"
     }
   ],
   "semanas": [
@@ -248,6 +248,33 @@
         "Praca de Alimentacao": 1,
         "Evento Roleta": 119
       }
+    },
+    {
+      "inicio": "2026-08-30",
+      "fim": "2026-09-05",
+      "parcial": false,
+      "scans": 32,
+      "por_frente": {
+        "Flyers": 10,
+        "Pilastra Boulevard": 12,
+        "Banner Sao Caetano": 3,
+        "Praca de Alimentacao": 0,
+        "Evento Roleta": 7
+      }
+    },
+    {
+      "inicio": "2026-09-06",
+      "fim": "2026-09-12",
+      "parcial": true,
+      "scans": 4,
+      "por_frente": {
+        "Flyers": 0,
+        "Pilastra Boulevard": 1,
+        "Banner Sao Caetano": 1,
+        "Praca de Alimentacao": 2,
+        "Evento Roleta": 0
+      },
+      "_nota": "Parcial ate quinta 10/09."
     }
   ],
   "sistema_operacional": {
@@ -298,5 +325,5 @@
     }
   ],
   "fora_da_capital_pct": 51.9,
-  "_nota_fechamento": "Fechamento do mes (corte 31/08). Semana 35 (23-29/08) FECHADA. Novos scans incorporados dos exports de QR: Banner Sao Caetano voltou (4 scans em 27/08, estava sem scan desde 24/07) e Praca +1 (28/08). Scans de 02-03/09 (Banner) e o novo QR 'Outdoor_saocaetano' (02/09) sao de setembro (semana 36) e ficam de fora deste corte."
+  "_nota_fechamento": "PARCIAL semana 37 (corte 10/09). Semana 36 (30/08-05/09) FECHADA a partir do export datado dos QR: 32 scans / 18 unicos. Semana 37 parcial (06-10/09): 4 scans / 4 unicos. Mapeamento: Outdoor_saocaetano consolidado em 'Banner Sao Caetano' (mesma regiao, 2 QRs); 'Banner de chao - Ativacoes' consolidado em 'Evento Roleta'. Divergencia com a tabela por campanha 'ate dia 10' (total 32): a tabela refletia recorte/filtro diferente por campanha; a fonte canonica e o export datado (semana 36 = 32; semana 37 = 4). Downloads/OS/top_cidades nao recalculados nesta rodada."
 }

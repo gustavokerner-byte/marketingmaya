@@ -2,56 +2,56 @@
   "descricao": "Frente Promotoras (ativacao presencial + reativacao heavy users). Alimenta a aba 'Promotoras' do dashboard de gestao (dados-usuarios). Atualizado na rodada semanal a partir dos 2 formularios: Tracking de Ativacao CDC Bras + Questionario Heavy Users.",
   "versao": 1,
   "fonte": "Google Forms - Tracking de Ativacao MayaApp CDC Bras; Questionario de Campo Heavy Users MayaApp CDC",
-  "data_corte": "2026-08-31",
+  "data_corte": "2026-09-11",
   "recorte_semana": {
-    "semana": 35,
-    "periodo": "2026-08-23 a 2026-08-29",
+    "semana": 37,
+    "periodo": "2026-09-06 a 2026-09-12",
     "dias_de_campo": [
       {
-        "data": "— a confirmar",
-        "dia": "— a confirmar",
-        "promotoras": 1
+        "data": "2026-09-07",
+        "dia": "segunda",
+        "promotoras": "— a confirmar"
       }
     ],
-    "promotora_dias": 1,
-    "nota": "Gestor informou 1 promotora, 1 dia de campo na semana 35 (dia especifico A CONFIRMAR). Lote de 3 formularios preenchido em 03/09 refere-se ao campo da semana 35. Recorte pelos dias de campo, nao pelo timestamp."
+    "promotora_dias": "— a confirmar",
+    "nota": "Parcial da semana 37: campo em 07/09 (segunda) -> 7 abordagens. O lote de 03/09 (3 abordagens) pertence a semana 36 e entra so na serie semanal. Nº de promotoras por dia a confirmar com o gestor."
   },
   "ativacao": {
     "acumulado": {
-      "periodo": "2026-02-27 a 2026-08-31",
-      "abordagens": 430,
+      "periodo": "2026-02-27 a 2026-09-11",
+      "abordagens": 437,
       "instalou_na_hora": 174,
-      "interesse_posterior": 159,
+      "interesse_posterior": 166,
       "sem_interesse": 96,
       "instalou_e_desinstalou": 1,
       "receptividade_media": 4.0,
       "receptividade_dist": {
-        "5": 194,
-        "4": 93,
+        "5": 198,
+        "4": 96,
         "3": 93,
         "2": 33,
         "1": 17
       },
       "pct_instalacao_imediata": 40,
-      "pct_interesse": 37,
+      "pct_interesse": 38,
       "pct_sem_interesse": 22
     },
     "semana": {
-      "abordagens": 3,
-      "instalou_na_hora": 3,
-      "interesse_posterior": 0,
+      "abordagens": 7,
+      "instalou_na_hora": 0,
+      "interesse_posterior": 7,
       "sem_interesse": 0,
       "instalou_e_desinstalou": 0,
-      "receptividade_media": 5.0,
+      "receptividade_media": 4.6,
       "receptividade_dist": {
-        "5": 3,
-        "4": 0,
+        "5": 4,
+        "4": 3,
         "3": 0,
         "2": 0,
         "1": 0
       },
-      "pct_instalacao_imediata": 100,
-      "pct_interesse": 0,
+      "pct_instalacao_imediata": 0,
+      "pct_interesse": 100,
       "pct_sem_interesse": 0
     },
     "serie_semanal_abordagens": [
@@ -166,60 +166,74 @@
       [
         "2026-08-30",
         3
+      ],
+      [
+        "2026-08-30",
+        3
+      ],
+      [
+        "2026-09-06",
+        7
       ]
     ],
-    "serie_semanal_nota": "Barras por semana dom-sab. Convencao do arquivo: rotulo = domingo da semana em que o lote foi REGISTRADO (preenchido). A barra 2026-08-30 (3 abordagens) refere-se ao campo da semana 35, formularios preenchidos em 03/09. DIVERGENCIA: a ROTINA_PROMOTORAS manda rotular pela semana de CAMPO; o arquivo historico rotula pela semana de preenchimento (ex.: batch semana 34 ficou em 2026-08-23). Mantido o padrao historico; reconciliar com o gestor.",
+    "serie_semanal_nota": "Barras por semana dom-sab (rotulo = domingo). Ultimas: 2026-08-30 = lote de 03/09 (semana 36, 3 abordagens); 2026-09-06 = campo de 07/09 (semana 37, 7 abordagens). Pico de 01/03 = semana de lancamento.",
     "perfil_acumulado": {
-      "tradicional": 301,
+      "tradicional": 303,
       "hibrido": 75,
-      "transicao": 39,
-      "focado_digital": 7
+      "transicao": 41,
+      "focado_digital": 10
     },
     "perfil_semana": {
-      "focado_digital": 2,
-      "tradicional": 1
+      "focado_digital": 3,
+      "transicao": 2,
+      "tradicional": 2
     },
     "segmento_acumulado": {
-      "moda_feminina": 217,
-      "moda_masculina": 119,
+      "moda_feminina": 222,
+      "moda_masculina": 120,
       "moda_infantil": 36,
       "unissex_outros": 58,
       "acessorios": 12,
       "moda_praia": 7,
-      "outros": 26
+      "outros": 27
     },
     "segmento_semana": {
-      "moda_feminina": 2,
-      "moda_masculina": 1
+      "moda_feminina": 5,
+      "moda_masculina": 1,
+      "outros": 1
     },
     "sinais_semana": {
-      "instalou_na_hora": 3,
-      "ajuda_primeira_publicacao": 2,
-      "compartilhou_indicou": 1,
-      "andar": "todas no terreo",
-      "corredores_top": [
-        "21",
-        "26",
-        "28"
-      ]
+      "nota": "Semana 37 (07/09): 7 abordagens, todas 'demonstrou interesse' (0 instalacao na hora). Receptividade alta (media 4,6), mas conversao imediata caiu para 0% - reportado sem atenuacao."
     },
     "comentarios_semana": [
       {
-        "texto": "Fez o download no momento da abordagem, ajudamos a fazer sua primeira publicacao e compartilhou o link para o marido baixar tambem.",
+        "texto": "Perguntou se o app faz videos; expliquei que ainda nao, mas estara disponivel em breve. Fez varias perguntas.",
         "segmento": "Moda Feminina",
-        "status": "instalou",
+        "status": "interesse",
+        "receptividade": 4
+      },
+      {
+        "texto": "Baixou o app mas nao efetuou o login no momento porque chegou cliente. Muito simpatica; tambem perguntou sobre videos.",
+        "segmento": "Moda Feminina",
+        "status": "interesse",
         "receptividade": 5
       },
       {
-        "texto": "Muito receptivo, baixou o app e comecou o cadastro, mas nao terminou no momento pois chegou cliente.",
+        "texto": "Pediu para passar em outro momento porque a dona da loja nao estava.",
+        "segmento": "Moda Feminina",
+        "status": "interesse",
+        "receptividade": 5
+      },
+      {
+        "texto": "Um pouco resistente ('nao saberia mexer'); mostrei catalogos que fiz no meu app e ele pediu para voltar outro dia para explicar.",
         "segmento": "Moda Masculina",
-        "status": "instalou",
-        "receptividade": 5
+        "status": "interesse",
+        "receptividade": 4
       },
       {
-        "texto": "Ja tinha o app baixado; ajudamos a fazer a 1a publicacao (a primeira impressao nao tinha sido boa). Adorou - principalmente acrescentar fundo, cenarios e corpos de diversas etnias e tamanhos.",
+        "texto": "Interessada, mas chegou cliente; voltei depois de 1h e a funcionaria tinha ido almocar.",
         "segmento": "Moda Feminina",
-        "status": "instalou",
+        "status": "interesse",
         "receptividade": 5
       }
     ]
@@ -239,7 +253,7 @@
     },
     "semana": {
       "entrevistados": 0,
-      "detalhe": "Sem novo lote de Heavy Users na semana 35."
+      "detalhe": "Sem novas entrevistas de Heavy Users nesta janela (ultima resposta em 24/08). Reativacao acumulada inalterada."
     },
     "por_que_pararam": {
       "falta_de_tempo": 6,
@@ -304,5 +318,5 @@
       "exemplos": "ex.: tenis; pedir por microfone; escolher cores sem tirar foto a foto"
     }
   ],
-  "metodo": "Ativacao: recorte da semana = lote de formularios preenchidos apos o campo, atribuido a semana de campo informada pelo gestor (nao pelo timestamp). Reativacao: questionario continuo; a coluna 'semana' reflete o lote da semana. Percentuais inteiros. Dado ausente vira '-' na tela, nunca zero."
+  "metodo": "Ativacao: recorte da semana = lote de formularios preenchidos apos o campo, atribuido a semana de campo informada pelo gestor (nao pelo timestamp). Reativacao: questionario continuo; a coluna 'semana' reflete o lote da semana. Percentuais inteiros. Dado ausente vira '-' na tela, nunca zero. | Parcial semana 37: recorte pelos dias de campo informados pelo gestor (03/09 -> sem.36; 07/09 -> sem.37), nao pelo timestamp."
 }
