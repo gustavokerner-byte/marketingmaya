@@ -261,13 +261,14 @@
   function renderResumo(cad, ati, ig) {
     var ac = cad.acumulado || {};
     var sems = cad.semanas || [];
-    var parc = cad.semana_parcial;                 // semana em curso (corte dom-qui)
+    var parc = cad.semana_parcial;                 // semana em curso (parcial)
     var isParc = !!parc;
+    var cmd = parc && parc.comparativo_mesmos_dias; // mesmos dias da semana anterior (apples-to-apples)
     var sem = parc || sems.slice(-1)[0] || {};
-    var ant = isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {});
-    // Parcial (dom-qui) nao e comparavel a semana cheia (dom-sab) -> sem badge de variacao
-    var sd = function (a, b) { return isParc ? false : delta(a, b); };
-    var antTxt = isParc ? "última fechada: " : "semana anterior: ";
+    var ant = cmd || (isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {}));
+    // Parcial sem base do mesmo corte -> sem badge; com comparativo de mesmos dias -> mostra a variacao
+    var sd = function (a, b) { return (isParc && !cmd) ? false : delta(a, b); };
+    var antTxt = cmd ? "mesmos dias sem. anterior: " : (isParc ? "última fechada: " : "semana anterior: ");
     var tAti = ati.totais || {};
     var ref = cad.semana_referencia || {};
 
@@ -297,20 +298,23 @@
         antTxt + num(ant.imagens_geradas)) +
       kpi("Usuários ativos no mês", num(sem.ativos_mes), false, "acumulado do mês");
 
-    var mes = cad.mes || {}, mant = cad.mes_anterior || {};
-    // Mês parcial (fechado:false) não é comparável a um mês cheio -> sem badge de variação
+    var mes = cad.mes || {};
     var mesParc = mes.fechado === false;
-    var md = function (a, b) { return mesParc ? false : delta(a, b); };
+    // Mês parcial: compara com o mês anterior no MESMO corte de dias (mmc); sem mmc, oculta o badge.
+    var mmc = mesParc && cad.mes_anterior_mesmo_corte;
+    var mant = mmc || cad.mes_anterior || {};
+    var md = function (a, b) { return (mesParc && !mmc) ? false : delta(a, b); };
+    var mantLbl = mmc ? "mês ant. (mesmo corte)" : (mant.label || "mês anterior");
     var mesKpis =
       kpi("Cadastros no mês", num(mes.cadastros), md(mes.cadastros, mant.cadastros),
-        esc(mant.label || "mês anterior") + ": " + num(mant.cadastros)) +
+        esc(mantLbl) + ": " + num(mant.cadastros)) +
       kpi("1º uso no mês", num(mes.primeiro_uso), md(mes.primeiro_uso, mant.primeiro_uso),
-        esc(mant.label || "mês anterior") + ": " + num(mant.primeiro_uso)) +
+        esc(mantLbl) + ": " + num(mant.primeiro_uso)) +
       kpi("Produtos no mês", num(mes.produtos_cadastrados),
         md(mes.produtos_cadastrados, mant.produtos_cadastrados),
-        esc(mant.label || "mês anterior") + ": " + num(mant.produtos_cadastrados)) +
+        esc(mantLbl) + ": " + num(mant.produtos_cadastrados)) +
       kpi("Imagens no mês", num(mes.imagens_geradas), md(mes.imagens_geradas, mant.imagens_geradas),
-        esc(mant.label || "mês anterior") + ": " + num(mant.imagens_geradas));
+        esc(mantLbl) + ": " + num(mant.imagens_geradas));
 
     mount("mx-resumo", '' +
       '<div class="mx-block"><div class="mx-block-head">' +
@@ -319,7 +323,7 @@
 
       '<div class="mx-block"><div class="mx-block-head">' +
         "<h3>Semana " + periodo(ref.inicio, ref.fim) + "</h3>" +
-        '<span class="mx-eyebrow">' + (isParc ? "parcial · dom–qui (corte " + dm(ref.fim) + ")" : "vs. semana anterior") + '</span>' +
+        '<span class="mx-eyebrow">' + (isParc ? ("parcial · corte " + dm(ref.fim) + (cmd ? " · vs. mesmos dias sem. ant." : "")) : "vs. semana anterior") + '</span>' +
       '</div><div class="mx-kpis">' + semanaKpis + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +
@@ -329,14 +333,20 @@
   }
 
   function renderCadastros(cad) {
-    var ac = cad.acumulado || {}, mes = cad.mes || {}, mant = cad.mes_anterior || {};
+    var ac = cad.acumulado || {}, mes = cad.mes || {};
     var sems = cad.semanas || [];
     var parc = cad.semana_parcial, isParc = !!parc;
     var ref = cad.semana_referencia || {};
+    var cmd = parc && parc.comparativo_mesmos_dias; // mesmos dias da semana anterior
     var sem = parc || sems.slice(-1)[0] || {};
-    var ant = isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {});
-    var sd = function (a, b) { return isParc ? false : delta(a, b); };
-    var semLbl = (isParc ? "parcial · " : "") + (isParc ? periodo(ref.inicio, ref.fim) : periodo(sem.inicio, sem.fim));
+    var ant = cmd || (isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {}));
+    var sd = function (a, b) { return (isParc && !cmd) ? false : delta(a, b); };
+    var semLbl = (isParc ? "parcial · " : "") + (isParc ? periodo(ref.inicio, ref.fim) : periodo(sem.inicio, sem.fim)) + (cmd ? " · vs. mesmos dias sem. ant." : "");
+    var mesParc = mes.fechado === false;
+    var mmc = mesParc && cad.mes_anterior_mesmo_corte;
+    var mant = mmc || cad.mes_anterior || {};
+    var md = function (a, b) { return (mesParc && !mmc) ? false : delta(a, b); };
+    var mantLbl = mmc ? "mês ant. (mesmo corte)" : (mant.label || "");
     var ativacao = ac.cadastros ? (ac.primeiro_uso / ac.cadastros) * 100 : null;
 
     var hero = heroCard("Cadastros acumulados", num(ac.cadastros), esc(ac._periodo || "")) +
@@ -349,12 +359,12 @@
     var grid =
       kpi("Cadastros na semana", num(sem.cadastros), sd(sem.cadastros, ant.cadastros),
         semLbl) +
-      kpi("Cadastros no mês", num(mes.cadastros), delta(mes.cadastros, mant.cadastros),
-        esc(mant.label || "") + ": " + num(mant.cadastros)) +
+      kpi("Cadastros no mês", num(mes.cadastros), md(mes.cadastros, mant.cadastros),
+        esc(mantLbl) + ": " + num(mant.cadastros)) +
       kpi("1º uso na semana", num(sem.primeiro_uso), sd(sem.primeiro_uso, ant.primeiro_uso),
         semLbl) +
-      kpi("1º uso no mês", num(mes.primeiro_uso), delta(mes.primeiro_uso, mant.primeiro_uso),
-        esc(mant.label || "") + ": " + num(mant.primeiro_uso));
+      kpi("1º uso no mês", num(mes.primeiro_uso), md(mes.primeiro_uso, mant.primeiro_uso),
+        esc(mantLbl) + ": " + num(mant.primeiro_uso));
 
     var cats = sems.map(function (s) { return dm(s.inicio); });
     var chartCad = sems.length >= 2
@@ -420,7 +430,7 @@
   function renderAtivacoes(ati) {
     var t = ati.totais || {}, frentes = ati.frentes || [], sems = ati.semanas || [];
     var ref = ati.semana_referencia || {};
-    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f3)", "var(--mx-f4)", "var(--mx-f5)"];
+    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f3)", "var(--mx-f4)", "var(--mx-f5)", "var(--mx-f6)"];
 
     var hero = heroCard("Scans acumulados", num(t.scans_total), "todas as frentes") +
       heroCard("Visitantes únicos", num(t.unicos_total),
@@ -441,7 +451,7 @@
       return {
         label: lb,
         cor: cores[i % cores.length],
-        valores: sems.map(function (s) { return (s.por_frente || {})[lb] || 0; })
+        valores: sems.map(function (s) { return Number((s.por_frente || {})[lb]) || 0; }) // "— a confirmar" (string) -> 0
       };
     });
     var chart = stackedBars(

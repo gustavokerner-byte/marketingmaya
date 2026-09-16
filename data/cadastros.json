@@ -1,38 +1,38 @@
 {
   "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
   "_corte_semanal": "domingo a sabado",
-  "_atualizado_em": "2026-09-11",
+  "_atualizado_em": "2026-09-16",
   "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
-  "_nota_fechamento": "PARCIAL semana 37 - corte 10/09/2026. Fechada tambem a semana 36 (30/08-05/09, print dom-sab). Atualizados: acumulado (10/09), mes (setembro parcial), mes_anterior (agosto fechado), semanas (+semana 36) e semana_parcial (semana 37). Downloads NAO atualizados (opcao do gestor). ativacoes/promotoras em arquivos proprios.",
+  "_nota_fechamento": "PARCIAL semana 38 - corte 15/09/2026 (evento presencial no CDC em 15/09, QR 'Balcao - PDV'). Fechada tambem a semana 37 (06-12/09, print dom-sab: 14 novos). Atualizados: acumulado (15/09=777), mes (setembro parcial 01-15), mes_anterior_mesmo_corte (agosto 01-15=18), semanas (+semana 37 fechada) e semana_parcial (semana 38, 13-15/09=112). Downloads NAO atualizados (opcao do gestor). ativacoes/promotoras em arquivos proprios.",
   "semana_referencia": {
-    "inicio": "2026-09-06",
-    "fim": "2026-09-10",
+    "inicio": "2026-09-13",
+    "fim": "2026-09-15",
     "parcial": true
   },
   "acumulado": {
-    "_periodo": "2026-02-01 a 2026-09-10",
-    "cadastros": 659,
-    "primeiro_uso": 461,
+    "_periodo": "2026-02-01 a 2026-09-15",
+    "cadastros": 777,
+    "primeiro_uso": 477,
     "assinantes": 0,
-    "ativos_mes": 45,
+    "ativos_mes": 66,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2767,
-    "produtos_sucesso": 2755,
-    "produtos_salvos": 1554,
-    "imagens_geradas": 30062,
-    "imagens_sucesso": 24579,
-    "imagens_salvas": 9595,
-    "heavy_users": 113,
+    "produtos_cadastrados": 2873,
+    "produtos_sucesso": 2861,
+    "produtos_salvos": 1636,
+    "imagens_geradas": 31241,
+    "imagens_sucesso": 25533,
+    "imagens_salvas": 10145,
+    "heavy_users": 117,
     "heavy_users_pct": 27,
     "frequencia": [
       {
         "faixa": "1-5 cadastros",
-        "usuarios": 309
+        "usuarios": 320
       },
       {
         "faixa": "6-10 cadastros",
-        "usuarios": 43
+        "usuarios": 45
       },
       {
         "faixa": "11-15 cadastros",
@@ -40,7 +40,7 @@
       },
       {
         "faixa": "16+ cadastros",
-        "usuarios": 47
+        "usuarios": 49
       }
     ],
     "top_clientes": [
@@ -59,32 +59,32 @@
         "sucesso_pct": 93.1
       },
       {
-        "nome": "Solange Severo",
-        "cadastros": 74,
-        "imagens": 675,
-        "erros": 0,
+        "nome": "Adriana M De Barros",
+        "cadastros": 79,
+        "imagens": 729,
+        "erros": 2,
         "sucesso_pct": 100.0
       }
     ],
-    "_obs_base": "Print acumulado (corte 10/09): novos cadastros 659 = usuarios cadastrados 659 -> cobre 100% da base. 659 >= 632 da rodada anterior (31/08). Encadeamento fino: 632 (31/08) + 28 novos de setembro = 660 vs 659 no print (e primeiro uso 439+23=462 vs 461); diferenca de 1 compativel com varredura residual de teste/duplicado. Autovalidacao do print (novos=total) prevalece."
+    "_obs_base": "Print acumulado (corte 15/09): novos cadastros 777 = usuarios cadastrados 777 -> cobre 100% da base. 777 >= 659 da rodada anterior (10/09). Encadeamento semanal fechado: 651 (05/09) +14 (s37) = 665 (12/09) +112 (s38 parcial) = 777 (15/09). Encadeamento mensal: 632 (31/08) + 146 (setembro ate 15/09) = 778 vs 777 no print (-1, varredura residual de teste/duplicado). Autovalidacao do print (novos=total) prevalece."
   },
   "mes": {
-    "_periodo": "2026-09-01 a 2026-09-10",
-    "label": "Setembro 2026 (parcial ate 10/09)",
+    "_periodo": "2026-09-01 a 2026-09-15",
+    "label": "Setembro 2026 (parcial ate 15/09)",
     "fechado": false,
-    "cadastros": 28,
-    "primeiro_uso": 23,
+    "cadastros": 146,
+    "primeiro_uso": 39,
     "assinantes": 0,
-    "ativos_mes": 45,
-    "produtos_cadastrados": 140,
-    "produtos_sucesso": 140,
-    "produtos_salvos": 65,
-    "imagens_geradas": 1570,
-    "imagens_sucesso": 1266,
-    "imagens_salvas": 354,
-    "heavy_users": 7,
-    "heavy_users_pct": 16,
-    "_nota": "Setembro parcial (01-10/09, 10 dias). Base chega a 659 em 10/09. Fecha quando vier o print do mes cheio."
+    "ativos_mes": 66,
+    "produtos_cadastrados": 246,
+    "produtos_sucesso": 246,
+    "produtos_salvos": 147,
+    "imagens_geradas": 2749,
+    "imagens_sucesso": 2220,
+    "imagens_salvas": 904,
+    "heavy_users": 14,
+    "heavy_users_pct": 21,
+    "_nota": "Setembro parcial (01-15/09, 15 dias). Inclui o evento presencial no CDC em 15/09. Base chega a 777 em 15/09. Fecha quando vier o print do mes cheio."
   },
   "mes_anterior": {
     "_periodo": "2026-08-01 a 2026-08-31",
@@ -254,24 +254,74 @@
       "heavy_users": 7,
       "heavy_users_pct": 12,
       "_nota": "Semana 36 fechada (dom 30/08 a sab 05/09). Encadeia: 589 (fim sem.35) + 63 = 652 vs 651 no print (-1 varredura residual de teste/duplicado). Absorve spillover de registros da acao de 24/08."
+    },
+    {
+      "inicio": "2026-09-06",
+      "fim": "2026-09-12",
+      "cadastros": 14,
+      "primeiro_uso": 7,
+      "ativos_mes": 50,
+      "base_cadastrada_fim": 665,
+      "produtos_cadastrados": 93,
+      "produtos_sucesso": 93,
+      "produtos_salvos": 38,
+      "imagens_geradas": 1055,
+      "imagens_sucesso": 846,
+      "imagens_salvas": 242,
+      "heavy_users": 6,
+      "heavy_users_pct": 25,
+      "_nota": "Semana 37 fechada (dom 06 a sab 12/09). Encadeia: 651 (fim s36) + 14 = 665. A parcial anterior (06-10/09) marcava 8; a semana cheia fechou em 14."
     }
   ],
   "semana_parcial": {
-    "inicio": "2026-09-06",
-    "fim": "2026-09-10",
+    "inicio": "2026-09-13",
+    "fim": "2026-09-15",
     "parcial": true,
-    "cadastros": 8,
-    "primeiro_uso": 5,
-    "ativos_mes": 45,
-    "base_cadastrada_fim": 659,
-    "produtos_cadastrados": 60,
-    "produtos_sucesso": 60,
-    "produtos_salvos": 16,
-    "imagens_geradas": 699,
-    "imagens_sucesso": 549,
-    "imagens_salvas": 90,
+    "cadastros": 112,
+    "primeiro_uso": 14,
+    "ativos_mes": 66,
+    "base_cadastrada_fim": 777,
+    "produtos_cadastrados": 73,
+    "produtos_sucesso": 73,
+    "produtos_salvos": 60,
+    "imagens_geradas": 823,
+    "imagens_sucesso": 657,
+    "imagens_salvas": 398,
     "heavy_users": 4,
     "heavy_users_pct": 25,
-    "_nota": "Semana 37 parcial (dom 06 a qui 10/09). Semana 36 (30/08-05/09) fechada em 'semanas'; base encadeia 651 (05/09) -> 659 (10/09)."
+    "comparativo_mesmos_dias": {
+      "_periodo": "2026-09-06 a 2026-09-08",
+      "label": "Semana 37, mesmos dias (dom-ter)",
+      "cadastros": 3,
+      "primeiro_uso": 4,
+      "ativos_mes": 43,
+      "base_cadastrada_fim": 654,
+      "produtos_cadastrados": 38,
+      "produtos_salvos": 10,
+      "imagens_geradas": 454,
+      "imagens_salvas": 48,
+      "heavy_users": 3,
+      "heavy_users_pct": 30
+    },
+    "_nota": "Semana 38 parcial (dom 13 a ter 15/09), corte no dia do evento presencial no CDC (15/09). 112 novos cadastros na janela, praticamente todos do evento. Base 665 (12/09) -> 777 (15/09). Comparativo mesmos dias da semana 37 (06-08/09) = 3 novos -> +3633%. Numero real, sem atenuacao. QR do evento (Balcao-PDV) registrou 87 scans / 86 unicos em 15/09 (em ativacoes.json)."
+  },
+  "mes_anterior_mesmo_corte": {
+    "_periodo": "2026-08-01 a 2026-08-15",
+    "label": "Agosto 2026 (parcial ate 15/08, comparativo do mesmo corte)",
+    "fechado": false,
+    "cadastros": 18,
+    "primeiro_uso": 8,
+    "assinantes": 0,
+    "ativos_mes": 20,
+    "produtos_cadastrados": 99,
+    "produtos_sucesso": 99,
+    "produtos_salvos": 53,
+    "imagens_geradas": 1116,
+    "imagens_sucesso": 891,
+    "imagens_salvas": 364,
+    "heavy_users": 5,
+    "heavy_users_pct": 25,
+    "base_cadastrada_ate": 445,
+    "_nota": "Comparativo do parcial de setembro no MESMO corte (ate o dia 15). Variacao cadastros: 146 vs 18 = +711%; primeiro uso 39 vs 8 = +388%. Efeito do evento de 15/09, reportado sem atenuacao."
   }
 }
