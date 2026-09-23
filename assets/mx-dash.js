@@ -285,16 +285,15 @@
       heroCard("Assinantes", num(ac.assinantes), "receita acumulada R$ " + num(ac.receita_bruta || 0), true);
 
     var semanaKpis =
-      kpi("Novos cadastros", num(sem.cadastros), sd(sem.cadastros, ant.cadastros),
+      kpi("Novos cadastros", num(sem.cadastros), false,
         antTxt + num(ant.cadastros)) +
-      kpi("Usuários com 1º uso", num(sem.primeiro_uso), sd(sem.primeiro_uso, ant.primeiro_uso),
+      kpi("Usuários com 1º uso", num(sem.primeiro_uso), false,
         antTxt + num(ant.primeiro_uso)) +
-      kpi("Scans de QR Code", num(tAti.scans_semana), delta(tAti.scans_semana, tAti.scans_semana_anterior),
+      kpi("Scans de QR Code", num(tAti.scans_semana), false,
         "semana anterior: " + num(tAti.scans_semana_anterior)) +
-      kpi("Produtos cadastrados", num(sem.produtos_cadastrados),
-        sd(sem.produtos_cadastrados, ant.produtos_cadastrados),
+      kpi("Produtos cadastrados", num(sem.produtos_cadastrados), false,
         antTxt + num(ant.produtos_cadastrados)) +
-      kpi("Imagens geradas", num(sem.imagens_geradas), sd(sem.imagens_geradas, ant.imagens_geradas),
+      kpi("Imagens geradas", num(sem.imagens_geradas), false,
         antTxt + num(ant.imagens_geradas)) +
       kpi("Usuários ativos no mês", num(sem.ativos_mes), false, "acumulado do mês");
 
@@ -306,14 +305,13 @@
     var md = function (a, b) { return (mesParc && !mmc) ? false : delta(a, b); };
     var mantLbl = mmc ? "mês ant. (mesmo corte)" : (mant.label || "mês anterior");
     var mesKpis =
-      kpi("Cadastros no mês", num(mes.cadastros), md(mes.cadastros, mant.cadastros),
+      kpi("Cadastros no mês", num(mes.cadastros), false,
         esc(mantLbl) + ": " + num(mant.cadastros)) +
-      kpi("1º uso no mês", num(mes.primeiro_uso), md(mes.primeiro_uso, mant.primeiro_uso),
+      kpi("1º uso no mês", num(mes.primeiro_uso), false,
         esc(mantLbl) + ": " + num(mant.primeiro_uso)) +
-      kpi("Produtos no mês", num(mes.produtos_cadastrados),
-        md(mes.produtos_cadastrados, mant.produtos_cadastrados),
+      kpi("Produtos no mês", num(mes.produtos_cadastrados), false,
         esc(mantLbl) + ": " + num(mant.produtos_cadastrados)) +
-      kpi("Imagens no mês", num(mes.imagens_geradas), md(mes.imagens_geradas, mant.imagens_geradas),
+      kpi("Imagens no mês", num(mes.imagens_geradas), false,
         esc(mantLbl) + ": " + num(mant.imagens_geradas));
 
     mount("mx-resumo", '' +
@@ -357,27 +355,29 @@
         pct(ac.heavy_users_pct, 0) + " da base com 6+ produtos cadastrados", true);
 
     var grid =
-      kpi("Cadastros na semana", num(sem.cadastros), sd(sem.cadastros, ant.cadastros),
+      kpi("Cadastros na semana", num(sem.cadastros), false,
         semLbl) +
-      kpi("Cadastros no mês", num(mes.cadastros), md(mes.cadastros, mant.cadastros),
+      kpi("Cadastros no mês", num(mes.cadastros), false,
         esc(mantLbl) + ": " + num(mant.cadastros)) +
-      kpi("1º uso na semana", num(sem.primeiro_uso), sd(sem.primeiro_uso, ant.primeiro_uso),
+      kpi("1º uso na semana", num(sem.primeiro_uso), false,
         semLbl) +
-      kpi("1º uso no mês", num(mes.primeiro_uso), md(mes.primeiro_uso, mant.primeiro_uso),
+      kpi("1º uso no mês", num(mes.primeiro_uso), false,
         esc(mantLbl) + ": " + num(mant.primeiro_uso));
 
-    var cats = sems.map(function (s) { return dm(s.inicio); });
-    var chartCad = sems.length >= 2
+    // inclui a semana parcial em curso (evento 13-15/09) como último ponto das séries
+    var chartWeeks = cad.semana_parcial ? sems.concat([cad.semana_parcial]) : sems.slice();
+    var cats = chartWeeks.map(function (s) { return dm(s.inicio); });
+    var chartCad = chartWeeks.length >= 2
       ? barsLine(cats,
-          { label: "Novos cadastros", cor: "var(--mx-f1)", valores: sems.map(function (s) { return s.cadastros; }) },
-          { label: "Usuários com 1º uso", cor: "var(--mx-f3)", valores: sems.map(function (s) { return s.primeiro_uso; }) },
+          { label: "Novos cadastros", cor: "var(--mx-f1)", valores: chartWeeks.map(function (s) { return s.cadastros; }) },
+          { label: "Usuários com 1º uso", cor: "var(--mx-f3)", valores: chartWeeks.map(function (s) { return s.primeiro_uso; }) },
           { aria: "Cadastros e primeiro uso por semana" })
-      : '<div class="mx-empty">A série semanal começa com ' + sems.length +
+      : '<div class="mx-empty">A série semanal começa com ' + chartWeeks.length +
         ' semana registrada. Ela cresce a cada segunda, conforme <code>tools/add_semana.py</code> for rodado.</div>';
 
-    var chartBase = sems.length >= 2
+    var chartBase = chartWeeks.length >= 2
       ? barsLine(cats,
-          { label: "Base cadastrada acumulada", cor: "var(--mx-f2)", valores: sems.map(function (s) { return s.base_cadastrada_fim; }) },
+          { label: "Base cadastrada acumulada", cor: "var(--mx-f2)", valores: chartWeeks.map(function (s) { return s.base_cadastrada_fim; }) },
           null, { aria: "Base cadastrada acumulada por semana" })
       : "";
 
@@ -405,10 +405,10 @@
 
       '<div class="mx-block"><div class="mx-block-head">' +
         "<h3>Cadastros e 1º uso, semana a semana</h3>" +
-        '<span class="mx-eyebrow">domingo a sábado</span></div>' + chartCad + "</div>" +
+        '<span class="mx-eyebrow">domingo a sábado' + (cad.semana_parcial ? " · " + dm(cad.semana_parcial.inicio) + " parcial" : "") + '</span></div>' + chartCad + "</div>" +
 
       (chartBase ? '<div class="mx-block"><div class="mx-block-head">' +
-        "<h3>Evolução da base cadastrada</h3></div>" + chartBase + "</div>" : "") +
+        "<h3>Evolução da base cadastrada</h3>" + (cad.semana_parcial ? '<span class="mx-eyebrow">' + dm(cad.semana_parcial.inicio) + " parcial</span>" : "") + "</div>" + chartBase + "</div>" : "") +
 
       '<div class="mx-block"><div class="mx-block-head"><h3>Conversão de uso</h3></div>' +
       '<div class="mx-kpis" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">' +
