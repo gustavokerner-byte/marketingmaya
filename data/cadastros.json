@@ -1,46 +1,47 @@
 {
   "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
   "_corte_semanal": "domingo a sabado",
-  "_atualizado_em": "2026-09-16",
+  "_atualizado_em": "2026-09-23",
   "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
-  "_nota_fechamento": "PARCIAL semana 38 - corte 15/09/2026 (evento presencial no CDC em 15/09, QR 'Balcao - PDV'). Fechada tambem a semana 37 (06-12/09, print dom-sab: 14 novos). Atualizados: acumulado (15/09=777), mes (setembro parcial 01-15), mes_anterior_mesmo_corte (agosto 01-15=18), semanas (+semana 37 fechada) e semana_parcial (semana 38, 13-15/09=112). Downloads NAO atualizados (opcao do gestor). ativacoes/promotoras em arquivos proprios.",
+  "_nota_fechamento": "PARCIAL DO MES - corte 22/09/2026. Atualizados: acumulado (22/09=918), mes (setembro parcial 01-22=287) e mes_anterior_mesmo_corte (agosto 01-22=34) a partir dos 3 prints do BI. Encadeamento mensal: 632 (31/08) + 287 = 919 vs 918 no print (-1 varredura residual). Series semanais NAO recapturadas nesta rodada (sem corte semanal 16-22/09); semana_parcial/semanas permanecem no ultimo estado (corte 15/09) e ficam a confirmar para 16-22/09. Downloads NAO atualizados (opcao do gestor). Promotoras sem atualizacao (corte 15/09). QR/flyer novo em ativacoes.json.",
   "semana_referencia": {
-    "inicio": "2026-09-13",
-    "fim": "2026-09-15",
-    "parcial": true
+    "inicio": "2026-09-01",
+    "fim": "2026-09-22",
+    "parcial": true,
+    "tipo": "parcial_do_mes"
   },
   "acumulado": {
-    "_periodo": "2026-02-01 a 2026-09-15",
-    "cadastros": 777,
-    "primeiro_uso": 477,
+    "_periodo": "2026-02-01 a 2026-09-22",
+    "cadastros": 918,
+    "primeiro_uso": 492,
     "assinantes": 0,
-    "ativos_mes": 66,
+    "ativos_mes": 86,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2873,
-    "produtos_sucesso": 2861,
-    "produtos_salvos": 1636,
-    "imagens_geradas": 31241,
-    "imagens_sucesso": 25533,
-    "imagens_salvas": 10145,
-    "heavy_users": 117,
+    "produtos_cadastrados": 2933,
+    "produtos_sucesso": 2921,
+    "produtos_salvos": 1663,
+    "imagens_geradas": 31931,
+    "imagens_sucesso": 26073,
+    "imagens_salvas": 10284,
+    "heavy_users": 120,
     "heavy_users_pct": 27,
     "frequencia": [
       {
         "faixa": "1-5 cadastros",
-        "usuarios": 320
+        "usuarios": 332
       },
       {
         "faixa": "6-10 cadastros",
-        "usuarios": 45
+        "usuarios": 48
       },
       {
         "faixa": "11-15 cadastros",
-        "usuarios": 23
+        "usuarios": 20
       },
       {
         "faixa": "16+ cadastros",
-        "usuarios": 49
+        "usuarios": 52
       }
     ],
     "top_clientes": [
@@ -52,39 +53,39 @@
         "sucesso_pct": 91.0
       },
       {
+        "nome": "Adriana M De Barros",
+        "cadastros": 84,
+        "imagens": 774,
+        "erros": 2,
+        "sucesso_pct": 100.0
+      },
+      {
         "nome": "Stark Multi",
         "cadastros": 79,
         "imagens": 729,
         "erros": 0,
         "sucesso_pct": 93.1
-      },
-      {
-        "nome": "Adriana M De Barros",
-        "cadastros": 79,
-        "imagens": 729,
-        "erros": 2,
-        "sucesso_pct": 100.0
       }
     ],
-    "_obs_base": "Print acumulado (corte 15/09): novos cadastros 777 = usuarios cadastrados 777 -> cobre 100% da base. 777 >= 659 da rodada anterior (10/09). Encadeamento semanal fechado: 651 (05/09) +14 (s37) = 665 (12/09) +112 (s38 parcial) = 777 (15/09). Encadeamento mensal: 632 (31/08) + 146 (setembro ate 15/09) = 778 vs 777 no print (-1, varredura residual de teste/duplicado). Autovalidacao do print (novos=total) prevalece."
+    "_obs_base": "Print acumulado (corte 22/09): novos cadastros 918 = usuarios cadastrados 918 -> cobre 100% da base. 918 >= 777 da rodada anterior (15/09). Encadeamento mensal: 632 (31/08) + 287 (setembro ate 22/09) = 919 vs 918 (-1 varredura residual de teste/duplicado). Autovalidacao do print (novos=total) prevalece."
   },
   "mes": {
-    "_periodo": "2026-09-01 a 2026-09-15",
-    "label": "Setembro 2026 (parcial ate 15/09)",
+    "_periodo": "2026-09-01 a 2026-09-22",
+    "label": "Setembro 2026 (parcial ate 22/09)",
     "fechado": false,
-    "cadastros": 146,
-    "primeiro_uso": 39,
+    "cadastros": 287,
+    "primeiro_uso": 54,
     "assinantes": 0,
-    "ativos_mes": 66,
-    "produtos_cadastrados": 246,
-    "produtos_sucesso": 246,
-    "produtos_salvos": 147,
-    "imagens_geradas": 2749,
-    "imagens_sucesso": 2220,
-    "imagens_salvas": 904,
-    "heavy_users": 14,
+    "ativos_mes": 86,
+    "produtos_cadastrados": 306,
+    "produtos_sucesso": 306,
+    "produtos_salvos": 174,
+    "imagens_geradas": 3439,
+    "imagens_sucesso": 2760,
+    "imagens_salvas": 1043,
+    "heavy_users": 18,
     "heavy_users_pct": 21,
-    "_nota": "Setembro parcial (01-15/09, 15 dias). Inclui o evento presencial no CDC em 15/09. Base chega a 777 em 15/09. Fecha quando vier o print do mes cheio."
+    "_nota": "Setembro parcial (01-22/09, 22 dias). Inclui evento presencial no CDC (15/09) e acao de flyers das promotoras (21/09). Base 918 em 22/09. Delta desde 15/09: +141 cadastros (777->918). Fecha quando vier o print do mes cheio."
   },
   "mes_anterior": {
     "_periodo": "2026-08-01 a 2026-08-31",
@@ -303,25 +304,25 @@
       "heavy_users": 3,
       "heavy_users_pct": 30
     },
-    "_nota": "Semana 38 parcial (dom 13 a ter 15/09), corte no dia do evento presencial no CDC (15/09). 112 novos cadastros na janela, praticamente todos do evento. Base 665 (12/09) -> 777 (15/09). Comparativo mesmos dias da semana 37 (06-08/09) = 3 novos -> +3633%. Numero real, sem atenuacao. QR do evento (Balcao-PDV) registrou 87 scans / 86 unicos em 15/09 (em ativacoes.json)."
+    "_nota": "Semana 38 parcial (dom 13 a ter 15/09), corte no dia do evento presencial no CDC (15/09). 112 novos cadastros na janela, praticamente todos do evento. Base 665 (12/09) -> 777 (15/09). Comparativo mesmos dias da semana 37 (06-08/09) = 3 novos -> +3633%. Numero real, sem atenuacao. QR do evento (Balcao-PDV) registrou 87 scans / 86 unicos em 15/09 (em ativacoes.json). [ATENCAO: esta parcial semanal e do corte 15/09; a rodada de 22/09 e parcial do MES - split semanal 16-22/09 a confirmar.]"
   },
   "mes_anterior_mesmo_corte": {
-    "_periodo": "2026-08-01 a 2026-08-15",
-    "label": "Agosto 2026 (parcial ate 15/08, comparativo do mesmo corte)",
+    "_periodo": "2026-08-01 a 2026-08-22",
+    "label": "Agosto 2026 (parcial ate 22/08, comparativo do mesmo corte)",
     "fechado": false,
-    "cadastros": 18,
-    "primeiro_uso": 8,
+    "cadastros": 34,
+    "primeiro_uso": 21,
     "assinantes": 0,
-    "ativos_mes": 20,
-    "produtos_cadastrados": 99,
-    "produtos_sucesso": 99,
-    "produtos_salvos": 53,
-    "imagens_geradas": 1116,
-    "imagens_sucesso": 891,
-    "imagens_salvas": 364,
-    "heavy_users": 5,
-    "heavy_users_pct": 25,
-    "base_cadastrada_ate": 445,
-    "_nota": "Comparativo do parcial de setembro no MESMO corte (ate o dia 15). Variacao cadastros: 146 vs 18 = +711%; primeiro uso 39 vs 8 = +388%. Efeito do evento de 15/09, reportado sem atenuacao."
+    "ativos_mes": 39,
+    "produtos_cadastrados": 174,
+    "produtos_sucesso": 174,
+    "produtos_salvos": 101,
+    "imagens_geradas": 1917,
+    "imagens_sucesso": 1566,
+    "imagens_salvas": 622,
+    "heavy_users": 7,
+    "heavy_users_pct": 18,
+    "base_cadastrada_ate": 461,
+    "_nota": "Comparativo do parcial de setembro no MESMO corte (ate o dia 22). Variacao: cadastros 287 vs 34 = +744%; primeiro uso 54 vs 21 = +157%; imagens 3.439 vs 1.917 = +79%; ativos no mes 86 vs 39 = +121%. Efeito do evento (15/09) e da acao de flyers (21/09), reportado sem atenuacao."
   }
 }

@@ -322,8 +322,8 @@
       '</div><div class="mx-hero">' + hero + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +
-        "<h3>Semana " + periodo(ref.inicio, ref.fim) + "</h3>" +
-        '<span class="mx-eyebrow">' + (isParc ? ("parcial · corte " + dm(ref.fim) + (cmd ? " · vs. mesmos dias sem. ant." : "")) : "vs. semana anterior") + '</span>' +
+        "<h3>Semana " + periodo(sem.inicio, sem.fim) + "</h3>" +
+        '<span class="mx-eyebrow">' + (isParc ? ("parcial · corte " + dm(sem.fim) + (cmd ? " · vs. mesmos dias sem. ant." : "")) : "vs. semana anterior") + '</span>' +
       '</div><div class="mx-kpis">' + semanaKpis + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +
@@ -341,7 +341,7 @@
     var sem = parc || sems.slice(-1)[0] || {};
     var ant = cmd || (isParc ? (sems.slice(-1)[0] || {}) : (sems.slice(-2)[0] || {}));
     var sd = function (a, b) { return (isParc && !cmd) ? false : delta(a, b); };
-    var semLbl = (isParc ? "parcial · " : "") + (isParc ? periodo(ref.inicio, ref.fim) : periodo(sem.inicio, sem.fim)) + (cmd ? " · vs. mesmos dias sem. ant." : "");
+    var semLbl = (isParc ? "parcial · " : "") + periodo(sem.inicio, sem.fim) + (cmd ? " · vs. mesmos dias sem. ant." : "");
     var mesParc = mes.fechado === false;
     var mmc = mesParc && cad.mes_anterior_mesmo_corte;
     var mant = mmc || cad.mes_anterior || {};
@@ -589,26 +589,35 @@
     }
     var kpis = '<div class="pr-kpis">' +
       kpiTile("% Instalação imediata", pInt(A.pct_instalacao_imediata), "pr-v-good", num(A.instalou_na_hora) + " de " + num(A.abordagens) + " lojistas", pInt(S.pct_instalacao_imediata) + " · " + num(S.instalou_na_hora) + " de " + num(S.abordagens)) +
-      kpiTile("% Demonstrou interesse", pInt(A.pct_interesse), "pr-v-warn", num(A.interesse_posterior) + " com interesse posterior", pInt(S.pct_interesse) + " · " + num(S.interesse_posterior) + " de " + num(S.abordagens)) +
+      kpiTile("% Demonstrou interesse", pInt(A.pct_interesse), "pr-v-warn", num(A.interesse_posterior) + " com interesse posterior", num(S.interesse_posterior) + " de " + num(S.abordagens)) +
       kpiTile("% Sem interesse", pInt(A.pct_sem_interesse), "pr-v-crit", num(A.sem_interesse) + " recusas registradas", pInt(S.pct_sem_interesse) + " · " + num(S.sem_interesse) + " de " + num(S.abordagens)) +
       kpiTile("Nota de receptividade", dec1(A.receptividade_media) + '<small>/5</small>', "", "média de " + num(A.abordagens) + " abordagens", dec1(S.receptividade_media) + " / 5") +
       '</div>';
 
-    // 4) colunas por semana
-    var serie = (av.serie_semanal_abordagens || []).filter(function (d, i, arr) {
+    // 4) colunas — consolidado por mês
+    var serieRaw = (av.serie_semanal_abordagens || []).filter(function (d, i, arr) {
       return i === 0 || d[0] !== arr[i - 1][0]; // remove barras de semana duplicadas (mesma data)
     });
-    var maxSerie = Math.max.apply(null, serie.map(function (d) { return d[1]; }).concat([1]));
-    var cols = serie.map(function (d, i) {
+    var MESES_ABREV = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+    var mesMap = {}, mesOrder = [];
+    serieRaw.forEach(function (d) {
+      var ym = String(d[0]).slice(0, 7); // "2026-03" = mês do domingo que rotula a semana
+      if (!(ym in mesMap)) { mesMap[ym] = 0; mesOrder.push(ym); }
+      mesMap[ym] += Number(d[1]) || 0;
+    });
+    var serie = mesOrder.map(function (ym) {
+      var mi = parseInt(ym.slice(5, 7), 10) - 1;
+      return { label: MESES_ABREV[mi] || ym, val: mesMap[ym] };
+    });
+    var maxSerie = Math.max.apply(null, serie.map(function (s) { return s.val; }).concat([1]));
+    var cols = serie.map(function (s, i) {
       var hot = i === serie.length - 1;
-      var h = Math.max(2, Math.round(d[1] / maxSerie * 100));
-      var lab = hot ? "Sem " + rec.semana : dm(d[0]);
-      var showx = i % 3 === 0 || hot;
-      return '<div class="pr-col' + (hot ? ' hot' : '') + '"><div class="bar" style="height:' + h + '%" title="' + esc(lab) + ': ' + d[1] + ' abordagens">' +
-        '<div class="val">' + (d[1] || "") + '</div></div><div class="xl' + (showx ? '' : ' hide') + '">' + esc(lab) + '</div></div>';
+      var h = Math.max(2, Math.round(s.val / maxSerie * 100));
+      return '<div class="pr-col' + (hot ? ' hot' : '') + '"><div class="bar" style="height:' + h + '%" title="' + esc(s.label) + ': ' + s.val + ' abordagens">' +
+        '<div class="val">' + (s.val || "") + '</div></div><div class="xl">' + esc(s.label) + '</div></div>';
     }).join("");
-    var chartBlock = '<div class="card"><div class="mx-block-head"><h3>Abordagens por semana</h3>' +
-      '<span class="pr-hint">' + serie.length + ' semanas · semana ' + esc(rec.semana) + ' destacada</span></div>' +
+    var chartBlock = '<div class="card"><div class="mx-block-head"><h3>Abordagens por mês</h3>' +
+      '<span class="pr-hint">' + serie.length + ' meses · ' + num(A.abordagens) + ' abordagens no total</span></div>' +
       '<div class="pr-cols">' + cols + '</div></div>';
 
     // 5) funil + receptividade

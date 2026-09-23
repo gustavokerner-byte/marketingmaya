@@ -1,38 +1,39 @@
 {
-  "_gerado_em": "2026-09-16T00:00:00-03:00",
+  "_gerado_em": "2026-09-23T00:00:00-03:00",
   "_nota_roleta": "Frente 'Evento Roleta' = ação presencial no CDC (24/08), consolidando os 2 QR do leitor scanned.page (Banner de chão 80 + Flyers_roleta 39 = 119 leituras). Sem quebra semanal no export; atribuída à semana 35 (23-29/08, parcial). Leituras tratadas como scans (sem dedup de únicos).",
   "_fonte": "Exports de QR Code (data/qr/) + historico ativacoes.json",
   "_corte_semanal": "domingo a sabado (alinhado ao BI da CWS)",
   "_nota": "Frente 'Flyers' consolida Adesivo (original) + Bras + CDC (CDC novo nesta rodada) como uma unica frente, por decisao do gestor. Pilastra e Praca vem do export. Banner Sao Caetano sem scans desde 24/07. SEMANA 34 (16-22/08): 17 scans / 6 unicos, concentrados em 22/08 e com recorrencia alta (Flyers 14 scans / 3 unicos) - provaveis scans de teste/demonstracao dos QR de Bras e CDC no dia 22. Uniques acumulados aproximados: dedup cross-QR nao e possivel com export parcial do Adesivo. top_cidades e fora_da_capital_pct referem-se ate a rodada anterior.",
   "semana_referencia": {
-    "inicio": "2026-09-13",
-    "fim": "2026-09-19",
+    "inicio": "2026-09-20",
+    "fim": "2026-09-26",
     "parcial": true
   },
   "totais": {
-    "scans_total": 411,
-    "unicos_total": 362,
-    "scans_semana": 87,
-    "unicos_semana": 86,
-    "scans_semana_anterior": 4,
-    "unicos_semana_anterior": 4,
-    "recorrencia": 1.18,
-    "_nota_semana": "Semana 38 parcial (13-15/09): so o QR 'Balcao - PDV' (evento) foi atualizado nesta rodada. Demais frentes em 13-15/09: a confirmar (nao exportadas)."
+    "scans_total": 474,
+    "unicos_total": 422,
+    "scans_semana": 46,
+    "unicos_semana": 44,
+    "scans_semana_anterior": 16,
+    "unicos_semana_anterior": 15,
+    "recorrencia": 1.12,
+    "_nota_semana": "Semana 39 parcial (20-22/09): destaque para a acao de flyers das promotoras (Flyer_branco_promotoras) em 21/09 (44 leituras). Frentes de evento (Roleta, Balcao/PDV) sem novo export nesta rodada."
   },
   "frentes": [
     {
       "label": "Flyers",
-      "qr": "Adesivo + Bras + CDC",
+      "qr": "Adesivo + Bras + CDC + Flyer_branco_promotoras",
       "tipo": "Flyer",
       "local": "Distribuicao em campo",
       "instalacao": "2026-06-02",
-      "scans_total": 89,
-      "unicos_total": 58,
-      "scans_semana": 0,
-      "scans_semana_anterior": 10,
-      "recorrencia": 1.44,
+      "scans_total": 142,
+      "unicos_total": 109,
+      "scans_semana": 44,
+      "scans_semana_anterior": 8,
+      "recorrencia": 1.3,
       "primeiro_scan": "2026-06-02",
-      "ultimo_scan": "2026-09-05"
+      "ultimo_scan": "2026-09-22",
+      "_nota_flyer": "Flyer_branco_promotoras (novo) incorporado: 53 leituras (44 na acao de 21/09, s39). QR de campo das promotoras."
     },
     {
       "label": "Pilastra Boulevard",
@@ -40,13 +41,13 @@
       "tipo": "Pilastra",
       "local": "Boulevard CDC",
       "instalacao": "2026-06-18",
-      "scans_total": 74,
-      "unicos_total": 57,
-      "scans_semana": 1,
-      "scans_semana_anterior": 12,
-      "recorrencia": 1.2,
+      "scans_total": 82,
+      "unicos_total": 64,
+      "scans_semana": 2,
+      "scans_semana_anterior": 6,
+      "recorrencia": 1.28,
       "primeiro_scan": "2026-06-18",
-      "ultimo_scan": "2026-09-10"
+      "ultimo_scan": "2026-09-21"
     },
     {
       "label": "Banner Sao Caetano",
@@ -54,13 +55,13 @@
       "tipo": "Banner",
       "local": "Sao Caetano (Entrada + Outdoor, mesma regiao, 2 QRs)",
       "instalacao": "2026-06-18",
-      "scans_total": 13,
-      "unicos_total": 13,
-      "scans_semana": 1,
-      "scans_semana_anterior": 3,
+      "scans_total": 14,
+      "unicos_total": 14,
+      "scans_semana": 0,
+      "scans_semana_anterior": 1,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-06-18",
-      "ultimo_scan": "2026-09-09"
+      "ultimo_scan": "2026-09-18"
     },
     {
       "label": "Praca de Alimentacao",
@@ -68,13 +69,13 @@
       "tipo": "Banner",
       "local": "Praca de Alimentacao",
       "instalacao": "2026-08-03",
-      "scans_total": 8,
-      "unicos_total": 8,
-      "scans_semana": 2,
-      "scans_semana_anterior": 0,
+      "scans_total": 9,
+      "unicos_total": 9,
+      "scans_semana": 0,
+      "scans_semana_anterior": 1,
       "recorrencia": 1.0,
       "primeiro_scan": "2026-08-03",
-      "ultimo_scan": "2026-09-10"
+      "ultimo_scan": "2026-09-15"
     },
     {
       "label": "Evento Roleta",
@@ -312,6 +313,19 @@
         "Evento CDC (Balcao/PDV)": 87
       },
       "_nota": "Parcial ate ter 15/09 (dia do evento). So o QR 'Balcao - PDV' atualizado: 87 scans / 86 unicos. Demais frentes = a confirmar."
+    },
+    {
+      "inicio": "2026-09-20",
+      "fim": "2026-09-26",
+      "parcial": true,
+      "scans": 46,
+      "por_frente": {
+        "Flyers": 44,
+        "Pilastra Boulevard": 2,
+        "Banner Sao Caetano": 0,
+        "Praca de Alimentacao": 0
+      },
+      "_nota": "Parcial ate 22/09. Flyer_branco_promotoras (acao 21/09) = 44 leituras. Frentes de evento sem export."
     }
   ],
   "sistema_operacional": {
@@ -362,6 +376,6 @@
     }
   ],
   "fora_da_capital_pct": 51.9,
-  "_nota_fechamento": "PARCIAL semana 38 (corte 15/09) - foco no evento presencial de 15/09 (QR 'Balcao - PDV': 87 scans / 86 unicos). Semana 37 (06-12/09) permanece parcial no export original (4 scans, 06-10/09) - sem novo export das demais frentes nesta rodada. Balcao entra como frente de Evento (decisao do gestor). Downloads/OS/top_cidades nao recalculados. OS do evento 15/09 (referencia): iOS 46, Android 41. Top cidade 15/09: Sao Paulo (48 de 87).",
+  "_nota_fechamento": "PARCIAL DO MES (corte 22/09). QR atualizados a partir dos exports por QR: Flyer_branco_promotoras (NOVO, +53) juntado a Flyers; Pilastra +8, Banner +1, Praca +1 (scans apos o ultimo corte de cada frente). Frentes de evento (Roleta, Balcao/PDV) sem novo export. Downloads/OS/top_cidades NAO recalculados nesta rodada.",
   "_nota_evento_1509": "Evento presencial no CDC em 15/09/2026 usando o QR 'Balcao - PDV' (cadastro na hora). Export do QR (16/08-16/09): 87 scans / 86 unicos em 15/09 (pico 13h-14h; ~57% Sao Paulo capital; iOS 46 / Android 41). Corte desta rodada = 15/09: os 3 scans de 16/09 ficam para a proxima. Classificacao: 'Balcao entra em evento' (decisao do gestor) -> criada a frente 'Evento CDC (Balcao/PDV)' com tipo 'Evento', mantida separada da 'Evento Roleta' (24/08) para nao misturar as duas acoes. Scans avulsos anteriores do mesmo QR (18/08=1, 24/08=12, 31/08=1) incorporados ao historico da frente e recomputados nos totais das semanas 34-36."
 }
