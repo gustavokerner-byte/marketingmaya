@@ -13,35 +13,35 @@
   "acumulado": {
     "_periodo": "2026-02-01 a 2026-09-30",
     "cadastros": 931,
-    "primeiro_uso": 500,
+    "primeiro_uso": 499,
     "assinantes": 0,
     "ativos_mes": 96,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2992,
-    "produtos_sucesso": 2980,
-    "produtos_salvos": 1701,
-    "imagens_geradas": 32605,
-    "imagens_sucesso": 26604,
-    "imagens_salvas": 10461,
+    "produtos_cadastrados": 2991,
+    "produtos_sucesso": 2979,
+    "produtos_salvos": 1700,
+    "imagens_geradas": 32596,
+    "imagens_sucesso": 26595,
+    "imagens_salvas": 10458,
     "heavy_users": 120,
-    "heavy_users_pct": 27,
+    "heavy_users_pct": 26,
     "frequencia": [
       {
         "faixa": "1-5 cadastros",
-        "usuarios": 332
+        "usuarios": 339
       },
       {
         "faixa": "6-10 cadastros",
-        "usuarios": 48
+        "usuarios": 46
       },
       {
         "faixa": "11-15 cadastros",
-        "usuarios": 20
+        "usuarios": 21
       },
       {
         "faixa": "16+ cadastros",
-        "usuarios": 52
+        "usuarios": 53
       }
     ],
     "top_clientes": [
@@ -54,21 +54,20 @@
       },
       {
         "nome": "Adriana M De Barros",
-        "cadastros": 84,
-        "imagens": 774,
+        "cadastros": 86,
+        "imagens": 792,
         "erros": 2,
         "sucesso_pct": 100.0
       },
       {
-        "nome": "Stark Multi",
-        "cadastros": 79,
-        "imagens": 729,
+        "nome": "Solange Severo",
+        "cadastros": 82,
+        "imagens": 747,
         "erros": 0,
-        "sucesso_pct": 93.1
+        "sucesso_pct": 100.0
       }
     ],
-    "_obs_base": "Corte 30/09. cadastros 931 = USUARIOS CADASTRADOS do print mensal (base direta; 931>=918 da rodada 22/09). primeiro_uso/produtos/imagens DERIVADOS por encadeamento realizado: acum 22/09 + delta set 23-30/09 (do print mensal menos o parcial 01-22). A CONFIRMAR com print de acumulado 01/02-30/09 (validacao novos=total). heavy_users/frequencia/top_clientes ABAIXO ainda sao do corte 22/09 -> atualizar com o print de acumulado.",
-    "_pendente_acumulado": "heavy_users, heavy_users_pct, frequencia[], top_clientes[] = corte 22/09; aguardam print acumulado 01/02-30/09."
+    "_obs_base": "Corte 30/09, print de acumulado 01/02-30/09 (validacao novos=total: 931). primeiro_uso 499, produtos/imagens e heavy_users/frequencia/top_clientes confirmados pelo print de acumulado (antes derivados/corte 22/09). heavy_users 120 = 46+21+53 (6+); heavy_users_pct 26 = 120/459 das faixas."
   },
   "mes": {
     "_periodo": "2026-09-01 a 2026-09-30",
