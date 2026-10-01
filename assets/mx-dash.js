@@ -17,6 +17,7 @@
   // ------------------------------------------------------------------- helpers
   var NF = new Intl.NumberFormat("pt-BR");
   var num = function (v) { return v == null || isNaN(v) ? "—" : NF.format(v); };
+  var isNum = function (v) { return typeof v === "number" && isFinite(v); };
 
   function pct(v, casas) {
     if (v == null || isNaN(v)) return "—";
@@ -261,7 +262,11 @@
   function renderResumo(cad, ati, ig) {
     var ac = cad.acumulado || {};
     var sems = cad.semanas || [];
-    var parc = cad.semana_parcial;                 // semana em curso (parcial)
+    var parcRaw = cad.semana_parcial;              // semana em curso (parcial)
+    // Só destacamos a parcial quando ela traz dados comparáveis (comparativo de
+    // mesmos dias) ou métricas completas. Uma parcial-stub ("— a confirmar", poucos
+    // dias) cede lugar à última semana fechada — leitura mais informativa.
+    var parc = (parcRaw && (parcRaw.comparativo_mesmos_dias || isNum(parcRaw.primeiro_uso))) ? parcRaw : null;
     var isParc = !!parc;
     var cmd = parc && parc.comparativo_mesmos_dias; // mesmos dias da semana anterior (apples-to-apples)
     var sem = parc || sems.slice(-1)[0] || {};
@@ -333,7 +338,9 @@
   function renderCadastros(cad) {
     var ac = cad.acumulado || {}, mes = cad.mes || {};
     var sems = cad.semanas || [];
-    var parc = cad.semana_parcial, isParc = !!parc;
+    var parcRaw = cad.semana_parcial;
+    var parc = (parcRaw && (parcRaw.comparativo_mesmos_dias || isNum(parcRaw.primeiro_uso))) ? parcRaw : null;
+    var isParc = !!parc;
     var ref = cad.semana_referencia || {};
     var cmd = parc && parc.comparativo_mesmos_dias; // mesmos dias da semana anterior
     var sem = parc || sems.slice(-1)[0] || {};
@@ -364,8 +371,9 @@
       kpi("1º uso no mês", num(mes.primeiro_uso), false,
         esc(mantLbl) + ": " + num(mant.primeiro_uso));
 
-    // inclui a semana parcial em curso (evento 13-15/09) como último ponto das séries
-    var chartWeeks = cad.semana_parcial ? sems.concat([cad.semana_parcial]) : sems.slice();
+    // inclui a semana parcial em curso como último ponto das séries, só quando ela
+    // tiver dados completos (parcial-stub "— a confirmar" não é plotada)
+    var chartWeeks = parc ? sems.concat([parc]) : sems.slice();
     var cats = chartWeeks.map(function (s) { return dm(s.inicio); });
     var chartCad = chartWeeks.length >= 2
       ? barsLine(cats,
@@ -405,10 +413,10 @@
 
       '<div class="mx-block"><div class="mx-block-head">' +
         "<h3>Cadastros e 1º uso, semana a semana</h3>" +
-        '<span class="mx-eyebrow">domingo a sábado' + (cad.semana_parcial ? " · " + dm(cad.semana_parcial.inicio) + " parcial" : "") + '</span></div>' + chartCad + "</div>" +
+        '<span class="mx-eyebrow">domingo a sábado' + (parc ? " · " + dm(parc.inicio) + " parcial" : "") + '</span></div>' + chartCad + "</div>" +
 
       (chartBase ? '<div class="mx-block"><div class="mx-block-head">' +
-        "<h3>Evolução da base cadastrada</h3>" + (cad.semana_parcial ? '<span class="mx-eyebrow">' + dm(cad.semana_parcial.inicio) + " parcial</span>" : "") + "</div>" + chartBase + "</div>" : "") +
+        "<h3>Evolução da base cadastrada</h3>" + (parc ? '<span class="mx-eyebrow">' + dm(parc.inicio) + " parcial</span>" : "") + "</div>" + chartBase + "</div>" : "") +
 
       '<div class="mx-block"><div class="mx-block-head"><h3>Conversão de uso</h3></div>' +
       '<div class="mx-kpis" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">' +
@@ -520,8 +528,8 @@
   var BEN_LBL = { fotos_profissionais_descricao: "Fotos profissionais + descrição", atrai_clientes_divulgacao: "Atrai clientes / divulgação", gratuito_pratico_agil: "Gratuito e prático / ágil" };
   var STATUS_LBL = { instalou: "instalou na hora", interesse: "interesse posterior", sem_interesse: "sem interesse", instalou_e_desinstalou: "instalou e desinstalou" };
 
-  function dec1(v) { return v == null ? "—" : Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
-  function pInt(v) { return v == null ? "—" : Math.round(v) + "%"; }
+  function dec1(v) { return (v == null || isNaN(v)) ? "—" : Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
+  function pInt(v) { return (v == null || isNaN(v)) ? "—" : Math.round(v) + "%"; }
   function ri2(n) { return (n != null && n < 10 ? "0" : "") + n; }
 
   /** Linhas rótulo→valor (+barra opcional) a partir de um objeto e um mapa de labels. */
@@ -543,6 +551,12 @@
     var A = av.acumulado || {}, S = av.semana || {};
     var R = P.reativacao || {}, Ra = R.acumulado || {}, Rs = R.semana || {};
     var sin = av.sinais_semana || {};
+    var uc = av.ultimo_campo || null;
+    var isPausa = rec.status === "pausa" || ((S.abordagens === 0) && !(av.comentarios_semana || []).length && !!uc);
+    var semResumo = isPausa
+      ? ("em pausa — sem campo" + (uc ? " · último campo " + dm(uc.data) + " (" + num(uc.abordagens) + " abordagens)" : ""))
+      : (num(S.abordagens) + " abordagens · " + num(S.instalou_na_hora) + " instalações · receptividade " + dec1(S.receptividade_media));
+    var semChip = isPausa ? "em pausa" : ("+" + num(S.abordagens) + " na semana " + esc(rec.semana));
 
     var pp = (rec.periodo || "").split(" a ");
     var periodoLbl = pp.length === 2 ? periodo(pp[0], pp[1]) : (rec.periodo || "—");
@@ -560,32 +574,36 @@
         '<div class="lbl">Ativação de campo · acumulado da campanha</div>' +
         '<h3>' + num(A.abordagens) + ' abordagens · ' + num(A.instalou_na_hora) + ' instalações</h3>' +
         '<div class="pr-field">Período: <b>' + (acPer.length === 2 ? dm(acPer[0]) + " → " + dm(acPer[1]) : "—") + '</b>' +
-          ' &nbsp;·&nbsp; Semana ' + esc(rec.semana) + ' (' + esc(periodoLbl) + '): ' + num(S.abordagens) + ' abordagens · ' + num(S.instalou_na_hora) + ' instalações · receptividade ' + dec1(S.receptividade_media) + '</div>' +
+          ' &nbsp;·&nbsp; Semana ' + esc(rec.semana) + ' (' + esc(periodoLbl) + '): ' + semResumo + '</div>' +
       '</div><div class="pr-pill">' + pInt(A.pct_instalacao_imediata) + ' de conversão imediata</div></div>' +
       '<div class="pr-insights">' +
-        '<div class="pr-ic"><div class="k pr-num">' + num(A.abordagens) + '</div><div class="t">abordagens acumuladas</div><div class="d pr-d-good">+' + num(S.abordagens) + ' na semana ' + esc(rec.semana) + '</div></div>' +
+        '<div class="pr-ic"><div class="k pr-num">' + num(A.abordagens) + '</div><div class="t">abordagens acumuladas</div><div class="d ' + (isPausa ? 'pr-d-warn' : 'pr-d-good') + '">' + semChip + '</div></div>' +
         '<div class="pr-ic"><div class="k pr-num">' + num(A.instalou_na_hora) + '</div><div class="t">instalações na hora</div><div class="d pr-d-good">' + pInt(A.pct_instalacao_imediata) + ' de conversão imediata</div></div>' +
         '<div class="pr-ic"><div class="k pr-num">' + num(A.interesse_posterior) + '</div><div class="t">interesse posterior</div><div class="d pr-d-warn">' + pInt(A.pct_interesse) + ' — follow-up</div></div>' +
         '<div class="pr-ic"><div class="k pr-num">' + dec1(A.receptividade_media) + '</div><div class="t">receptividade média (1–5)</div><div class="d pr-d-good">' + num(A.abordagens) + ' avaliações</div></div>' +
       '</div></div>';
 
-    var leitura = "";
+    var leitura = isPausa
+      ? '<div class="pr-pausa">⏸ <b>Semana ' + esc(rec.semana) + ' em pausa</b> — a promotora não foi a campo nesta janela' +
+          (uc ? '. Último campo em <b>' + dm(uc.data) + '</b> (' + num(uc.abordagens) + ' abordagens, semana ' + esc(uc.semana) + '). ' : '. ') +
+          'O acumulado da campanha segue em <b>' + num(A.abordagens) + '</b> abordagens.</div>'
+      : "";
 
     // 2) visão geral
     var ovw =
       '<div class="pr-ovw">' +
         '<div class="card"><div class="pr-big"><div class="n pr-num">' + num(A.abordagens) +
-          '<small>Abordagens — acumulado</small></div><span class="pr-chip p">+' + num(S.abordagens) + ' na semana</span></div>' +
+          '<small>Abordagens — acumulado</small></div><span class="pr-chip p">' + semChip + '</span></div>' +
           '<div class="pr-barline"><i style="width:100%;background:var(--pr-acc)"></i></div></div>' +
         '<div class="card"><div class="pr-big"><div class="n pr-num" style="color:var(--pr-good)">' + num(A.instalou_na_hora) +
-          '<small>Cadastros convertidos — instalou na hora (acum.)</small></div><span class="pr-chip g">+' + num(S.instalou_na_hora) + ' na semana</span></div>' +
+          '<small>Cadastros convertidos — instalou na hora (acum.)</small></div><span class="pr-chip g">' + (isPausa ? "em pausa" : "+" + num(S.instalou_na_hora) + " na semana") + '</span></div>' +
           '<div class="pr-barline"><i style="width:' + pInt(A.pct_instalacao_imediata) + ';background:var(--pr-good)"></i></div></div>' +
       '</div>';
 
     // 3) KPIs
     function kpiTile(lab, big, cls, den, wk) {
       return '<div class="card pr-kpi"><div class="lab">' + lab + '</div><div class="v ' + cls + ' pr-num">' + big + '</div>' +
-        '<div class="den">' + den + '</div><div class="wk"><span>semana</span><b>' + wk + '</b></div></div>';
+        '<div class="den">' + den + '</div><div class="wk"><span>semana</span><b>' + (isPausa ? "em pausa" : wk) + '</b></div></div>';
     }
     var kpis = '<div class="pr-kpis">' +
       kpiTile("% Instalação imediata", pInt(A.pct_instalacao_imediata), "pr-v-good", num(A.instalou_na_hora) + " de " + num(A.abordagens) + " lojistas", pInt(S.pct_instalacao_imediata) + " · " + num(S.instalou_na_hora) + " de " + num(S.abordagens)) +
@@ -648,8 +666,10 @@
     var recept = '<div class="card"><h4 class="pr-h4">Receptividade (1–5)</h4><div class="pr-legend"><span>acumulado · coluna direita = semana</span></div>' + recRows + '</div>';
     var funBlock = '<div class="pr-tworow">' + funil2 + recept + '</div>';
 
-    // 6) comentários da semana
-    var quotes = (av.comentarios_semana || []).map(function (c) {
+    // 6) comentários — da semana; se vazio (pausa), cai para o último campo
+    var comSrc = (av.comentarios_semana || []).length ? av.comentarios_semana : ((uc && uc.comentarios) || []);
+    var comFromUC = !(av.comentarios_semana || []).length && !!(uc && uc.comentarios && uc.comentarios.length);
+    var quotes = comSrc.map(function (c) {
       var r = c.receptividade, rc = r >= 4 ? "hi" : (r == 3 ? "mid" : "lo");
       return '<div class="pr-q"><p>“' + esc(c.texto) + '”</p><div class="meta">' + esc(c.segmento || "") +
         (c.status ? ' · ' + esc(STATUS_LBL[c.status] || c.status) : "") +
@@ -721,7 +741,10 @@
       sec("Indicadores da abordagem", "número grande = acumulado · linha = semana", kpis) +
       '<div class="mx-block">' + chartBlock + '</div>' +
       sec("Funil de instalação e receptividade", "barra = acumulado · coluna direita = semana", funBlock) +
-      sec("Principais comentários da semana", "qualitativo · semana " + esc(rec.semana), comentBlock) +
+      (quotes
+        ? sec("Principais comentários " + (comFromUC ? "do último campo" : "da semana"),
+            "qualitativo · " + (comFromUC && uc ? dm(uc.data) : "semana " + esc(rec.semana)), comentBlock)
+        : "") +
       sec("Segmento e sinais", "acumulado · semana", perfilBlock) +
       '<div class="mx-block">' + reaBlock + '</div>' +
       '<div class="mx-block">' + sugBlock + '</div>'
@@ -733,18 +756,24 @@
     var host = document.getElementById("mx-resumo");
     if (!host) return;
     var av = P.ativacao || {}, A = av.acumulado || {}, S = av.semana || {}, rec = P.recorte_semana || {};
+    var uc = av.ultimo_campo || null;
+    var isPausa = rec.status === "pausa" || ((S.abordagens === 0) && !(av.comentarios_semana || []).length && !!uc);
+    var semTxt = isPausa
+      ? ("Semana " + esc(rec.semana) + ": em pausa (promotora sem campo" + (uc ? "; último em " + dm(uc.data) : "") + ").")
+      : ("Semana " + esc(rec.semana) + ": " + num(S.abordagens) + " abordagens · " + num(S.instalou_na_hora) + " instalações.");
+    var semSub = isPausa ? ("semana " + esc(rec.semana) + ": pausa") : ("semana " + esc(rec.semana) + ": " + num(S.abordagens));
+    var instSub = isPausa ? (pInt(A.pct_instalacao_imediata) + " do acumulado") : (pInt(A.pct_instalacao_imediata) + " · +" + num(S.instalou_na_hora) + " na semana");
     var lead = "Acumulado da campanha: " + num(A.abordagens) + " abordagens · " +
       num(A.instalou_na_hora) + " instalações na hora (" + pInt(A.pct_instalacao_imediata) + ") · " +
-      num(A.interesse_posterior) + " com interesse posterior · receptividade " + dec1(A.receptividade_media) + "/5. " +
-      "Semana " + esc(rec.semana) + ": " + num(S.abordagens) + " abordagens · " + num(S.instalou_na_hora) + " instalações.";
+      num(A.interesse_posterior) + " com interesse posterior · receptividade " + dec1(A.receptividade_media) + "/5. " + semTxt;
     var grid =
-      kpi("Abordagens (acum.)", num(A.abordagens), false, "semana " + esc(rec.semana) + ": " + num(S.abordagens)) +
-      kpi("Instalações na hora", num(A.instalou_na_hora), false, pInt(A.pct_instalacao_imediata) + " · +" + num(S.instalou_na_hora) + " na semana") +
+      kpi("Abordagens (acum.)", num(A.abordagens), false, semSub) +
+      kpi("Instalações na hora", num(A.instalou_na_hora), false, instSub) +
       kpi("Interesse posterior", num(A.interesse_posterior), false, pInt(A.pct_interesse) + " do acumulado") +
       kpi("Receptividade média", dec1(A.receptividade_media), false, "de " + num(A.abordagens) + " avaliações");
     host.insertAdjacentHTML("beforeend",
       '<div class="mx-block"><div class="mx-block-head"><h3>Promotoras — ativação de campo</h3>' +
-        '<span class="mx-eyebrow">acumulado · semana ' + esc(rec.semana) + '</span></div>' +
+        '<span class="mx-eyebrow">acumulado · semana ' + esc(rec.semana) + (isPausa ? " · pausa" : "") + '</span></div>' +
         '<p class="pr-resumo-lead">' + lead + '</p>' +
         '<div class="mx-kpis" style="margin-top:14px">' + grid + '</div></div>');
   }

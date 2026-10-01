@@ -2,57 +2,53 @@
   "descricao": "Frente Promotoras (ativacao presencial + reativacao heavy users). Alimenta a aba 'Promotoras' do dashboard de gestao (dados-usuarios). Atualizado na rodada semanal a partir dos 2 formularios: Tracking de Ativacao CDC Bras + Questionario Heavy Users.",
   "versao": 1,
   "fonte": "Google Forms - Tracking de Ativacao MayaApp CDC Bras; Questionario de Campo Heavy Users MayaApp CDC",
-  "data_corte": "2026-09-11",
+  "data_corte": "2026-09-26",
   "recorte_semana": {
-    "semana": 37,
-    "periodo": "2026-09-06 a 2026-09-12",
-    "dias_de_campo": [
-      {
-        "data": "2026-09-07",
-        "dia": "segunda",
-        "promotoras": "— a confirmar"
-      }
-    ],
-    "promotora_dias": "— a confirmar",
-    "nota": "Parcial da semana 37: campo em 07/09 (segunda) -> 7 abordagens. O lote de 03/09 (3 abordagens) pertence a semana 36 e entra so na serie semanal. Nº de promotoras por dia a confirmar com o gestor."
+    "semana": 39,
+    "periodo": "2026-09-20 a 2026-09-26",
+    "dias_de_campo": [],
+    "promotora_dias": 0,
+    "status": "pausa",
+    "nota": "PAUSA em setembro: a promotora parou de ir a campo. Sem abordagens nas semanas 38(apos 14/09) e 39. Ultima atividade de campo = 14/09 (11 abordagens, atribuidas a semana 38) — detalhada em 'ultimo_campo'. Acumulado recomputado dos 448 registros do form."
   },
   "ativacao": {
     "acumulado": {
-      "periodo": "2026-02-27 a 2026-09-11",
-      "abordagens": 437,
+      "periodo": "2026-02-27 a 2026-09-14",
+      "abordagens": 448,
       "instalou_na_hora": 174,
-      "interesse_posterior": 166,
-      "sem_interesse": 96,
-      "instalou_e_desinstalou": 1,
+      "interesse_posterior": 174,
+      "sem_interesse": 98,
+      "instalou_e_desinstalou": 2,
       "receptividade_media": 4.0,
       "receptividade_dist": {
-        "5": 198,
-        "4": 96,
-        "3": 93,
+        "5": 204,
+        "4": 100,
+        "3": 94,
         "2": 33,
         "1": 17
       },
-      "pct_instalacao_imediata": 40,
-      "pct_interesse": 38,
+      "pct_instalacao_imediata": 39,
+      "pct_interesse": 39,
       "pct_sem_interesse": 22
     },
     "semana": {
-      "abordagens": 7,
+      "abordagens": 0,
       "instalou_na_hora": 0,
-      "interesse_posterior": 7,
+      "interesse_posterior": 0,
       "sem_interesse": 0,
       "instalou_e_desinstalou": 0,
-      "receptividade_media": 4.6,
+      "receptividade_media": "—",
       "receptividade_dist": {
-        "5": 4,
-        "4": 3,
+        "5": 0,
+        "4": 0,
         "3": 0,
         "2": 0,
         "1": 0
       },
-      "pct_instalacao_imediata": 0,
-      "pct_interesse": 100,
-      "pct_sem_interesse": 0
+      "pct_instalacao_imediata": "—",
+      "pct_interesse": "—",
+      "pct_sem_interesse": "—",
+      "detalhe": "Semana 39 (20-26/09): pausa, promotora nao foi a campo. 0 abordagens (zero real, nao dado ausente)."
     },
     "serie_semanal_abordagens": [
       [
@@ -168,75 +164,111 @@
         3
       ],
       [
-        "2026-08-30",
-        3
-      ],
-      [
         "2026-09-06",
         7
+      ],
+      [
+        "2026-09-13",
+        11
+      ],
+      [
+        "2026-09-20",
+        0
       ]
     ],
-    "serie_semanal_nota": "Barras por semana dom-sab (rotulo = domingo). Ultimas: 2026-08-30 = lote de 03/09 (semana 36, 3 abordagens); 2026-09-06 = campo de 07/09 (semana 37, 7 abordagens). Pico de 01/03 = semana de lancamento.",
+    "serie_semanal_nota": "Barras por semana dom-sab (rotulo = domingo). Removida duplicata de 2026-08-30. 2026-09-13 = lote de 14/09 (11 abordagens, semana 38); 2026-09-20 = 0 (pausa, semana 39). Pico de 01/03 = lancamento.",
     "perfil_acumulado": {
-      "tradicional": 303,
-      "hibrido": 75,
-      "transicao": 41,
-      "focado_digital": 10
+      "tradicional": 304,
+      "hibrido": 76,
+      "transicao": 43,
+      "focado_digital": 16,
+      "_nota": "~9 respostas sem perfil padronizado (vazio/ad-hoc: Crocs, Fitness, 'vende replica', etc.) nao somadas aqui; total form=448."
     },
-    "perfil_semana": {
-      "focado_digital": 3,
-      "transicao": 2,
-      "tradicional": 2
-    },
+    "perfil_semana": {},
     "segmento_acumulado": {
-      "moda_feminina": 222,
-      "moda_masculina": 120,
+      "moda_feminina": 225,
+      "moda_masculina": 126,
       "moda_infantil": 36,
-      "unissex_outros": 58,
+      "outros": 20,
       "acessorios": 12,
-      "moda_praia": 7,
-      "outros": 27
+      "unissex": 11,
+      "moda_praia": 8,
+      "eletronicos": 5,
+      "calcados": 3,
+      "cama_mesa_banho": 2
     },
-    "segmento_semana": {
-      "moda_feminina": 5,
-      "moda_masculina": 1,
-      "outros": 1
-    },
+    "segmento_semana": {},
     "sinais_semana": {
-      "nota": "Semana 37 (07/09): 7 abordagens, todas 'demonstrou interesse' (0 instalacao na hora). Receptividade alta (media 4,6), mas conversao imediata caiu para 0% - reportado sem atenuacao."
+      "nota": "Semana 39: pausa, sem campo. Ver 'ultimo_campo' (14/09) para o ultimo lote."
     },
-    "comentarios_semana": [
-      {
-        "texto": "Perguntou se o app faz videos; expliquei que ainda nao, mas estara disponivel em breve. Fez varias perguntas.",
-        "segmento": "Moda Feminina",
-        "status": "interesse",
-        "receptividade": 4
+    "comentarios_semana": [],
+    "ultimo_campo": {
+      "data": "2026-09-14",
+      "semana": 38,
+      "periodo": "2026-09-13 a 2026-09-19",
+      "abordagens": 11,
+      "instalou_na_hora": 0,
+      "interesse_posterior": 8,
+      "sem_interesse": 2,
+      "instalou_e_desinstalou": 1,
+      "receptividade_media": 4.5,
+      "receptividade_dist": {
+        "5": 6,
+        "4": 4,
+        "3": 1,
+        "2": 0,
+        "1": 0
       },
-      {
-        "texto": "Baixou o app mas nao efetuou o login no momento porque chegou cliente. Muito simpatica; tambem perguntou sobre videos.",
-        "segmento": "Moda Feminina",
-        "status": "interesse",
-        "receptividade": 5
+      "pct_instalacao_imediata": 0,
+      "pct_interesse": 73,
+      "pct_sem_interesse": 18,
+      "segmento": {
+        "moda_masculina": 6,
+        "moda_feminina": 3,
+        "moda_praia": 1,
+        "outros": 1
       },
-      {
-        "texto": "Pediu para passar em outro momento porque a dona da loja nao estava.",
-        "segmento": "Moda Feminina",
-        "status": "interesse",
-        "receptividade": 5
+      "perfil": {
+        "focado_digital": 6,
+        "transicao": 2,
+        "tradicional": 1,
+        "hibrido": 1,
+        "fitness": 1
       },
-      {
-        "texto": "Um pouco resistente ('nao saberia mexer'); mostrei catalogos que fiz no meu app e ele pediu para voltar outro dia para explicar.",
-        "segmento": "Moda Masculina",
-        "status": "interesse",
-        "receptividade": 4
-      },
-      {
-        "texto": "Interessada, mas chegou cliente; voltei depois de 1h e a funcionaria tinha ido almocar.",
-        "segmento": "Moda Feminina",
-        "status": "interesse",
-        "receptividade": 5
-      }
-    ]
+      "comentarios": [
+        {
+          "texto": "Estava muito ocupada mas demonstrou interesse.",
+          "segmento": "Moda Feminina",
+          "status": "interesse",
+          "receptividade": 5
+        },
+        {
+          "texto": "Demonstrou interesse no app, mas estava recebendo mercadoria e falou que baixaria mais tarde.",
+          "segmento": "Moda Masculina",
+          "status": "interesse",
+          "receptividade": 5
+        },
+        {
+          "texto": "Se mostrou interessada, mas pelo movimento da loja nao conseguiu dar atencao; ficou com o informativo e baixaria depois.",
+          "segmento": "Outros",
+          "status": "interesse",
+          "receptividade": 5
+        },
+        {
+          "texto": "Pediu o informativo para ler e falou que baixaria depois; ofereci ajuda e preferiu fazer chegando em casa.",
+          "segmento": "Moda Feminina",
+          "status": "interesse",
+          "receptividade": 5
+        },
+        {
+          "texto": "Ficou com o informativo mas nao demonstrou muito interesse.",
+          "segmento": "Moda Masculina",
+          "status": "sem_interesse",
+          "receptividade": 3
+        }
+      ],
+      "nota": "Ultimo lote de campo antes da pausa. 0 instalacao imediata (todas 'baixaria depois' / sem interesse); receptividade alta (4,5)."
+    }
   },
   "reativacao": {
     "acumulado": {
@@ -249,11 +281,11 @@
         "parou": 5,
         "semanal": 2
       },
-      "_periodo_nota": "corte 31/08; sem novo lote de Heavy Users na semana 35 (segue 22 entrevistados)."
+      "_periodo_nota": "corte 24/08; sem novo lote de Heavy Users em setembro (segue 22 entrevistados, ultima resposta 24/08)."
     },
     "semana": {
       "entrevistados": 0,
-      "detalhe": "Sem novas entrevistas de Heavy Users nesta janela (ultima resposta em 24/08). Reativacao acumulada inalterada."
+      "detalhe": "Sem novas entrevistas de Heavy Users (ultima em 24/08). Reativacao acumulada inalterada."
     },
     "por_que_pararam": {
       "falta_de_tempo": 6,
@@ -318,5 +350,6 @@
       "exemplos": "ex.: tenis; pedir por microfone; escolher cores sem tirar foto a foto"
     }
   ],
-  "metodo": "Ativacao: recorte da semana = lote de formularios preenchidos apos o campo, atribuido a semana de campo informada pelo gestor (nao pelo timestamp). Reativacao: questionario continuo; a coluna 'semana' reflete o lote da semana. Percentuais inteiros. Dado ausente vira '-' na tela, nunca zero. | Parcial semana 37: recorte pelos dias de campo informados pelo gestor (03/09 -> sem.36; 07/09 -> sem.37), nao pelo timestamp."
+  "metodo": "Ativacao: acumulado recomputado dos 448 registros do form (corte 14/09, ultima resposta). Recorte da semana = dias de campo informados pelo gestor; setembro em PAUSA (promotora parou de ir) -> semana 39 = 0 abordagens (zero real). Ultimo campo real = 14/09 (11 abordagens, semana 38) em 'ultimo_campo'. Reativacao: sem novo lote (22 entrevistados). Percentuais inteiros. Dado ausente vira '—'; pausa com 0 campo = 0 real.",
+  "ultima_resposta_ativacao": "2026-09-14"
 }

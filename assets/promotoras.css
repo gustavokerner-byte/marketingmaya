@@ -156,6 +156,14 @@
 /* ---- resumo executivo: bloco promotoras ---- */
 .pr-resumo-lead { font-size: 13px; color: var(--mx-ink-soft); line-height: 1.55; margin: 4px 0 0; }
 
+/* ---- banner de pausa (sem campo na semana) ---- */
+.pr-pausa {
+  margin-top: 14px; padding: 12px 14px; border-radius: 10px;
+  background: var(--pr-warn-bg); border: 1px solid var(--pr-warn);
+  color: var(--pr-warn); font-size: 13px; line-height: 1.5;
+}
+.pr-pausa b { font-weight: 700; }
+
 @media (max-width: 860px) {
   .pr-insights, .pr-kpis, .pr-pgrid, .pr-restat { grid-template-columns: repeat(2, 1fr); }
   .pr-ovw, .pr-tworow, .pr-quotes { grid-template-columns: 1fr; }
