@@ -447,9 +447,9 @@
       heroCard("Fora da capital", pct(ati.fora_da_capital_pct, 0),
         "dos scans vêm de outras cidades", true);
 
-    var isParcAti = !!ref.parcial; // semana parcial: sem badge de variacao por frente
+    var isParcAti = !!ref.parcial;
     var cardsFrente = frentes.map(function (f, i) {
-      return kpi(f.label, num(f.scans_semana), isParcAti ? false : delta(f.scans_semana, f.scans_semana_anterior),
+      return kpi(f.label, num(f.scans_semana), false,
         num(f.scans_total) + " scans acumulados · desde " + dm(f.instalacao));
     }).join("");
 
@@ -493,7 +493,7 @@
 
       '<div class="mx-block"><div class="mx-block-head">' +
         "<h3>Scans na semana por frente</h3>" +
-        '<span class="mx-eyebrow">' + periodo(ref.inicio, ref.fim) + (isParcAti ? " · parcial" : " · vs. semana anterior") + "</span>" +
+        '<span class="mx-eyebrow">' + periodo(ref.inicio, ref.fim) + (isParcAti ? " · parcial" : "") + "</span>" +
       '</div><div class="mx-kpis">' + cardsFrente + "</div></div>" +
 
       '<div class="mx-block"><div class="mx-block-head">' +

@@ -3,9 +3,46 @@
   "versao": 2,
   "definicao_de_semana": "domingo a sabado. Rotulo = numero ISO da segunda-feira contida na janela.",
   "fonte": "BI CWS + Windsor.ai (Instagram) + QR codes (leitor de QR)",
-  "destinatarios": ["vinicius.dias@cws-platform.com", "fernando@cws-platform.com"],
-  "ultima_rodada": "2026-08-24",
-
+  "destinatarios": [
+    "vinicius.dias@cws-platform.com",
+    "fernando@cws-platform.com"
+  ],
+  "ultima_rodada": "2026-10-08",
+  "downloads": {
+    "total": 924,
+    "data_corte": "2026-08-22",
+    "corte_misto": true,
+    "por_loja": {
+      "appstore": {
+        "acumulado": 463,
+        "desde": "2026-02-24",
+        "corte": "2026-08-22"
+      },
+      "google_play": {
+        "acumulado": 461,
+        "desde": null,
+        "corte": "2026-08-19"
+      }
+    },
+    "por_periodo": {
+      "semana_34": {
+        "appstore": 17,
+        "google_play_ate_19": 8
+      },
+      "agosto_ate_22": {
+        "appstore": 34,
+        "google_play_ate_19": 35
+      }
+    },
+    "delta_desde_ultima_rodada": 168,
+    "baseline_delta": {
+      "data": "2026-07-21",
+      "total": 756,
+      "nota": "Ultima posicao de downloads documentada (App Store 343 + Google Play 413). A CONFIRMAR com o gestor."
+    },
+    "metodo_de_atualizacao": "total = soma dos acumulados por loja.",
+    "nota": "Corte misto: 22/08 iOS, 19/08 Android (Google Play atrasa ~3 dias). App Store passou a dar split por periodo; Google via CSV diario. Downloads no e-mail entra so no bloco acumulado ate os cortes alinharem."
+  },
   "semanas_fechadas_dom_sab": [
     {
       "semana": 33,
@@ -29,9 +66,31 @@
       "produtos_cadastrados": 75,
       "imagens_geradas": 801,
       "cadastrados_acumulado_no_fim": 478
+    },
+    {
+      "semana": 39,
+      "periodo": "2026-09-20 a 2026-09-26",
+      "novos_cadastros": 140,
+      "primeiro_uso": 13,
+      "usuarios_ativos": 90,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 40,
+      "imagens_geradas": 433,
+      "cadastrados_acumulado_no_fim": 926,
+      "nota": "Comparativo da rodada da semana 40. Volume atipico de cadastros (140) - provavel acao presencial."
+    },
+    {
+      "semana": 40,
+      "periodo": "2026-09-27 a 2026-10-03",
+      "novos_cadastros": 11,
+      "primeiro_uso": 6,
+      "usuarios_ativos": 8,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 61,
+      "imagens_geradas": 694,
+      "cadastrados_acumulado_no_fim": 937
     }
   ],
-
   "janelas_parciais_dom_qui": [
     {
       "semana": 30,
@@ -56,17 +115,31 @@
       "cadastrados_acumulado_no_fim": 457
     }
   ],
-
   "semanas_legado_seg_dom": {
     "aviso": "Capturado sob a definicao antiga (segunda a domingo). NAO comparavel com as semanas domingo-sabado. Nao usar como comparativo.",
     "dados": [
-      { "semana": 26, "periodo": "2026-06-22 a 2026-06-28", "primeiro_uso": 24 },
-      { "semana": 27, "periodo": "2026-06-29 a 2026-07-05", "primeiro_uso": 4 },
-      { "semana": 28, "periodo": "2026-07-06 a 2026-07-12", "primeiro_uso": 4 },
-      { "semana": 29, "periodo": "2026-07-13 a 2026-07-19", "primeiro_uso": 8 }
+      {
+        "semana": 26,
+        "periodo": "2026-06-22 a 2026-06-28",
+        "primeiro_uso": 24
+      },
+      {
+        "semana": 27,
+        "periodo": "2026-06-29 a 2026-07-05",
+        "primeiro_uso": 4
+      },
+      {
+        "semana": 28,
+        "periodo": "2026-07-06 a 2026-07-12",
+        "primeiro_uso": 4
+      },
+      {
+        "semana": 29,
+        "periodo": "2026-07-13 a 2026-07-19",
+        "primeiro_uso": 8
+      }
     ]
   },
-
   "acumulados_por_rodada": [
     {
       "data": "2026-07-22",
@@ -99,20 +172,87 @@
       "imagens_com_sucesso": 21792,
       "imagens_salvas": 8825,
       "validacao": "Print mostra novos cadastros 478, igual ao total de usuarios cadastrados 478. Janela cobre 100% da base. Acumulado valido. 478 >= 465 da rodada anterior."
+    },
+    {
+      "data": "2026-10-08",
+      "janela_do_print": "2026-02-01 a 2026-10-08",
+      "usuarios_cadastrados": 945,
+      "primeiro_uso_acumulado": 507,
+      "assinantes_base_ativa": 0,
+      "produtos_cadastrados": 3075,
+      "produtos_com_sucesso": 3063,
+      "produtos_salvos": 1725,
+      "imagens_geradas": 33537,
+      "imagens_com_sucesso": 27351,
+      "imagens_salvas": 10614,
+      "validacao": "Print mostra novos cadastros 945, igual ao total de usuarios cadastrados 945. Janela cobre 100% da base. Acumulado valido. 945 >= 478 da rodada anterior."
     }
   ],
-
   "mes_corrente_por_corte": [
-    { "mes": "2026-07", "dia_corte": 22, "novos_cadastros": 33, "primeiro_uso": 19, "usuarios_ativos": 39, "produtos_cadastrados": 139, "imagens_geradas": 1612 },
-    { "mes": "2026-07", "dia_corte": 23, "novos_cadastros": 33, "primeiro_uso": 20, "usuarios_ativos": 41, "produtos_cadastrados": 146, "imagens_geradas": 1693 },
-    { "mes": "2026-08", "dia_corte": 22, "novos_cadastros": 51, "primeiro_uso": 21, "usuarios_ativos": 39, "assinantes_novos": 0, "produtos_cadastrados": 174, "imagens_geradas": 1917 }
+    {
+      "mes": "2026-07",
+      "dia_corte": 22,
+      "novos_cadastros": 33,
+      "primeiro_uso": 19,
+      "usuarios_ativos": 39,
+      "produtos_cadastrados": 139,
+      "imagens_geradas": 1612
+    },
+    {
+      "mes": "2026-07",
+      "dia_corte": 23,
+      "novos_cadastros": 33,
+      "primeiro_uso": 20,
+      "usuarios_ativos": 41,
+      "produtos_cadastrados": 146,
+      "imagens_geradas": 1693
+    },
+    {
+      "mes": "2026-08",
+      "dia_corte": 22,
+      "novos_cadastros": 51,
+      "primeiro_uso": 21,
+      "usuarios_ativos": 39,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 174,
+      "imagens_geradas": 1917
+    },
+    {
+      "mes": "2026-10",
+      "dia_corte": 8,
+      "novos_cadastros": 14,
+      "primeiro_uso": null,
+      "usuarios_ativos": 18,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": null,
+      "imagens_geradas": null,
+      "cadastrados_acumulado_no_fim": 945,
+      "nota": "Parcial 01-08/10. primeiro_uso, produtos e imagens do mes nao isolaveis (falta print 01/10 ate corte); 01-03/10 nao separavel da semana 40."
+    }
   ],
-
   "mes_anterior_por_corte": [
-    { "mes": "2026-06", "dia_corte": 23, "novos_cadastros": 58, "primeiro_uso": 30, "usuarios_ativos": 45, "produtos_cadastrados": 191, "imagens_geradas": 2095, "cadastrados_acumulado_no_fim": 413 },
-    { "mes": "2026-06", "dia_corte": 30, "novos_cadastros": 77, "primeiro_uso": 43, "usuarios_ativos": 61, "produtos_cadastrados": 298, "imagens_geradas": 3375, "cadastrados_acumulado_no_fim": 432, "nota": "Mes fechado." }
+    {
+      "mes": "2026-06",
+      "dia_corte": 23,
+      "novos_cadastros": 58,
+      "primeiro_uso": 30,
+      "usuarios_ativos": 45,
+      "produtos_cadastrados": 191,
+      "imagens_geradas": 2095,
+      "cadastrados_acumulado_no_fim": 413
+    },
+    {
+      "mes": "2026-06",
+      "dia_corte": 30,
+      "novos_cadastros": 77,
+      "primeiro_uso": 43,
+      "usuarios_ativos": 61,
+      "produtos_cadastrados": 298,
+      "imagens_geradas": 3375,
+      "cadastrados_acumulado_no_fim": 432,
+      "nota": "Mes fechado."
+    }
   ],
-
   "medias_moveis": [
     {
       "data": "2026-07-23",
@@ -127,31 +267,119 @@
       "cadastros_no_periodo": 24,
       "media_diaria": 3.4,
       "metodo": "acumulado 478 em 22/08 menos acumulado 454 em 15/08, dividido por 7"
+    },
+    {
+      "data": "2026-10-08",
+      "tipo": "mensal_fechado",
+      "mes_referencia": "2026-09",
+      "media_diaria": 10.0,
+      "metodo": "301 novos cadastros em setembro / 30 dias. Media movel 7 dias nao computada: falta acumulado em 01/10."
     }
   ],
-
   "qr_codes": [
     {
       "data_da_rodada": "2026-08-24",
       "janela": "2026-08-16 a 2026-08-22",
-      "metrica": "leituras (visitantes unicos) filtrados pela data/hora do scan",
-      "frentes_conhecidas": ["Bras", "CDC"],
-      "regra_agrupamento": "Frentes nao reconhecidas agrupadas como 'Flyer' (regra do gestor). Nesta rodada, agrupadas em Flyer: 'Praca de Alimentacao', 'Entrada Sao Caetano', 'pilastra1_boulevard_cdcQ'.",
-      "por_frente_semana_34": {
-        "Bras": { "leituras": 7, "unicos": 1 },
-        "CDC": { "leituras": 7, "unicos": 2 },
-        "Flyer": { "leituras": 3, "unicos": 3, "composicao": "Praca de Alimentacao 3/3" }
+      "metrica": "scans (leituras) e visitantes unicos por data/hora do scan",
+      "agrupamento": "4 frentes canonicas do dashboard (ativacoes.json): Flyers, Pilastra, Banner, Praca. Flyers = Adesivo + Bras + CDC (CDC novo nesta rodada). Pilastra = pilastra1_boulevard_cdcQ. Banner = Entrada Sao Caetano. Praca = Praca de Alimentacao.",
+      "semana_34": {
+        "Flyers": {
+          "scans": 14,
+          "unicos": 3
+        },
+        "Pilastra": {
+          "scans": 0,
+          "unicos": 0
+        },
+        "Banner": {
+          "scans": 0,
+          "unicos": 0
+        },
+        "Praca": {
+          "scans": 3,
+          "unicos": 3
+        },
+        "total": {
+          "scans": 17,
+          "unicos": 6
+        }
       },
-      "total_semana_34": { "leituras": 17, "unicos": 6 },
-      "por_frente_semana_33": {
-        "Bras": { "leituras": 6, "unicos": 6 },
-        "Flyer": { "leituras": 4, "unicos": 4, "composicao": "Praca de Alimentacao 1/1; pilastra1_boulevard_cdcQ 3/3" }
+      "semana_33": {
+        "Flyers": {
+          "scans": 6,
+          "unicos": 6
+        },
+        "Pilastra": {
+          "scans": 3,
+          "unicos": 3
+        },
+        "Banner": {
+          "scans": 0,
+          "unicos": 0
+        },
+        "Praca": {
+          "scans": 1,
+          "unicos": 1
+        },
+        "total": {
+          "scans": 10,
+          "unicos": 10
+        }
       },
-      "total_semana_33": { "leituras": 10, "unicos": 10 },
-      "nota": "Frentes cruas encontradas nos arquivos: Bras, CDC, Entrada Sao Caetano, Praca de Alimentacao, pilastra1_boulevard_cdcQ. Agrupamento Flyer a confirmar com o gestor."
+      "nota": "Semana 34: 17 scans / 6 unicos concentrados em 22/08; recorrencia alta em Flyers (14 scans / 3 unicos) - provaveis scans de teste/demonstracao dos QR de Bras e CDC. Fonte canonica dos numeros de QR = ativacoes.json (dashboard)."
+    },
+    {
+      "data_da_rodada": "2026-10-08",
+      "janela": "2026-09-27 a 2026-10-03",
+      "metrica": "scans (leituras) e visitantes unicos por data/hora do scan",
+      "agrupamento": "Frentes canonicas (ativacoes.json): Flyers=Adesivo+Bras+CDC; Pilastra=pilastra1_boulevard_cdcQ; Banner=Entrada Sao Caetano+Outdoor_saocaetano; Praca=Praca de Alimentacao.",
+      "semana_40": {
+        "Flyers": {
+          "scans": 0,
+          "unicos": 0
+        },
+        "Pilastra": {
+          "scans": 1,
+          "unicos": 1
+        },
+        "Banner": {
+          "scans": 3,
+          "unicos": 2
+        },
+        "Praca": {
+          "scans": 0,
+          "unicos": 0
+        },
+        "total": {
+          "scans": 4,
+          "unicos": 3
+        }
+      },
+      "semana_39": {
+        "Flyers": {
+          "scans": 0,
+          "unicos": 0
+        },
+        "Pilastra": {
+          "scans": 5,
+          "unicos": 5
+        },
+        "Banner": {
+          "scans": 2,
+          "unicos": 2
+        },
+        "Praca": {
+          "scans": 2,
+          "unicos": 2
+        },
+        "total": {
+          "scans": 9,
+          "unicos": 9
+        }
+      },
+      "nota": "Export QR cobre 09/09-06/10. Semana 38 (13-19/09) tambem preenchida no ativacoes.json (8 scans/7 unicos), fechando a lacuna. Flyers sem scans desde 05/09."
     }
   ],
-
   "instagram": [
     {
       "data": "2026-07-23",
@@ -171,8 +399,20 @@
       "interacoes_janela": 37,
       "interacoes_janela_anterior": 34,
       "posts_de_pico": [
-        { "data": "2026-07-09", "tipo": "CAROUSEL_ALBUM", "alcance": 1314, "engajamento": 12, "seguidores_atribuidos": 0 },
-        { "data": "2026-07-17", "tipo": "REELS", "alcance": 1852, "engajamento": 53, "seguidores_atribuidos": null }
+        {
+          "data": "2026-07-09",
+          "tipo": "CAROUSEL_ALBUM",
+          "alcance": 1314,
+          "engajamento": 12,
+          "seguidores_atribuidos": 0
+        },
+        {
+          "data": "2026-07-17",
+          "tipo": "REELS",
+          "alcance": 1852,
+          "engajamento": 53,
+          "seguidores_atribuidos": null
+        }
       ],
       "linha_de_base_alcance_por_post": "13 a 38",
       "nota": "Novos seguidores indisponivel: a API do Instagram nao libera a metrica diaria para contas com menos de 100 seguidores. Destrava ao passar de 100. Alcance e soma do alcance diario, nao alcance unico. seguidores_atribuidos e null em reels: a API nao suporta o campo."
@@ -194,9 +434,26 @@
       "interacoes_janela": 95,
       "interacoes_janela_anterior": 33,
       "nota": "Conta passou de 100 seguidores: metrica de novos seguidores diaria DESTRAVOU. Novos seguidores na janela = 11 (soma de follower_count 16-22/08). Alcance e soma do alcance diario, nao alcance unico."
+    },
+    {
+      "data": "2026-10-08",
+      "conta": "mayaapp.cdc",
+      "account_id": "17841480695293760",
+      "janela": "2026-09-27 a 2026-10-03",
+      "janela_comparativa": "2026-09-20 a 2026-09-26",
+      "seguidores_total": 364,
+      "novos_seguidores_na_janela": 5,
+      "alcance_janela": 1598,
+      "alcance_janela_anterior": 1836,
+      "visualizacoes_janela": 3407,
+      "visualizacoes_janela_anterior": 3263,
+      "contas_engajadas_janela": 43,
+      "contas_engajadas_janela_anterior": 34,
+      "interacoes_janela": 55,
+      "interacoes_janela_anterior": 42,
+      "nota": "Alcance e soma do alcance diario, nao alcance unico. seguidores_total = valor de hoje (08/10) no Windsor. Deltas: alcance -13%, views +4%, contas eng +26%, interacoes +31%."
     }
   ],
-
   "rodadas_enviadas": [
     {
       "data": "2026-07-23",
@@ -228,22 +485,36 @@
         "Semana 33 primeiro uso = 1 (base baixa) faz o comparativo de primeiro uso da semana 34 explodir para +1200% (13 vs 1). Numero real, reportado sem atenuacao.",
         "Comparativo do mes: julho ate dia 22 veio do historico (mes_corrente_por_corte), sem pedir print novo."
       ]
+    },
+    {
+      "data": "2026-10-08",
+      "tipo": "fechamento_segunda",
+      "semana": 40,
+      "assunto": "MayaApp - fechamento da semana 40 (27/09-03/10)",
+      "status": "rascunho PENDENTE - aguardando ajuste do gestor antes de criar no Gmail",
+      "gmail_draft_id": null,
+      "sem_downloads": true,
+      "bloco_mes": "Setembro fechado vs agosto fechado (gestor optou por mes fechado em vez do corte de 3 dias 01-03/10).",
+      "ficou_de_fora": [
+        "Downloads (App Store + Google Play): outro dashboard; omitido neste e-mail e no dash de gestao.",
+        "Bloco de mes como 'mes corrente ate corte': substituido por mes fechado a pedido do gestor (corte de 3 dias nao representativo)."
+      ],
+      "observacoes": [
+        "Semana 40 cadastros 11 vs semana 39 140 = -92%. Semana 39 teve volume atipico (provavel acao presencial); numero real, sem atenuacao.",
+        "Imagens da semana +60% (694 vs 433) apesar de menos cadastros.",
+        "Setembro fechado +48% vs agosto (301 vs 203). Cadeia de acumulado encadeia: 630(ago)->931(set)->945(08/10)."
+      ]
     }
   ],
-
   "fonte_canonica": "Print do BI CWS. Deck, apresentacao ou planilha nao prevalecem. Instagram vem do Windsor.ai. QR codes vem do leitor de QR.",
-
   "pendencias_de_captura": [
     "Definicao do denominador de 'engajamento %' - bloco de Instagram segue em numeros absolutos",
-    "Confirmar agrupamento das frentes de QR (o que vira 'Flyer' vs frente propria: Praca de Alimentacao, Entrada Sao Caetano, pilastra1_boulevard_cdcQ).",
     "Downloads (App Store + Google Play) da semana 34: gestor optou por rodar sem downloads; capturar quando disponivel.",
-    "Estado atual dos 3 JSON do dashboard (repo privado dados-usuarios) para sincronizar o dashboard.",
     "Julho nunca foi fechado no serie_mensal do dashboard (ultima rodada antes desta foi 23/07). Fechar julho quando for sincronizar o dashboard.",
-    "Semanas 31-32 (dom-sab) nao capturadas: serie semanal dom-sab tem lacuna entre 23/jul e semana 33."
+    "Semanas 31-32 (dom-sab) nao capturadas: serie semanal dom-sab tem lacuna entre 23/jul e semana 33.",
+    "Outubro: primeiro_uso, produtos e imagens do mes nao isolaveis sem print 01/10 ate o corte (01-03/10 ficou dentro da semana 40)."
   ],
-
   "divergencias_abertas": [],
-
   "divergencias_resolvidas": [
     {
       "id": "DIV-01",
@@ -253,6 +524,30 @@
       "fonte_a": "Deck 'MayaApp - Desenvolvimento Mai-Ago 2026' (20/06/2026): 487 usuarios cadastrados, 2.000 produtos, 20.000 imagens",
       "fonte_b": "BI CWS: 432 cadastrados em 30/06/2026; 2.241 produtos e 24.147 imagens em 23/07/2026",
       "decisao": "O print do BI prevalece. Os numeros do deck de 20/06 nao devem ser usados."
+    }
+  ],
+  "meses_fechados": [
+    {
+      "mes": "2026-08",
+      "dia_corte": 31,
+      "novos_cadastros": 203,
+      "primeiro_uso": 67,
+      "usuarios_ativos": 88,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 339,
+      "imagens_geradas": 3830,
+      "cadastrados_acumulado_no_fim": 630
+    },
+    {
+      "mes": "2026-09",
+      "dia_corte": 30,
+      "novos_cadastros": 301,
+      "primeiro_uso": 62,
+      "usuarios_ativos": 96,
+      "assinantes_novos": 0,
+      "produtos_cadastrados": 365,
+      "imagens_geradas": 4113,
+      "cadastrados_acumulado_no_fim": 931
     }
   ]
 }

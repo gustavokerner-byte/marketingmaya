@@ -1,7 +1,7 @@
 {
   "_fonte": "CWS Platform - Maya App / Desempenho Geral (prints do BI)",
   "_corte_semanal": "domingo a sabado",
-  "_atualizado_em": "2026-10-01",
+  "_atualizado_em": "2026-10-08",
   "_como_atualizar": "Toda segunda: rode tools/add_semana.py com os numeros do print da semana fechada. Ver docs/ROTINA_SEMANAL.md.",
   "_nota_fechamento": "FECHAMENTO semana 39 + mes setembro (corte 30/09). Prints BI 01/10. Fechadas semanas 37(13),38(124),39(140); setembro fechado (301, base 931); agosto revisado (203, base 630). Acumulado: base 931 direta; sub-metricas derivadas (ver _obs_base). QR em ativacoes.json atualizado. Promotoras NAO atualizada (2 formularios nao recebidos). Downloads fora desta frente.",
   "semana_referencia": {
@@ -11,19 +11,19 @@
     "tipo": "fechamento_semana_39"
   },
   "acumulado": {
-    "_periodo": "2026-02-01 a 2026-09-30",
-    "cadastros": 931,
-    "primeiro_uso": 499,
+    "_periodo": "2026-02-01 a 2026-10-08",
+    "cadastros": 945,
+    "primeiro_uso": 507,
     "assinantes": 0,
     "ativos_mes": 96,
     "receita_bruta": 0,
     "rebate": 0,
-    "produtos_cadastrados": 2991,
-    "produtos_sucesso": 2979,
-    "produtos_salvos": 1700,
-    "imagens_geradas": 32596,
-    "imagens_sucesso": 26595,
-    "imagens_salvas": 10458,
+    "produtos_cadastrados": 3075,
+    "produtos_sucesso": 3063,
+    "produtos_salvos": 1725,
+    "imagens_geradas": 33537,
+    "imagens_sucesso": 27351,
+    "imagens_salvas": 10614,
     "heavy_users": 120,
     "heavy_users_pct": 26,
     "frequencia": [
@@ -67,7 +67,7 @@
         "sucesso_pct": 100.0
       }
     ],
-    "_obs_base": "Corte 30/09, print de acumulado 01/02-30/09 (validacao novos=total: 931). primeiro_uso 499, produtos/imagens e heavy_users/frequencia/top_clientes confirmados pelo print de acumulado (antes derivados/corte 22/09). heavy_users 120 = 46+21+53 (6+); heavy_users_pct 26 = 120/459 das faixas."
+    "_obs_base": "Corte 08/10, print de acumulado 01/02-08/10 (validacao novos=total: 945). produtos/imagens confirmados pelo print. ativos_mes (96), heavy_users (120/26%), frequencia[] e top_clientes[] seguem no corte 30/09 (o print de 08/10 nao traz essas quebras); atualizam no proximo print de acumulado completo."
   },
   "mes": {
     "_periodo": "2026-09-01 a 2026-09-30",
@@ -306,21 +306,19 @@
       "heavy_users": 0,
       "heavy_users_pct": 0,
       "_nota": "Semana 39 fechada (dom 20 a sab 26/09). Encadeia: 786 (19/09) + 140 = 926. Inclui acao de flyers das promotoras (21/09)."
+    },
+    {
+      "inicio": "2026-09-27",
+      "fim": "2026-10-03",
+      "cadastros": 11,
+      "primeiro_uso": 6,
+      "ativos_mes": 8,
+      "base_cadastrada_fim": 937,
+      "produtos_cadastrados": 61,
+      "imagens_geradas": 694,
+      "_nota": "Semana 40 fechada (dom 27/09 a sab 03/10). Encadeia: 926 (26/09) + 11 = 937. Volume normaliza apos a acao da semana 39 (140)."
     }
   ],
-  "semana_parcial": {
-    "inicio": "2026-09-27",
-    "fim": "2026-09-30",
-    "parcial": true,
-    "cadastros": 5,
-    "base_cadastrada_fim": 931,
-    "primeiro_uso": "— a confirmar",
-    "ativos_mes": "— a confirmar",
-    "produtos_cadastrados": "— a confirmar",
-    "imagens_geradas": "— a confirmar",
-    "heavy_users": "— a confirmar",
-    "_nota": "Semana 40 parcial (dom 27 a ter 30/09, fim do mes). Cadastros e base por diferenca do print mensal: 926 (26/09) -> 931 (30/09) = +5. Demais metricas da janela 27-30 nao vieram em print separado -> a confirmar."
-  },
   "mes_anterior_mesmo_corte": {
     "_periodo": "2026-08-01 a 2026-08-22",
     "label": "Agosto 2026 (parcial ate 22/08, comparativo do mesmo corte)",
