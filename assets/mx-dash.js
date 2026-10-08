@@ -207,11 +207,13 @@
 
   function funil(titulo, etapas) {
     var base = etapas[0].valor || 1;
-    var rows = etapas.map(function (e) {
+    var cores = ["var(--mx-f1)", "var(--mx-f2)", "var(--mx-f6)"]; // topo -> sucesso -> retido
+    var rows = etapas.map(function (e, i) {
       var p = (e.valor / base) * 100;
+      var cor = cores[i % cores.length];
       return '<div class="mx-funnel-row"><span>' + esc(e.label) + "</span>" +
         '<span class="mx-funnel-track"><span class="mx-funnel-fill" style="width:' +
-        Math.max(1.5, p).toFixed(1) + '%"></span></span>' +
+        Math.max(1.5, p).toFixed(1) + '%;background:' + cor + '"></span></span>' +
         '<span class="mx-funnel-num">' + num(e.valor) + " <small>(" + pct(p, 0) + ")</small></span></div>";
     }).join("");
     return '<div class="mx-chart"><p class="mx-eyebrow" style="margin:0 0 14px">' + esc(titulo) +
@@ -845,9 +847,7 @@
 
       var st = document.getElementById("mx-atualizado");
       if (st) {
-        st.textContent = "Cadastros atualizados em " + dm(cad._atualizado_em) +
-          " · QR Codes em " + dm((ati._gerado_em || "").slice(0, 10)) +
-          (prom ? " · Promotoras em " + dm(prom.data_corte) : "");
+        st.textContent = "Cadastros atualizados em " + dm(cad._atualizado_em);
       }
     }).catch(function (e) {
       console.error("[mx-dash]", e);
