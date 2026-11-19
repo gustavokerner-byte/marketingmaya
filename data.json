@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_updated": "2026-11-18T19:19:16.381Z",
+    "last_updated": "2026-11-19T19:26:07.706Z",
     "account_id": "17841480695293760",
     "account_name": "MayaApp CDC (mayaapp.cdc)"
   },
   "account": {
-    "followers_count": 880,
+    "followers_count": 884,
     "follows_count": 157,
     "media_count": 68
   },
@@ -129,21 +129,10 @@
     "2026-11-15": 868,
     "2026-11-16": 868,
     "2026-11-17": 880,
-    "2026-11-18": 880
+    "2026-11-18": 880,
+    "2026-11-19": 884
   },
   "daily_metrics": [
-    {
-      "date": "2026-08-20",
-      "reach": 63,
-      "likes": 1,
-      "comments": 0,
-      "saves": 0,
-      "shares": 0,
-      "total_interactions": 1,
-      "views": 148,
-      "accounts_engaged": 1,
-      "new_followers": 1
-    },
     {
       "date": "2026-08-21",
       "reach": 1056,
@@ -1211,6 +1200,18 @@
       "views": 1071,
       "accounts_engaged": 2,
       "new_followers": 11
+    },
+    {
+      "date": "2026-11-18",
+      "reach": 53,
+      "likes": 6,
+      "comments": 0,
+      "saves": 1,
+      "shares": 0,
+      "total_interactions": 7,
+      "views": 797,
+      "accounts_engaged": 7,
+      "new_followers": 2
     }
   ],
   "posts": [
@@ -1219,13 +1220,13 @@
       "type": "REELS",
       "caption": "Da peça no cabide ao catálogo no WhatsApp do cliente.\n\nSem estúdio, sem fotógrafo, sem sair da loja. A MayaApp monta a vitrine digital da sua loja no CDC.\n\nBaixe o app no link na bio. \n\n#MayaAppCDC #CDC #Brás #lojista",
       "permalink": "https://www.instagram.com/reel/DcTyAHHxMNU/",
-      "media_url": "https://scontent-fra5-1.cdninstagram.com/o1/v/t2/f2/m86/AQO_zvY5fVFdEEanw8j73AsKmgasrGvjra08sfe4kTK_4t4G8p1TJKO0UY_C6aZu-GsPXnZ9AaDueG9K0T6h0dfbOOqFgesA_iwsWNA.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_ohc=5v83bSFYkucQ7kNvwGiQv0M&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTAzNjU3MDk0OTI2MDI4MSwiYXNzZXRfYWdlX2RheXMiOjg5LCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6NDQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=b2b029ac6b2b6226&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9BMzQyM0E0NzQ5RjMwRTAzNUEwNzg2QTNFNkE4NTc4QV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0VFNEFBRjg5RTg4NzRGNDEyNDEwQUMwQzhCMTA2QTgzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbyz7izr7DXAxUCKAJDMywXQEYIcrAgxJwYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=WPoLIC29lAI-dEaI4MkekA&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQgeczyMiCGwhFzJHtoIQ1wPXkNSxvLCNErdbsiTInR5w&oe=6AFFC047",
+      "media_url": "https://scontent-fra5-1.cdninstagram.com/o1/v/t2/f2/m86/AQO_zvY5fVFdEEanw8j73AsKmgasrGvjra08sfe4kTK_4t4G8p1TJKO0UY_C6aZu-GsPXnZ9AaDueG9K0T6h0dfbOOqFgesA_iwsWNA.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_ohc=5v83bSFYkucQ7kNvwGTXoMT&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTAzNjU3MDk0OTI2MDI4MSwiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6NDQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=b2b029ac6b2b6226&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9BMzQyM0E0NzQ5RjMwRTAzNUEwNzg2QTNFNkE4NTc4QV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0VFNEFBRjg5RTg4NzRGNDEyNDEwQUMwQzhCMTA2QTgzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbyz7izr7DXAxUCKAJDMywXQEYIcrAgxJwYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=GrMdi4nuA3udXCILdZy9Mg&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQRLj_YrX3_SvUaMmy7vrqei6KLDP-bH-UJCbK42rh5o1A&oe=6B0111C7",
       "metrics": {
-        "reach": 3289,
+        "reach": 3294,
         "engagement": 59,
         "saves": 6,
         "shares": 4,
-        "views": 3836,
+        "views": 3843,
         "likes": 40,
         "comments": 5,
         "follows": null
@@ -1236,7 +1237,7 @@
       "type": "CAROUSEL_ALBUM",
       "caption": "A roleta girou no Brás! 🎡\n\nForam +100 brindes distribuídos e 10 air fryers entregues para quem se cadastrou na MayaApp. \n\nUm dia inteiro no Circuito de Compras do Brás, com prêmio na mesa e muita conversa boa com os lojistas.\n\nE além do prêmio, deu pra mostrar de perto o que a MayaApp faz pela loja: foto profissional, descrição pronta e catálogo pra mandar no WhatsApp na hora.\n\nE se você perdeu essa, vai ter mais. Fica de olho aqui que a gente avisa quando a roleta voltar. 👀\n\nMarca aquele lojista que não pode perder a próxima. 👇\n\n#MayaApp #CircuitoDeCompras #Bras #ModaAtacado",
       "permalink": "https://www.instagram.com/p/DcjMFcVlVnX/",
-      "media_url": "https://scontent-fra5-1.cdninstagram.com/v/t51.82787-15/782876235_17878506117689844_8327971345656540352_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=P7iRF7-d00wQ7kNvwFVwWeh&_nc_oc=Adqp7J1j-Ii7CKNCe5zkfG5IJVAlfvfYr5-SbjmT-jb1OimcBgQ_u3t8M6HW5tNdeBA&_nc_zt=23&_nc_ht=scontent-fra5-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WPoLIC29lAI-dEaI4MkekA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTAiLaTMyLLdujH7EnFfVWeUhfCa1RxP4Xu0IcSRa3DvA&oe=6B03E440",
+      "media_url": "https://scontent-fra5-1.cdninstagram.com/v/t51.82787-15/782876235_17878506117689844_8327971345656540352_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=P7iRF7-d00wQ7kNvwG0w7vZ&_nc_oc=AdoRaHbKCGykskcaABqHKfEj_om01k_hVp-c9x_i9VdaqWqEJZuE4reI1IDC5sfXl18&_nc_zt=23&_nc_ht=scontent-fra5-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=GrMdi4nuA3udXCILdZy9Mg&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQRt4emYC_PgB73CciqpbT-1fKbn-vPf3io28FM5khyfiQ&oe=6B0535C0",
       "metrics": {
         "reach": 161,
         "engagement": 33,
@@ -1253,13 +1254,13 @@
       "type": "CAROUSEL_ALBUM",
       "caption": "3.000 créditos pra você. 3.000 pro lojista que você indicar.\n\nÉ só isso mesmo. Você compartilha seu convite, ele se cadastra, os dois recebem.\n\nSem limite de indicações. Cada lojista novo é mais crédito na sua conta.\n\nSeu convite já está no app \n\nDesliza o carrossel e descubra como compartilhar! 💜",
       "permalink": "https://www.instagram.com/p/Dcl-qSGFRHM/",
-      "media_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.82787-15/787366233_17878684158689844_7142881082725068205_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=b9gMaKYZrRkQ7kNvwGeDzjR&_nc_oc=AdrCVavHXmiwMMmKXxAWHfAIYvph5wV3rR3pqJxbshvE9zRN5faY44LIBEqLE9btk48&_nc_zt=23&_nc_ht=scontent-fra3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WPoLIC29lAI-dEaI4MkekA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSlvdNBU719gK0I_gDDZ4EPQllTAbKS2Ct_URtc8XRqDg&oe=6B03D395",
+      "media_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.82787-15/787366233_17878684158689844_7142881082725068205_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=b9gMaKYZrRkQ7kNvwGFif4w&_nc_oc=AdoSI3Wyh9rxKYPHGXqwBQGlmOhQNLc7UW1ullDYUx_QFMeRDuoKdX8qmHua24AsbXs&_nc_zt=23&_nc_ht=scontent-fra3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=GrMdi4nuA3udXCILdZy9Mg&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQRS7W6CMzBZtqP2uyz0-of34sMSciSwOqoEnkmIXvLf0g&oe=6B052515",
       "metrics": {
-        "reach": 1695,
+        "reach": 1702,
         "engagement": 22,
         "saves": 3,
         "shares": 1,
-        "views": 3323,
+        "views": 3331,
         "likes": 18,
         "comments": 0,
         "follows": 1
@@ -1270,7 +1271,7 @@
       "type": "REELS",
       "caption": "A MayaApp CDC passou no SBT Brasil. 📺\n\nNa sexta, o SBT exibiu uma matéria sobre inteligência artificial para empreendedores e a MayaApp CDC entrou como um dos casos. \n\nAndré Seibel, CEO do @circuitodecomprasofc , apresentou o projeto, e a @curini.beachfit mostrou como usa o app na rotina da loja: foto de produto pronta, catálogo em ordem, menos tempo perdido.\n\nVer a tecnologia que a gente construiu chegando na tela de milhões de brasileiros é motivo de orgulho. E é só o começo. 🚀\n\n#MayaAppCDC #CircuitoDeCompras #InteligenciaArtificial #VarejoDeModa",
       "permalink": "https://www.instagram.com/reel/DctbJtlAPrU/",
-      "media_url": "https://scontent-fra3-1.cdninstagram.com/o1/v/t2/f2/m86/AQOYx_lp7awVg8EHe-QqjFD72RsTZUnCKiZCW6nTJvgYcDXErVWg2hx9je2thZz4Q185nBPP5SRMI_wu2E_vqzKS1RtUCG8dMYVpckQ.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_ohc=T5zS7G6FVX0Q7kNvwGIcFP9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTA0OTAwODY0Nzk3ODg2NSwiYXNzZXRfYWdlX2RheXMiOjc5LCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6MTYwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=642d8d72193a9b30&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zNTQ2NEFDQUE2QUQyNTg2QjU1NkM4NjJDQzFDRkZCRF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzI5NEVGRDExOUY4NkU0QjQ0Q0JBOEY0QTJCQTdFRDk3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbi_aG9q4TdAxUCKAJDMywXQGQO6XjU_fQYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=WPoLIC29lAI-dEaI4MkekA&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQSfLoLqgQCWcaOKabqZTaLont9A4eaNDk0oZIiGKQ9P5Q&oe=6AFFE5D1",
+      "media_url": "https://scontent-fra3-1.cdninstagram.com/o1/v/t2/f2/m86/AQOYx_lp7awVg8EHe-QqjFD72RsTZUnCKiZCW6nTJvgYcDXErVWg2hx9je2thZz4Q185nBPP5SRMI_wu2E_vqzKS1RtUCG8dMYVpckQ.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_ohc=vBzL7-3WTqgQ7kNvwEs8mDy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTA0OTAwODY0Nzk3ODg2NSwiYXNzZXRfYWdlX2RheXMiOjgwLCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6MTYwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=642d8d72193a9b30&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zNTQ2NEFDQUE2QUQyNTg2QjU1NkM4NjJDQzFDRkZCRF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzI5NEVGRDExOUY4NkU0QjQ0Q0JBOEY0QTJCQTdFRDk3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbi_aG9q4TdAxUCKAJDMywXQGQO6XjU_fQYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=GrMdi4nuA3udXCILdZy9Mg&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQSPp-3-y7366SEXyJaLscVV0ZS7RjBofQdz51HGXg8ucA&oe=6B013751",
       "metrics": {
         "reach": 414,
         "engagement": 57,
@@ -1287,13 +1288,13 @@
       "type": "REELS",
       "caption": "Do cabide pro catálogo em minutos. ⚡\n\nA MayaApp CDC transforma a foto do celular em imagem profissional, organiza sua coleção e deixa tudo pronto pra postar e vender.\n\nQuem vende no Circuito de Compras já sabe: tempo é peça na araras. 🛍️",
       "permalink": "https://www.instagram.com/reel/Ddb1v5pAIMq/",
-      "media_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.82787-15/814629395_17881735044689844_5087998258479940943_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=YijEKe0nX_4Q7kNvwFNt0Zn&_nc_oc=AdrhagSlVyzjqVHeQyVWY1MwO32zYiLnhyJLFESqpWIzrG7Nx49e3Dw-0pCzdei3L6A&_nc_zt=23&_nc_ht=scontent-fra3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WPoLIC29lAI-dEaI4MkekA&_nc_tpa=Q5bMBQJFXyR_O3-SKOxr2UU23-qh1ulbnlW41r23xgzElziuwVRoK1ltCecI95CSl7VtuKTWjvCpabg3iQ&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQQdgUiYdtnXm9wxcJuyCZYbdLKXCbb08Z9WMgaf152fBA&oe=6B03C19E",
+      "media_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.82787-15/814629395_17881735044689844_5087998258479940943_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=YijEKe0nX_4Q7kNvwE1JuHY&_nc_oc=AdqQSD-b-8lgIBVtY_180f2VETfvUhMb2mnOZ8ML2jQXsf4gSjE7xBfvsPXhf12HCa8&_nc_zt=23&_nc_ht=scontent-fra3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=GrMdi4nuA3udXCILdZy9Mg&_nc_tpa=Q5bMBQJNcPTN6ke_NU7H73sxQyL1jQ1WbuadCKSNnju7_CeKPPnMruw7BnC2ARtIC81WGQggJJA-estj6Q&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQSkHjXDITnsFEyQJ05DTR3sPcnXsV6wQPzU2wUNwsxCbA&oe=6B05131E",
       "metrics": {
         "reach": 3206,
         "engagement": 57,
         "saves": 3,
         "shares": 4,
-        "views": 4530,
+        "views": 4536,
         "likes": 48,
         "comments": 2,
         "follows": null
@@ -1304,7 +1305,7 @@
       "type": "REELS",
       "caption": "Cadastrar produto na MayaApp é mais rápido do que você imagina 👀📲\n\nNeste vídeo a gente mostra o passo a passo: tira a foto da peça, escolhe o estilo, e a MayaApp cuida do resto. Seu produto fica pronto para vender, com imagem profissional e cadastro organizado.\n\nSalva este post pra consultar depois e manda pra aquela lojista que ainda cadastra tudo na mão 💜",
       "permalink": "https://www.instagram.com/reel/DdpNX4ORK0N/",
-      "media_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.82787-15/817455447_17882474862689844_3342761392793078551_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=qS_882m-zBYQ7kNvwEJG9kn&_nc_oc=Adr3GCaIqnZM7apwHahNgZtnOgGRlkNBLX6mXO8CSAZqNhWYsSmX25aIrIAJ9BIE9RU&_nc_zt=23&_nc_ht=scontent-fra3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=LSdkd_s0vgwXyWilx76gbg&_nc_tpa=Q5bMBQLHsM_EU9BOvHrkPXVO8QdS2L1xTmk3EfAZW2lc77mZ_Qxwh576_Zx-JDYvCTtzN3cgABX-fXw8tg&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQQAGyrwfYL42f66z3vgqSjB-IMqbQOi0KBA6lJ3cio8Gg&oe=6B03BD42",
+      "media_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.82787-15/817455447_17882474862689844_3342761392793078551_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MtCXUpf4u7AQ7kNvwGJ2ure&_nc_oc=AdoUTFmjtpI4scLadGBvl-lPcKjPVBlwsHLoSFdZPNLlcmEC3zcYNaLyqYTXm4QVPrM&_nc_zt=23&_nc_ht=scontent-fra3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=trRSYUo0BLCVMzJ_NM7wdg&_nc_tpa=Q5bMBQJ1b8s36YGzN_PBBwtWPKh-HNs6MdVJQV7ilLEwOYN621Y-fj7wFvL0cDxMonPoHOOfGG1TswspTA&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQQz4IO4nYaPhR1cbou8_fPhIlMN5-XygZvuOcyOBDrB4w&oe=6B050EC2",
       "metrics": {
         "reach": 950,
         "engagement": 25,
@@ -1321,13 +1322,13 @@
       "type": "REELS",
       "caption": "A Roleta da Sorte da MayaApp foi um sucesso!\n\nForam +100 brindes distribuídos para quem se cadastrou na MayaApp e girou a roleta com a gente. 💜\n\nObrigado a cada lojista que parou, conheceu a plataforma e deu o primeiro passo para digitalizar o seu negócio. Isso é só o começo: agora vocês têm na mão uma ferramenta completa para mostrar seus produtos, vender mais e crescer junto com o Circuito.\n\nAinda não se cadastrou? O link está na bio. 👆\n\nNinguém mais vende sozinho. ✨\n\n#MayaApp #CircuitoDeCompras #Brás #modanobrás",
       "permalink": "https://www.instagram.com/reel/Dd2K148g44g/",
-      "media_url": "https://scontent-fra5-1.cdninstagram.com/o1/v/t2/f2/m86/AQO42YbfP2K6IJlMAYnwk9wSmFYCw0YcQKtNVX1_292T4z9SIuHJifTUXEP-xIZJPsgDOZD6-H3-SwNX8x4525L5_aQDuRFDlHegd6c.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_ohc=tKnjrmaAejAQ7kNvwF8GC-M&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNTc2LmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTI4NjkzNTEzNzEyMzc1NiwiYXNzZXRfYWdlX2RheXMiOjUwLCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6NDgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=63e7839df8d16dc3&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9DN0QxOTE1NDQxRUM0NjY0OENGM0MwOTg4QTdDMDkzMl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzYzNUJERkZENEZGNzQ4QTdCRkEwRDNFOTM4MjU5MERFX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbY9pP7vZ3JBBUCKAJDMywXQEh2JN0vGqAYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=LSdkd_s0vgwXyWilx76gbg&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQRl25YzBdXU5JM3Tqj7cXsjBtjQiPMK1r6Mk414uouIYQ&oe=6AFFEAAB",
+      "media_url": "https://scontent-fra5-1.cdninstagram.com/o1/v/t2/f2/m86/AQO42YbfP2K6IJlMAYnwk9wSmFYCw0YcQKtNVX1_292T4z9SIuHJifTUXEP-xIZJPsgDOZD6-H3-SwNX8x4525L5_aQDuRFDlHegd6c.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_ohc=aPwR_jJuq_IQ7kNvwGwB9gQ&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNTc2LmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTI4NjkzNTEzNzEyMzc1NiwiYXNzZXRfYWdlX2RheXMiOjUxLCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6NDgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=63e7839df8d16dc3&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9DN0QxOTE1NDQxRUM0NjY0OENGM0MwOTg4QTdDMDkzMl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzYzNUJERkZENEZGNzQ4QTdCRkEwRDNFOTM4MjU5MERFX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbY9pP7vZ3JBBUCKAJDMywXQEh2JN0vGqAYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=trRSYUo0BLCVMzJ_NM7wdg&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQ3o8xXOJeBbVSgPM6zs9Mk0WilaYlXqlcOvD6M_DY4rg&oe=6B013C2B",
       "metrics": {
-        "reach": 2113,
+        "reach": 2121,
         "engagement": 39,
         "saves": 0,
         "shares": 1,
-        "views": 2685,
+        "views": 2689,
         "likes": 35,
         "comments": 0,
         "follows": null
@@ -1338,13 +1339,13 @@
       "type": "IMAGE",
       "caption": "Mulheres que fazem o Brás acontecer: esse post é pra vocês. 💜🎀\n\nVocês abrem a loja cedo, atendem, fotografam, divulgam, vendem e ainda cuidam de todo mundo. \n\nNeste Outubro Rosa, a MayaApp quer lembrar que cuidar de quem cuida de tudo também é prioridade.\n\nE esse carinho não ficou só aqui no feed: teve ação especial da MayaApp no Circuito de Compras. Em breve a gente mostra como foi. Fica de olho! 👀💜\n\nNinguém mais vende sozinho. E ninguém precisa se cuidar sozinha.\n\n#OutubroRosa #MayaApp #CDC #Brás #MulheresEmpreendedoras",
       "permalink": "https://www.instagram.com/p/DfDPIf9vCxa/",
-      "media_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.82787-15/870481618_17887908201689844_2236450509398816883_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=0bJXHHs8ZbgQ7kNvwFwVZ9v&_nc_oc=AdoWsel9tEw8yR-dvOTImQWgMNgV8FOeAfrJKm_2ftADbZBTjZsnvdpc8B-OL9YfeTo&_nc_zt=23&_nc_ht=scontent-fra3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=FrXwJXxdzFXRh6VWG1Hb_Q&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTSXT35tzVO3zr0u0Vu6KFAVWdwo4GbjFqBrQOzcJtNGA&oe=6B03C622",
+      "media_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.82787-15/870481618_17887908201689844_2236450509398816883_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=0bJXHHs8ZbgQ7kNvwHrPFfe&_nc_oc=Adp2uHmpfclp2Rsu62vfURHW6xoNxa0Nq4eNRjPbn9EVhjb-jVmgzOqtzg_7533gRl4&_nc_zt=23&_nc_ht=scontent-fra3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=pAIPiuVo-T-1nS9pLN5xnQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQRqzBYZ5wawtkF8vMc4EZwadC9NFEhv7THzqmsCIQvphA&oe=6B0517A2",
       "metrics": {
-        "reach": 79,
+        "reach": 80,
         "engagement": 10,
         "saves": 0,
         "shares": 0,
-        "views": 194,
+        "views": 197,
         "likes": 9,
         "comments": 1,
         "follows": null
@@ -1355,13 +1356,13 @@
       "type": "REELS",
       "caption": "Que dia incrível no Circuito Fashion Brás! 💜\n\nFoi uma alegria estar ao lado do Circuito de Compras e mostrar, ao vivo, como a MayaApp transforma a rotina do lojista: fotos profissionais dos seus produtos e catálogo pronto direto do celular, com inteligência artificial.\n\nObrigado a todos que interagiram com a gente , testaram o app e saíram com uma nova forma de vender. 🚀\n\nAinda não conhece? Baixe a MayaApp e comece hoje mesmo.\n\n#MayaApp #FashionBras #CircuitoDeCompras #ModaBrás #VarejoDeModa",
       "permalink": "https://www.instagram.com/reel/DfkSPx1gK0T/",
-      "media_url": "https://scontent-fra5-1.cdninstagram.com/o1/v/t2/f2/m86/AQPsJIdDFgW-qRCjKNXmGfJLs0oq7_MJvSPMGlFcIu_sLoX6LpWPga9MZg89mygt0b18jtXKsu5QU9XW08t6G0ss80PZtdVr4pG9R1E.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_ohc=TU9zLjjmNUAQ7kNvwGL7tFm&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTQyMzk5MDYyOTg5Nzc4MywiYXNzZXRfYWdlX2RheXMiOjgsInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo1MSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=b3c31925d0783c1d&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9EQkZCRUNDNkJCQkI0N0VDODFBMzYzMTg2Q0IxNjlBOV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzIzMUU0QzQ2MzI1NDQ4RUZCQkU5MUY5OTI0NERDMjIyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbu2MT6lMeHBRUCKAJDMywXQEnMan752yMYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=FrXwJXxdzFXRh6VWG1Hb_Q&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQvzuRCHuMZB0CuhOmu_c_j1Z-2w8aJ2aVugVQJioVi5g&oe=6AFFF06D",
+      "media_url": "https://scontent-fra5-1.cdninstagram.com/o1/v/t2/f2/m86/AQPsJIdDFgW-qRCjKNXmGfJLs0oq7_MJvSPMGlFcIu_sLoX6LpWPga9MZg89mygt0b18jtXKsu5QU9XW08t6G0ss80PZtdVr4pG9R1E.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_ohc=TU9zLjjmNUAQ7kNvwERpGt4&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTQyMzk5MDYyOTg5Nzc4MywiYXNzZXRfYWdlX2RheXMiOjksInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo1MSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=b3c31925d0783c1d&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9EQkZCRUNDNkJCQkI0N0VDODFBMzYzMTg2Q0IxNjlBOV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzIzMUU0QzQ2MzI1NDQ4RUZCQkU5MUY5OTI0NERDMjIyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwOIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRJjb3B5X3NhbXBsZV9ncm91cHMBMRUAACbu2MT6lMeHBRUCKAJDMywXQEnMan752yMYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=pAIPiuVo-T-1nS9pLN5xnQ&edm=AFF3FJ0EAAAA&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQUbG1TBNlka4fXe2GJkqMNEgxeSzqVj7bmNDm_XHBuLA&oe=6B0141ED",
       "metrics": {
-        "reach": 1225,
+        "reach": 1264,
         "engagement": 33,
         "saves": 1,
         "shares": 3,
-        "views": 1730,
+        "views": 1782,
         "likes": 26,
         "comments": 2,
         "follows": null
@@ -1373,15 +1374,15 @@
     "gender": [
       {
         "name": "F",
-        "size": 626
+        "size": 637
       },
       {
         "name": "M",
-        "size": 138
+        "size": 139
       },
       {
         "name": "U",
-        "size": 105
+        "size": 104
       }
     ],
     "age": [
@@ -1391,41 +1392,41 @@
       },
       {
         "name": "18-24",
-        "size": 32
+        "size": 31
       },
       {
         "name": "25-34",
-        "size": 192
+        "size": 193
       },
       {
         "name": "35-44",
-        "size": 317
+        "size": 321
       },
       {
         "name": "45-54",
-        "size": 228
+        "size": 231
       },
       {
         "name": "55-64",
-        "size": 83
+        "size": 86
       },
       {
         "name": "65+",
-        "size": 15
+        "size": 16
       }
     ],
     "cities": [
       {
         "name": "São Paulo, São Paulo (state)",
-        "size": 208
-      },
-      {
-        "name": "Guarulhos, São Paulo (state)",
-        "size": 20
+        "size": 212
       },
       {
         "name": "Rio de Janeiro, Rio de Janeiro (state)",
-        "size": 17
+        "size": 19
+      },
+      {
+        "name": "Guarulhos, São Paulo (state)",
+        "size": 19
       },
       {
         "name": "Salvador, Bahia",
@@ -1459,7 +1460,7 @@
     "countries": [
       {
         "name": "BR",
-        "size": 854
+        "size": 865
       },
       {
         "name": "PT",
@@ -1499,6 +1500,6 @@
       }
     ],
     "min_followers_required": 100,
-    "current_followers": 880
+    "current_followers": 884
   }
 }
